@@ -10,13 +10,13 @@
 	padding: 0;
 	.logo {
 		@include mixins.flex-center;
-		gap: 12px;
 		position: relative;
-		top: 12px;
+		gap: 16px;
+		top: 14px;
 		left: 6px;
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));
 		text-decoration: none;
-		.logo-icon { min-width: 110px; height: auto; }
+		.logo-icon { min-width: 104px; height: auto; }
 		.logo-text {
 			padding: 0 10px;
 			font-size: 32px;
@@ -28,9 +28,9 @@
 	}
 	.main-menu {
 		position: relative;
-		top: 12px;
-		left: 104px;
-		min-width: 700px;
+		top: 14px;
+		left: 106px;
+		min-width: 702px;
 		ul {
 			display: flex;
 			justify-content: space-around;
@@ -46,12 +46,17 @@
 				&:hover { color: vars.$btn; }
 				&.active { color: #414880; }
 			}
+			li a.about { position: relative; top: -2px; left: 0; }
+			li a.service { position: relative; top: 0; left: -2px; }
+			li a.gallery { position: relative; top: 0; left: 0; }
 		}
 	}
 	.contact-button {
-		margin-top: 20px;
-		width: 11vw;
-		height: 7vh;
+		position: relative;
+		top: 12px;
+		right: 14px;
+		width: 210px;
+		height: 68px;
 		border-radius: 50px;
 		border: none;
 		background-color: vars.$btn;
@@ -66,26 +71,52 @@
 
 	@media (max-width: 1440px) {
 		.logo {
-			gap: 10px;
-			top: -8px;
-			left: 4px;
+			gap: 10px; top: 0; left: 4px;
 			.logo-icon { min-width: 80px; }
-			.logo-text {
-				font-size: 24px;
-				letter-spacing: 0.15rem;
-			}
+			.logo-text { font-size: 24px; letter-spacing: 0.15rem; }
 		}
 		.main-menu {
-			top: 0;
-			left: 80px;
-			min-width: 500px;
-			ul li a {
-				font-size: 1rem;
-				letter-spacing: 0.1rem;
+			top: 0; left: 80px; min-width: 526px;
+			ul li a { font-size: 1rem; letter-spacing: 0.1rem; }
+			ul li a.about { left: -2px; }
+			ul li a.service { top: 0; left: -2px; }
+			ul li a.gallery { top: 0; left: -2px; }
+		}
+		.contact-button {
+			top: -2px;
+			right: 4px;
+			width: 159px;
+			height: 50px;
+			font-size: 1rem;
+		}
+	}
+	@media (max-width: 1320px) {
+		.logo {
+			gap: 10px; top: 0; left: 0;
+			.logo-icon { min-width: 60px; }
+			.logo-text { font-size: 18px; letter-spacing: 0.15rem; }
+		}
+		.main-menu { top: 0; left: 40px; min-width: 500px; }
+	}
+	@media (max-width: 1180px) {
+		flex-direction: column;
+		align-items: center;
+		.logo {
+			position: static; gap: 10px;
+			.logo-icon { min-width: 90px; }
+			.logo-text { font-size: 20px; letter-spacing: 0.15rem; }
+		}
+		.main-menu {
+			position: static; margin-top: 20px;
+			ul {
+				flex-direction: column; align-items: center; gap: 10px;
+				li a { font-size: 1rem; letter-spacing: 0.1rem; }
 			}
 		}
 		.contact-button {
-			width: 150px;
+			position: static;
+			margin-top: 20px;
+			width: 160px;
 			height: 50px;
 			font-size: 1rem;
 		}

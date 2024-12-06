@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/components/header.scss";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/main_logo.png";
 
 function Header() {
 	return (
@@ -11,7 +11,7 @@ function Header() {
 		</a>
 		<nav className="main-menu">
 			<ul>
-			<li><a href="/" className="home active">Home</a></li>
+			<li><a href="/" className="home active">Home</a> +</li>
 			<li><a href="/" className="about">About</a></li>
 			<li><a href="/" className="service">Service</a></li>
 			<li><a href="/" className="gallery">Gallery</a></li>
