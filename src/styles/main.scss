@@ -1,0 +1,16 @@
+//// base
+@use './base/variables';
+@use './base/mixins';
+@use './base/reset';
+//// layouts
+@use './layouts/header';
+@use './layouts/footer';
+//// components
+@use './components/button';
+
+
+
+//// Import tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
