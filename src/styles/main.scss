@@ -3,10 +3,10 @@
 @use './base/mixins';
 @use './base/reset';
 //// layouts
-@use './layouts/header';
 @use './layouts/footer';
 //// components
-@use './components/button';
+@use './components/hero';
+@use './components/header.scss';
 
 
 
