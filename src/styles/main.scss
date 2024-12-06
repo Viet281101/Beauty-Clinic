@@ -2,12 +2,21 @@
 @use './base/variables';
 @use './base/mixins';
 @use './base/reset';
+
 //// layouts
 @use './layouts/footer';
+
 //// components
 @use './components/hero';
 @use './components/header.scss';
 
+
+//// Apply global font
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Poppins', sans-serif;
+}
 
 
 //// Import tailwind
