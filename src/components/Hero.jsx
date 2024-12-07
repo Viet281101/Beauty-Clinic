@@ -4,13 +4,13 @@ import heroImage from "../assets/bg_frame_1.svg";
 
 function Hero() {
 	return (
-		<section className="hero" id="hero">
-		<div className="hero-content">
+		<section className="hero relative w-full" id="hero">
+		<div className="hero-content font-semibold text-left w-1/2">
 			<h1>Clinic & beauty<br/>consultant</h1>
 			<p>It is a long established fact that a reader will be<br/>by the readable content of a page.</p>
-			<button>More Details</button>
+			<button className="rounded-full cursor-pointer">More Details</button>
 		</div>
-		<div className="hero-image">
+		<div className="hero-image text-right relative">
 			<img src={heroImage} alt="Background Frame" />
 		</div>
 		</section>

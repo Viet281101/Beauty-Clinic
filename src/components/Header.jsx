@@ -18,7 +18,7 @@ function Header() {
 			<li><a href="/" className="blog relative">Blog</a></li>
 			</ul>
 		</nav>
-		<button className="contact-button relative font-semibold">Contact</button>
+		<button className="contact-button relative font-semibold rounded-full">Contact</button>
 		</header>
 	);
 }
