@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import SlideButton from "./components/SlideBtn";
 import Services from "./components/Services";
+import About from "./components/About";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<SlideButton />
 			</div>
 			<Services />
+			<About />
 			<Footer />
 		</div>
 	);

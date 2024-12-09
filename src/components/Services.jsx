@@ -35,7 +35,7 @@ function Services() {
 				turpis.
 			</p>
 		</div>
-		<div className="services-boxes relative flex items-center justify-between">
+		<div className="services-boxes relative flex items-center justify-between z-10">
 			{serviceData.map((service) => (
 			<div className={`service-box relative text-center ${service.id === 1 ? "left" : service.id === 2 ? "mid" : "right"}`} key={service.id}>
 				<div className="service-icon">
