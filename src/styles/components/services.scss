@@ -1,0 +1,230 @@
+@use "../base/variables" as vars;
+@use "../base/mixins" as mixins;
+
+.services {
+	top: 220px; padding: 100px 0;
+	.services-title {
+		margin-bottom: 50px;
+		.services-subtitle {
+			font-size: 21px;
+			font-weight: 600;
+			line-height: 20px;
+			color: vars.$btn;
+			margin-bottom: 22px;
+		}
+		.services-heading {
+			font-size: 46px;
+			font-weight: 600;
+			line-height: 60px;
+			letter-spacing: 0.1rem;
+			color: vars.$h_txt;
+			margin-bottom: 26px;
+		}
+		.services-description {
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 32px;
+			color: vars.$desc_txt;
+			letter-spacing: 0.13rem;
+			max-width: 1110px;
+			margin: 0 auto;
+		}
+	}
+	.services-boxes {
+		top: 110px;
+		padding: 0 198px;
+		gap: 40px;
+		grid-template-columns: repeat(3, 1fr);
+		.service-box {
+			background-color: #fff;
+			border-radius: 50px;
+			box-shadow: 0px 35px 100px rgba(246, 247, 255, 1);
+			padding: 60px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			flex: 1;
+			max-width: 460px;
+			&:hover {
+				transform: translateY(-15px);
+				box-shadow: 0px 60px 180px rgba(246, 247, 255, 1);
+			}
+			.service-icon img {
+				margin: 0 auto;
+				width: 220px;
+				height: 220px;
+				margin-top: 17px;
+				margin-bottom: 66px;
+			}
+			.service-title {
+				font-size: 24px;
+				font-weight: 600;
+				color: vars.$h_txt;
+				margin-bottom: 40px;
+			}
+			.service-desc {
+				font-size: 20px;
+				font-weight: 400;
+				color: vars.$desc_txt;
+				line-height: 28px;
+				letter-spacing: 0.09rem;
+			}
+		}
+	}
+	@media (max-width: 1440px) {
+		top: 142px;
+		padding: 100px 0;
+		.services-title {
+			.services-subtitle { font-size: 16px; margin-bottom: 13px; }
+			.services-heading {
+				font-size: 33px;
+				line-height: 44px;
+				letter-spacing: 0.1rem;
+				margin-bottom: 20px;
+			}
+			.services-description {
+				font-size: 16px;
+				line-height: 24px;
+				letter-spacing: 0.095rem;
+				max-width: 860px;
+			}
+		}
+		.services-boxes {
+			top: 32px;
+			padding: 0 150px;
+			gap: 50px;
+			.service-box {
+				padding: 30px;
+				&.left { right: 2px; }
+				&.right { left: 2px; }
+				.service-icon img {
+					width: 164px;
+					margin-top: 4px;
+					margin-bottom: 30px;
+				}
+				.service-title {
+					font-size: 18px;
+					margin-bottom: 18px;
+				}
+				.service-desc {
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 21px;
+					letter-spacing: 0.08rem;
+					margin-bottom: 38px;
+				}
+			}
+		}
+	}
+	@media (max-width: 1024px) {
+		padding: 80px 20px;
+		.services-title {
+			margin-bottom: 40px;
+			.services-subtitle {
+				font-size: 18px;
+				margin-bottom: 16px;
+			}
+			.services-heading {
+				font-size: 38px;
+				line-height: 50px;
+				margin-bottom: 20px;
+			}
+			.services-description {
+				font-size: 18px;
+				line-height: 28px;
+				letter-spacing: 0.1rem;
+				max-width: 800px;
+			}
+		}
+		.services-boxes {
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+			padding: 0 50px;
+			.service-box {
+				max-width: 100%;
+				padding: 50px;
+				.service-icon img {
+					width: 180px;
+					height: 180px;
+					margin-bottom: 50px;
+				}
+				.service-title { font-size: 22px; margin-bottom: 20px; }
+				.service-desc {
+					font-size: 18px;
+					line-height: 26px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		padding: 60px 15px;
+		.services-title {
+			.services-subtitle { font-size: 16px; margin-bottom: 12px; }
+			.services-heading {
+				font-size: 32px;
+				line-height: 45px;
+				margin-bottom: 18px;
+			}
+			.services-description {
+				font-size: 16px;
+				line-height: 24px;
+				letter-spacing: 0.08rem;
+				max-width: 600px;
+			}
+		}
+		.services-boxes {
+			padding: 0 30px; gap: 20px;
+			.service-box {
+				padding: 40px;
+				.service-icon img {
+					width: 150px;
+					height: 150px;
+					margin-bottom: 40px;
+				}
+				.service-title {
+					font-size: 20px;
+					margin-bottom: 15px;
+				}
+				.service-desc {
+					font-size: 16px;
+					line-height: 24px;
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	@media (max-width: 480px) {
+		padding: 40px 10px;
+		.services-title {
+			.services-subtitle { font-size: 14px; margin-bottom: 8px; }
+			.services-heading {
+				font-size: 26px;
+				line-height: 38px;
+				margin-bottom: 14px;
+			}
+			.services-description {
+				font-size: 14px;
+				line-height: 20px;
+				letter-spacing: 0.05rem;
+				max-width: 100%;
+			}
+		}
+		.services-boxes {
+			padding: 0 15px; gap: 15px;
+			.service-box {
+				padding: 30px;
+				.service-icon img {
+					width: 120px;
+					height: 120px;
+					margin-bottom: 30px;
+				}
+				.service-title { font-size: 18px; margin-bottom: 10px; }
+				.service-desc {
+					font-size: 14px;
+					line-height: 20px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

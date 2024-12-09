@@ -8,6 +8,7 @@
 	.bar {
 		width: 20px;
 		height: 4px;
+		background-color: #eee;
 		border-radius: 10px;
 		transition: background-color 0.3s ease, width 0.3s ease;
 		&.active {
@@ -31,5 +32,4 @@
 		margin-top: 1rem;
 		justify-content: center;
 	}
-  }
-  
+}
