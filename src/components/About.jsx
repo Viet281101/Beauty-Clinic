@@ -21,7 +21,7 @@ function About() {
 						cras tellus enim.
 					</p>
 					<div className="about-actions flex items-center gap-6">
-						<button className="about-btn border-none font-semibold cursor-pointer">Learn More</button>
+						<button className="about-btn border-none font-semibold cursor-pointer text-white">Learn More</button>
 						<div className="about-video flex items-center cursor-pointer gap-4 font-semibold">
 							<img src={playButtonIcon} alt="Play Button" className="play-icon hover:scale-125" />
 							<p>Watch Video</p>

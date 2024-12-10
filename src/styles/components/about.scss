@@ -34,7 +34,6 @@
 					width: 264px;
 					height: 80px;
 					background-color: vars.$btn;
-					color: #fff;
 					border-radius: 50px;
 					font-size: 21px;
 					box-shadow: 0 8px 16px rgba(255, 100, 174, 0.3);
@@ -139,9 +138,7 @@
 						padding: 15px 20px;
 						font-size: 18px;
 					}
-					.about-video {
-						p { font-size: 16px; }
-					}
+					.about-video p { font-size: 16px; }
 				}
 			}
 			.about-image img {
@@ -159,9 +156,7 @@
 				.about-description { font-size: 16px; line-height: 26px; }
 				.about-actions {
 					.about-btn { font-size: 16px; padding: 10px 15px; }
-					.about-video {
-						p { font-size: 14px; }
-					}
+					.about-video p { font-size: 14px; }
 				}
 			}
 			.about-image img { max-width: 100%; }
