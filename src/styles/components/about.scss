@@ -6,29 +6,12 @@
 	background-size: 65%;
 	padding: 150px 10%;
 	.about-content {
-		margin-top: 323px; gap: 40px;
 		.about-text {
 			flex: 1;
-			.about-subtitle {
-				font-size: 20px;
-				color: vars.$btn;
-				margin-bottom: 10px;
-			}
-			.about-heading {
-				font-size: 48px;
-				color: vars.$h_txt;
-				margin-bottom: 20px;
-			}
-			.about-description {
-				width: 90%;
-				margin-top: 28px;
-				font-size: 21px;
-				line-height: 32px;
-				color: vars.$desc_txt;
-				margin-bottom: 28px;
-			}
+			.about-subtitle { font-size: 20px; color: vars.$btn; }
+			.about-heading { font-size: 48px; color: vars.$h_txt; }
+			.about-description { font-size: 21px; color: vars.$desc_txt; }
 			.about-actions {
-				margin-top: 70px;
 				.about-btn {
 					background-color: vars.$btn;
 					border-radius: 50px;
@@ -41,29 +24,14 @@
 					}
 				}
 				.about-video {
-					gap: 10px;
-					.play-icon {
-						width: 70px; height: 70px; margin-left: 20px;
-						&:hover { transition: transform 0.3s ease; }
-					}
-					p {
-						font-size: 20px;
-						color: vars.$desc_txt;
-						margin-left: 2px;
-						letter-spacing: 0.03rem;
-					}
+					.play-icon { &:hover { transition: transform 0.3s ease; } }
+					p { font-size: 20px; color: vars.$desc_txt; }
 				}
 			}
 		}
 		.about-image {
 			flex: 1; top : 30px;
-			img {
-				width: 90%;
-				max-width: 650px;
-				max-height: 470px;
-				border-radius: 60px;
-				box-shadow: 0px 10px 20px rgba(91, 91, 91, 0.2);
-			}
+			img { box-shadow: 0px 10px 20px rgba(91, 91, 91, 0.2); }
 		}
 	}
 	@media (max-width: 1440px) {

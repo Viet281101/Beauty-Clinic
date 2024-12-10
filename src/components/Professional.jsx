@@ -97,12 +97,12 @@ function Professional() {
 				{teamData.map((team, index) => (
 					<div className={`pro-box ${index === 1 ? "active w-[570px] z-20 bg-white" : ""} ${
 							index === 0 ? "left" : index === 2 ? "right" : "mid"
-						} z-10 relative w-[510px] h-[820px]`} key={team.id} >
+						} z-10 relative w-[510px] h-[820px] rounded-[50px] shadow-none`} key={team.id} >
 						<img src={team.image} alt={team.name} className="pro-avatar object-cover rounded-full" />
 						<p className="pro-role font-semibold">{team.role}</p>
 						<p className="pro-name font-bold">{team.name}</p>
 						<p className="pro-desc font-medium leading-7">{team.desc}</p>
-						<div className="pro-social flex justify-center gap-6">
+						<div className="pro-social flex justify-center gap-6 mt-10">
 							{team.socials.map((social, idx) => (
 								<img src={social} alt={`Social Icon ${idx + 1}`} key={idx} className="cursor-pointer rounded-full bg-white hover:scale-125 w-12 h-12 p-[10px]" />
 							))}

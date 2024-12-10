@@ -5,7 +5,7 @@ import contactFrame from "../assets/contact_frame.svg";
 
 function Contact() {
 	return (
-		<section className="contact relative flex justify-between items-center -top-80" id="contact" style={{ backgroundImage: `url(${bubbleBackground})` }}>
+		<section className="contact relative flex justify-between items-center -top-5" id="contact" style={{ backgroundImage: `url(${bubbleBackground})` }}>
 			<div className="contact-container flex justify-between items-center gap-16">
 				<div className="contact-image">
 					<img className="w-full max-w-[540px] h-auto" src={contactFrame} alt="Contact Frame" />
