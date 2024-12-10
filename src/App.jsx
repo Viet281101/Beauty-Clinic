@@ -6,6 +6,7 @@ import SlideButton from "./components/SlideBtn";
 import Services from "./components/Services";
 import About from "./components/About";
 import Professional from "./components/Professional";
+import Contact from "./components/Contact";
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 			<Services />
 			<About />
 			<Professional />
+			<Contact />
 			<Footer />
 		</div>
 	);

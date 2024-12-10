@@ -2,29 +2,24 @@
 @use "../base/mixins" as mixins;
 
 .professional {
-	padding: 100px 10%; top: -64px;
+	padding: 100px 10%;
 	.professional-title {
 		margin-bottom: 30px;
 		.professional-subtitle { font-size: 22px; margin-bottom: 4px; color: vars.$btn; }
 		.professional-heading { font-size: 48px; margin-bottom: 20px; color: vars.$h_txt; }
 		.professional-description {
 			font-size: 22px;
-			line-height: 24px;
 			color: vars.$desc_txt;
 			margin: 0 auto;
 		}
 	}
 	.professional-boxes {
-		top: 110px;
 		.pro-box {
 			background-color: rgba(255, 255, 255, 0);
 			border-radius: 50px;
-			width: 510px;
-			height: 820px;
 			transition: all 0.3s ease;
 			box-shadow: none;
 			&.active {
-				width: 570px;
 				transform: scale(1.02);
 				box-shadow: 0px 12px 36px rgba(85, 73, 104, 0.2);
 			}
@@ -34,15 +29,11 @@
 			.pro-desc {
 				margin: 20px 40px 0;
 				font-size: 18px;
-				line-height: 28px;
 				color: vars.$desc_txt;
 			}
 			.pro-social {
 				margin-top: 40px;
 				img {
-					width: 48px;
-					height: 48px;
-					padding: 10px;
 					box-shadow: 0px 4px 8px rgba(32, 32, 75, 0.1);
 					transition: all 0.3s ease;
 					&:hover { box-shadow: 0px 6px 12px rgba(32, 32, 75, 0.2); }
