@@ -5,11 +5,7 @@
 	margin: 41px auto;
 	.logo {
 		@include mixins.flex-center;
-		gap: 16px;
-		top: 14px;
-		left: 6px;
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
-		text-decoration: none;
 		.logo-icon { min-width: 104px; height: auto; }
 		.logo-text {
 			padding: 0 10px;
@@ -20,15 +16,11 @@
 		}
 	}
 	.main-menu {
-		top: 14px;
-		left: 106px;
 		min-width: 702px;
 		ul {
-			list-style: none;
 			li a {
 				text-decoration: none;
 				font-size: 1.3rem;
-				line-height: 1rem;
 				letter-spacing: 0.12rem;
 				color: vars.$desc_txt;
 				&:hover { color: vars.$btn; }
@@ -39,15 +31,9 @@
 		}
 	}
 	.contact-button {
-		top: 12px;
-		right: 14px;
-		width: 210px;
-		height: 68px;
 		border: none;
 		background-color: vars.$btn;
-		color: #fff;
 		font-size: 1.3rem;
-		line-height: 1rem;
 		letter-spacing: 0.12rem;
 		cursor: pointer;
 		&:hover { background-color: #e05497; }

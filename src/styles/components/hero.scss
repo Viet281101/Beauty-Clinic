@@ -5,33 +5,22 @@
 	@include mixins.flex-center;
 	padding: 0 10%;
 	margin-top: 168px;
-	gap: 2.6rem;
 	.hero-content {
 		h1 {
 			font-size: 66px;
-			line-height: 5rem;
-			letter-spacing: 0.012rem;
 			color: vars.$h_txt;
-			margin-top: 6px;
-			margin-left: 8px;
-			margin-bottom: 10px;
+			margin: 6px 8px 10px;
 		}
 		p {
 			font-size: 1.3rem;
 			color: vars.$h_txt;
-			margin-bottom: 2.45rem;
-			line-height: 1.8rem;
-			margin-left: 8px;
+			margin: 0 0 2.45rem 8px;
 			white-space: nowrap;
 		}
 		button {
-			width: 260px;
-			height: 80px;
 			padding: 1rem 2rem;
 			background-color: vars.$btn;
-			color: #fff;
 			font-size: 1.2rem;
-			letter-spacing: 0.12rem;
 			transition: background-color 0.3s ease;
 			box-shadow: 0px 17px 22px rgba(255, 237, 246, 0.8);
 			&:hover {
@@ -40,11 +29,6 @@
 			}
 		}
 	}
-	.hero-image {
-		width: 60%; top: 0; right: 20px;
-		img { width: 100%; height: auto; }
-	}
-
 	@media (max-width: 1440px) {
 		margin-top: 180px; gap: 2.6rem;
 		.hero-content {

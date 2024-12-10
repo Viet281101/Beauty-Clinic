@@ -5,7 +5,6 @@
 	background: no-repeat top right;
 	background-size: 65%;
 	padding: 150px 10%;
-	top: -28px;
 	.about-content {
 		margin-top: 323px; gap: 40px;
 		.about-text {
@@ -31,8 +30,6 @@
 			.about-actions {
 				margin-top: 70px;
 				.about-btn {
-					width: 264px;
-					height: 80px;
 					background-color: vars.$btn;
 					border-radius: 50px;
 					font-size: 21px;
