@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import SlideButton from "./components/SlideBtn";
 import Services from "./components/Services";
 import About from "./components/About";
+import Professional from "./components/Professional";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			</div>
 			<Services />
 			<About />
+			<Professional />
 			<Footer />
 		</div>
 	);

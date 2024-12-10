@@ -1,0 +1,77 @@
+@use "../base/variables" as vars;
+@use "../base/mixins" as mixins;
+
+.professional {
+	padding: 100px 10%;
+	top: -64px;
+	.professional-title {
+		margin-bottom: 30px;
+		.professional-subtitle {
+			font-size: 22px;
+			color: vars.$btn;
+			margin-bottom: 4px;
+		}
+		.professional-heading {
+			font-size: 48px;
+			color: vars.$h_txt;
+			margin-bottom: 20px;
+		}
+		.professional-description {
+			font-size: 22px;
+			line-height: 24px;
+			color: vars.$desc_txt;
+			margin: 0 auto;
+		}
+	}
+	.professional-boxes {
+		top: 110px;
+		.pro-box {
+			background-color: rgba(255, 255, 255, 0);
+			border-radius: 50px;
+			width: 510px;
+			height: 820px;
+			transition: all 0.3s ease;
+			box-shadow: none;
+			&.active {
+				width: 570px;
+				transform: scale(1.02);
+				background-color: #fff;
+				box-shadow: 0px 12px 36px rgba(91, 91, 91, 0.2);
+			}
+			.pro-avatar {
+				margin: 120px auto 0;
+				width: 190px;
+				height: 190px;
+			}
+			.pro-role {
+				margin-top: 60px;
+				font-size: 22px;
+				color: vars.$btn;
+			}
+			.pro-name {
+				font-size: 24px;
+				color: vars.$h_txt;
+			}
+			.pro-desc {
+				margin: 20px 40px 0;
+				font-size: 18px;
+				line-height: 28px;
+				color: vars.$desc_txt;
+			}
+			.pro-social {
+				margin-top: 40px;
+				img {
+					width: 48px;
+					height: 48px;
+					padding: 10px;
+					background-color: #f8f8f8;
+					box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+					transition: all 0.3s ease;
+					&:hover {
+						box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+					}
+				}
+			}
+		}
+	}
+}
