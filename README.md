@@ -1,7 +1,10 @@
 # Beauty-Clinic
-**Beautice - Clinic & Beauty Consultation Website**
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Viet281101/BeautyClinic) ![Github language count](https://img.shields.io/github/languages/count/Viet281101/BeautyClinic) ![GitHub Created At](https://img.shields.io/github/created-at/Viet281101/BeautyClinic)
+
+**Beautice - Clinic & Beauty Consultation Website**
+
+[![alt text](/public/react.svg)](https://react.dev/)  **&** [![alt text](/public/javascript.svg)](https://en.wikipedia.org/wiki/JavaScript) **&** [![alt text](/public/tailwind.svg)](https://tailwindcss.com/) **&** [![alt text](public/sass.svg)](https://sass-lang.com/)
 
 **Figma Link:** [Beauty and Clinic](https://www.figma.com/design/Ry2YV1BCuUR3m0xPZdqrGP/Beautice---Clinic-%26-Beauty-Consultation-Website-Design?node-id=513-2&node-type=canvas&t=vKCDwo3FlkNBcL8j-0)
 

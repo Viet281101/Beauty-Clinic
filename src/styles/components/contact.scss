@@ -4,18 +4,8 @@
 	background: no-repeat top left;
 	background-size: 80%;
 	padding: 150px 10%;
-	margin-top: -48px;
 	.contact-container {
-		justify-content: space-between;
-		.contact-image {
-			img {
-				width: 100%;
-				max-width: 540px;
-				height: auto;
-			}
-		}
 		.contact-form-container {
-			width: 100%;
 			max-width: 540px;
 			.contact-title {
 				margin-bottom: 20px;
@@ -35,12 +25,7 @@
 				}
 			}
 			.contact-form {
-				display: flex;
-				flex-direction: column;
-				gap: 20px;
 				.form-row {
-					display: flex;
-					gap: 10px;
 					input {
 						padding: 15px 20px;
 						border: 1px solid vars.$border;
