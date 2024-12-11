@@ -33,11 +33,11 @@
 	@media (max-width: 1440px) {
 		top: 142px; padding: 100px 0;
 		.services-title {
-			.services-subtitle { font-size: 16px; margin-bottom: 13px; }
+			.services-subtitle { font-size: 16px; margin-bottom: 12px; }
 			.services-heading {
-				font-size: 33px;
-				line-height: 44px;
-				letter-spacing: 0.1rem;
+				font-size: 35px;
+				line-height: 45px;
+				letter-spacing: 0.03rem;
 				margin-bottom: 20px;
 			}
 			.services-description {
@@ -48,7 +48,7 @@
 			}
 		}
 		.services-boxes {
-			top: 32px; padding: 0 150px; gap: 50px;
+			top: 31px; padding: 0 150px; gap: 50px;
 			.service-box {
 				padding: 30px;
 				&.left { right: 2px; }

@@ -3,14 +3,6 @@
 @use './base/mixins';
 @use './base/reset';
 
-//// layouts
-@use './layouts/footer';
-
-//// components
-@use './components/hero';
-@use './components/header.scss';
-
-
 //// Apply global styles
 body {
 	-webkit-font-smoothing: antialiased;
