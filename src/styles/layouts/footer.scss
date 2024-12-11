@@ -3,17 +3,23 @@
 .footer {
 	background: url('../../assets/footer_bg.svg') no-repeat center bottom;
 	background-size: contain;
-	color: vars.$footer_text;
+	color: vars.$ft_txt;
 	.footer-content {
 		.footer-logo {
 			flex: 1;
-			.ft-desc, .ft-adresse, .ft-phone, .ft-mail, a {
+			.ft-desc, .ft-adresse, a {
 				font-size: 18px;
 				margin-left: 40px;
 				line-height: 24px;
 				letter-spacing: 0.1rem;
-				color: vars.$footer_text;
-				&:hover { color: vars.$btn; }
+				color: vars.$ft_txt;
+			}
+			.footer-contact-info .ft-phone, .ft-mail {
+				font-size: 18px;
+				line-height: 24px;
+				letter-spacing: 0.1rem;
+				color: vars.$ft_txt;
+				a:hover { color: vars.$btn; }
 			}
 		}
 		.footer-pages, .footer-info {
@@ -42,12 +48,9 @@
 					}
 					a {
 						font-size: 20px;
-						color: vars.$footer_text;
+						color: vars.$ft_txt;
 						text-decoration: none;
-						&:hover {
-							color: vars.$btn;
-							text-decoration: underline;
-						}
+						&:hover { color: vars.$btn; text-decoration: underline; }
 					}
 				}
 			}
@@ -59,10 +62,7 @@
 			height: 38px;
 			cursor: pointer;
 			transition: transform 0.3s ease, opacity 0.3s ease;
-			&:hover {
-				transform: scale(1.1);
-				opacity: 0.8;
-			}
+			&:hover { transform: scale(1.1); opacity: 0.8; }
 		}
 		p { font-size: 22px; }
 	}
@@ -73,35 +73,30 @@
 		.footer-logo {
 			margin-left: 5px;
 			margin-top: 377px;
-			.footer-logo-img {
-				width: 260px;
-				margin-bottom: 26px;
-			}
-			.ft-desc, .ft-adresse, .ft-phone, .ft-mail, a {
+			.footer-logo-img { width: 260px; margin-bottom: 26px; }
+			.ft-desc, .ft-adresse, a {
 				font-size: 16px;
 				margin-left: 32px;
 				line-height: 24px;
+			}
+			.footer-contact-info .ft-phone, .ft-mail {
+				font-size: 18px;
+				line-height: 24px;
+				letter-spacing: 0.1rem;
+				color: vars.$ft_txt;
 			}
 		}
 		.footer-pages, .footer-info {
 			margin-left: 80px;
 			margin-top: 358px;
-			.footer-title {
-				font-size: 18px;
-				margin-bottom: 28px;
-			}
-			.footer-links a {
-				font-size: 16px;
-			}
+			.footer-title { font-size: 18px; margin-bottom: 28px; }
+			.footer-links a { font-size: 16px; }
 		}
 		.footer-bottom {
 			margin-top: 99px;
 			.footer-social {
 				gap: 40px;
-				img {
-					width: 30px;
-					height: 30px;
-				}
+				img { width: 30px; height: 30px; }
 			}
 			p { font-size: 16px; }
 		}
@@ -115,10 +110,7 @@
 			.footer-logo {
 				margin-left: 0;
 				margin-top: 40px;
-				.footer-logo-img {
-					width: 260px;
-					margin-bottom: 20px;
-				}
+				.footer-logo-img { width: 260px; margin-bottom: 20px; }
 				.ft-desc, .ft-adresse, .ft-phone, .ft-mail {
 					margin-left: 0;
 					font-size: 12px;
@@ -129,13 +121,8 @@
 				margin-top: 40px;
 				text-align: center;
 			}
-			.footer-title {
-				font-size: 22px;
-				margin-bottom: 20px;
-			}
-			.footer-links a {
-				font-size: 18px;
-			}
+			.footer-title { font-size: 22px; margin-bottom: 20px; }
+			.footer-links a { font-size: 18px; }
 		}
 		.footer-bottom {
 			flex-direction: column;

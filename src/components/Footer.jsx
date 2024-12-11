@@ -20,12 +20,14 @@ function Footer() {
 					<p className="ft-adresse">
 						<i>Baker Steet 101, NY, United States.</i>
 					</p>
-					<p className="ft-phone">
-						<i>+521 569 8966.</i>
-					</p>
-					<p className="ft-mail">
-						<a href="mailto:mail@company.com"><i>mail@company.com</i></a>
-					</p>
+					<div className="footer-contact-info flex items-center gap-5 ml-10">
+						<p className="ft-phone">
+							<i>+521 569 8966.</i>
+						</p>
+						<p className="ft-mail">
+							<a href="mailto:mail@company.com"><i>mail@company.com</i></a>
+						</p>
+					</div>
 				</div>
 
 				{/* Footer Pages Section */}
