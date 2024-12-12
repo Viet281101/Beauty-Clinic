@@ -1,13 +1,34 @@
 import React from "react";
-import "../styles/components/slide_btn.scss";
+import tw, { styled } from "twin.macro";
+
+const SlideButtonContainer = styled.div`
+	${tw`flex justify-center items-center relative transform translate-y-[15.6rem] gap-[0.6rem]`}
+	@media (max-width: 1440px) {
+		${tw`transform translate-y-[6.9rem] gap-[0.5rem]`}
+	}
+	@media (max-width: 768px) {
+		${tw`relative translate-y-0 mt-4 justify-center`}
+	}
+`;
+
+const Bar = styled.div(({ isActive }) => [
+	tw`w-5 h-1 bg-gray-300 rounded-full transition-all duration-300`,
+	isActive && tw`w-8 h-2 bg-[#414880]`,
+	`
+	@media (max-width: 1440px) {
+		width: ${isActive ? '25px' : '16px'};
+		height: ${isActive ? '8px' : '4px'};
+	}
+	`,
+]);
 
 function SlideButton() {
 	return (
-		<div className="slide-button relative bottom-[38px] gap-[0.6rem]">
-			<div className="bar"></div>
-			<div className="bar active"></div>
-			<div className="bar"></div>
-		</div>
+		<SlideButtonContainer>
+			<Bar />
+			<Bar isActive />
+			<Bar />
+		</SlideButtonContainer>
 	);
 }
 

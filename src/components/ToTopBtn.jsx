@@ -1,6 +1,31 @@
 import React, { useEffect, useState } from "react";
-import "../styles/components/totop_btn.scss";
+import tw, { styled } from "twin.macro";
 import arrowUpIcon from "../assets/arrow_up.svg";
+
+const ToTopButton = styled.div(({ isVisible }) => [
+	tw`fixed flex justify-center items-center bg-[#ff64ae] shadow-lg rounded-md cursor-pointer opacity-0 invisible transition-all duration-300 z-20`,
+	tw`w-12 h-12 bottom-[230px] right-[90px] hover:(bg-[#e05497] shadow-2xl)`,
+	isVisible && tw`opacity-100 visible`,
+	`
+	@media (max-width: 1440px) {
+		bottom: 176px;
+		right: 66px;
+		width: 36px;
+		height: 36px;
+	}
+	@media (max-width: 768px) {
+		right: 70px;
+	}
+	`,
+]);
+
+const ToTopIcon = styled.img`
+	${tw`w-[26px] h-[26px]`}
+	@media (max-width: 1440px) {
+		width: 18px;
+		height: 18px;
+	}
+`;
 
 function ToTopBtn() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -32,11 +57,9 @@ function ToTopBtn() {
 	}, []);
 
 	return (
-		<div className={`to-top fixed bottom-[230px] right-[90px] w-12 h-12 cursor-pointer flex justify-center items-center rounded-md opacity-0 z-20 ${isVisible ? "show" : ""}`}
-			onClick={scrollToTop}
-			aria-label="Scroll to top" >
-			<img className="w-[26px] h-[26px]" src={arrowUpIcon} alt="Arrow Up" />
-		</div>
+		<ToTopButton isVisible={isVisible} onClick={scrollToTop} aria-label="Scroll to top">
+			<ToTopIcon src={arrowUpIcon} alt="Arrow Up" />
+		</ToTopButton>
 	);
 }
 
