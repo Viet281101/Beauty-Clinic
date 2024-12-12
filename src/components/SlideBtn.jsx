@@ -12,9 +12,8 @@ const SlideButtonContainer = styled.div`
 `;
 
 const Bar = styled.div(({ isActive }) => [
-	tw`w-5 h-1 bg-gray-300 rounded-full transition-all duration-300`,
-	isActive && tw`w-8 h-2 bg-[#414880]`,
-	`
+	tw`w-5 h-1 bg-[#eee] rounded-full transition-all duration-300`,
+	isActive && tw`w-8 h-2 bg-[#414880]`, `
 	@media (max-width: 1440px) {
 		width: ${isActive ? '25px' : '16px'};
 		height: ${isActive ? '8px' : '4px'};
