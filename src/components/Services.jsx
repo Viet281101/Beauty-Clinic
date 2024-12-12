@@ -118,6 +118,8 @@ const ServiceBox = styled.div`
 	box-shadow: 0px 35px 100px rgba(246, 247, 255, 1);
 	flex: 1;
 	&:hover { box-shadow: 0px 60px 180px rgba(246, 247, 255, 1); }
+	${({ position }) => position === "left" && tw`relative right-[2px]`}
+	${({ position }) => position === "right" && tw`relative left-[2px]`}
 	@media (max-width: 1440px) {
 		${tw`p-[30px]`}
 		&.left { right: 2px; }
@@ -137,7 +139,7 @@ const ServiceBox = styled.div`
 const ServiceIcon = styled.img`
 	${tw`block mt-[17px] mx-auto w-[220px] h-[220px] mb-12`}
 	@media (max-width: 1440px) {
-		${tw`w-[164px] mt-1 mb-[30px]`}
+		${tw`w-[164px] mt-[6px] mb-[28px]`}
 	}
 	@media (max-width: 1024px) {
 		${tw`w-[180px] h-[180px] mb-[50px]`}
@@ -169,7 +171,7 @@ const ServiceTitle = styled.h3`
 const ServiceDescription = styled.p`
 	${tw`text-[20px] font-normal text-[#8B8B8B] leading-7 tracking-[0.09rem] mb-8`}
 	@media (max-width: 1440px) {
-		${tw`text-[14px] font-medium leading-[21px] tracking-[0.08rem] mb-[38px]`}
+		${tw`text-[14px] font-medium leading-[21px] tracking-[0.08rem] mb-[39px]`}
 	}
 	@media (max-width: 1024px) {
 		${tw`text-[18px] leading-[26px] mb-5`}
@@ -199,10 +201,10 @@ function Services() {
 			</TitleWrapper>
 			<BoxesWrapper>
 				{serviceData.map((service) => (
-					<ServiceBox key={service.id}>
-						<ServiceIcon src={service.icon} alt={service.title} />
-						<ServiceTitle>{service.title}</ServiceTitle>
-						<ServiceDescription>{service.description}</ServiceDescription>
+					<ServiceBox key={service.id} position={ service.id === 1 ? "left" : service.id === 3 ? "right" : "mid" } >
+					<ServiceIcon src={service.icon} alt={service.title} />
+					<ServiceTitle>{service.title}</ServiceTitle>
+					<ServiceDescription>{service.description}</ServiceDescription>
 					</ServiceBox>
 				))}
 			</BoxesWrapper>
