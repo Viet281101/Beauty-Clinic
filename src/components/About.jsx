@@ -1,38 +1,195 @@
 import React from "react";
-import "../styles/components/about.scss";
+import tw, { styled } from "twin.macro";
 import bubbleBackground from "../assets/bubble_about_bg.svg";
 import playButtonIcon from "../assets/icons/play_button.svg";
 import aboutImage from "../assets/images/about_img.jpeg";
 
+const AboutSection = styled.section`
+	${tw`relative flex items-center justify-between z-0`}
+	background-image: url(${bubbleBackground});
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 65%;
+	padding: 150px 10%;
+	top: -28px;
+	@media (max-width: 1440px) {
+		top: -146px;
+		padding: 150px 10%;
+	}
+	@media (max-width: 1024px) {
+		${tw`flex-col text-center top-20`}
+		padding: 100px 8%;
+		background-size: 90%;
+	}
+	@media (max-width: 768px) {
+		padding: 80px 6%;
+	}
+	@media (max-width: 480px) {
+		padding: 50px 10px;
+	}
+`;
+
+const ContentWrapper = styled.div`
+	${tw`flex items-center gap-10 mt-[323px] z-10`}
+	@media (max-width: 1440px) {
+		margin-top: 202px;
+		gap: 40px;
+	}
+	@media (max-width: 1024px) {
+		${tw`flex-col`}
+		margin-top: 50px;
+		gap: 30px;
+	}
+`;
+
+const TextSection = styled.div`
+	${tw`text-left flex-1`}
+`;
+
+const Subtitle = styled.p`
+	${tw`font-semibold text-[#FF64AE] mb-[10px] text-[20px]`}
+	@media (max-width: 1440px) {
+		${tw`text-[16px] mb-1.5 ml-[7px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-center`}
+	}
+`;
+
+const Heading = styled.h2`
+	${tw`font-semibold mb-[20px] text-[48px] text-[#091156]`}
+	@media (max-width: 1440px) {
+		${tw`text-[36px] ml-1.5 -mb-[13px] -tracking-[0.003rem]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-center leading-[1.3rem]`}
+	}
+	@media (max-width: 768px) {
+		${tw`text-[28px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[24px]`}
+	}
+`;
+
+const Description = styled.p`
+	${tw`font-medium tracking-widest w-[90%] my-7 leading-8 text-[21px] text-[#8B8B8B]`}
+	@media (max-width: 1440px) {
+		${tw`text-[17px] leading-[24px] w-[86%] tracking-[0.062rem] mb-0 ml-1.5`}
+	}
+	@media (max-width: 1024px) {
+		${tw`w-full text-center`}
+		font-size: 18px;
+		line-height: 28px;
+	}
+	@media (max-width: 768px) {
+		${tw`text-[16px] leading-[26px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[14px] leading-[22px]`}
+	}
+`;
+
+const Actions = styled.div`
+	${tw`flex items-center gap-6 mt-[70px]`}
+	@media (max-width: 1440px) {
+		${tw`mt-[52px] ml-[7px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`justify-center mt-[30px]`}
+	}
+`;
+
+const Button = styled.button`
+	${tw`text-[21px] w-[264px] h-[80px] bg-[#FF64AE] text-white font-semibold rounded-full border-none shadow-md hover:bg-[#E05497]`}
+	transition: all 0.3s ease;
+	@media (max-width: 1440px) {
+		${tw`w-[200px] h-[59px] text-[16px] tracking-[0.1rem]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`w-auto px-5 py-[15px] text-[18px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`text-[16px] px-[15px] py-[10px]`}
+	}
+`;
+
+const Video = styled.div`
+	${tw`flex items-center cursor-pointer gap-[10px] font-semibold`}
+	@media (max-width: 1024px) {
+		${tw`justify-center`}
+	}
+	img {
+		${tw`w-[70px] h-[70px] hover:scale-125 transition-transform duration-300`}
+		@media (max-width: 1440px) {
+			${tw`w-[50px] h-[50px] ml-[18px]`}
+		}
+	}
+	p {
+		${tw`text-[#8B8B8B] tracking-[0.03rem] text-[20px]`}
+		@media (max-width: 1440px) {
+			${tw`text-[18px] pl-0.5 pb-0.5`}
+		}
+		@media (max-width: 1024px) {
+			${tw`text-[16px]`}
+		}
+		@media (max-width: 768px) {
+			${tw`text-[14px]`}
+		}
+	}
+`;
+
+const ImageWrapper = styled.div`
+	${tw`flex justify-end relative flex-1`}
+	@media (max-width: 1440px) {
+		${tw`top-[22px] -left-1.5`}
+	}
+	img {
+		${tw`object-cover w-[90%] max-w-[650px] max-h-[470px] rounded-[60px] shadow-lg`}
+		@media (max-width: 1440px) {
+			${tw`max-w-[474px] max-h-[350px] rounded-[48px]`}
+		}
+		@media (max-width: 1024px) {
+			${tw`w-full min-w-[420px] max-h-[300px]`}
+		}
+		@media (max-width: 768px) {
+			${tw`w-full`}
+		}
+		@media (max-width: 480px) {
+			${tw`mt-5`}
+		}
+	}
+`;
+
 function About() {
 	return (
-		<section className="about flex items-center relative justify-between z-0 -top-7" id="about" style={{ backgroundImage: `url(${bubbleBackground})` }} >
-			<div className="about-content flex items-center gap-10 mt-[323px] z-10">
-				<div className="about-text text-left">
-					<p className="about-subtitle font-semibold mb-[10px]">About Us</p>
-					<h2 className="about-heading font-semibold mb-[20px]">We are the best beauty clinic</h2>
-					<p className="about-description font-medium tracking-widest w-[90%] my-7 leading-8">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam
-						suscipit purus donec amet. Egestas volutpat facilisi eu libero.
-						Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in
-						suspendisse placerat.
-						<br/><br/>
-						Id dui erat sed quam tellus in purus. Pellentesque congue fringilla
-						cras tellus enim.
-					</p>
-					<div className="about-actions flex items-center gap-6 mt-[70px]">
-						<button className="about-btn w-[264px] h-20 border-none font-semibold cursor-pointer text-white">Learn More</button>
-						<div className="about-video flex items-center cursor-pointer gap-[10px] font-semibold">
-							<img src={playButtonIcon} alt="Play Button" className="play-icon w-[70px] h-[70px] ml-5 hover:scale-125" />
-							<p className="tracking-[0.03rem] ml-[2px] ">Watch Video</p>
-						</div>
-					</div>
-				</div>
-				<div className="about-image flex justify-end relative">
-					<img className="object-cover w-[90%] max-w-[650px] max-h-[470px] rounded-[60px]" src={aboutImage} alt="About Us" />
-				</div>
-			</div>
-		</section>
+		<AboutSection id="about">
+			<ContentWrapper>
+				<TextSection>
+				<Subtitle>About Us</Subtitle>
+				<Heading>We are the best beauty clinic</Heading>
+				<Description>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam
+					suscipit purus donec amet. Egestas volutpat facilisi eu libero.
+					Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in
+					suspendisse placerat.
+					<br /><br />
+					Id dui erat sed quam tellus in purus. Pellentesque congue fringilla
+					cras tellus enim.
+				</Description>
+				<Actions>
+					<Button>Learn More</Button>
+					<Video>
+						<img src={playButtonIcon} alt="Play Button" />
+						<p>Watch Video</p>
+					</Video>
+				</Actions>
+				</TextSection>
+				<ImageWrapper>
+					<img src={aboutImage} alt="About Us" />
+				</ImageWrapper>
+			</ContentWrapper>
+		</AboutSection>
 	);
 }
 
