@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import About from "./components/About";
 import Professional from "./components/Professional";
 import Contact from "./components/Contact";
+import ToTopBtn from "./components/ToTopBtn";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 			<Professional />
 			<Contact />
 			<Footer />
+			<ToTopBtn />
 		</div>
 	);
 }
