@@ -14,56 +14,56 @@ function Footer() {
 				{/* Footer Logo Section */}
 				<div className="footer-logo text-left ml-[10px] mt-56 min-w-[620px]">
 					<img src={footerLogo} alt="Beautice Logo" className="footer-logo-img w-[340px] mb-11" />
-					<p className="ft-desc">
+					<p className="ft-desc ml-8 mb-5">
 						<b>Beautice</b> is a Beauty Clinic WordPress Theme.
 					</p>
-					<p className="ft-adresse">
+					<p className="ft-adresse ml-8 mb-4">
 						<i>Baker Steet 101, NY, United States.</i>
 					</p>
 					<div className="footer-contact-info flex items-center gap-5 ml-10">
-						<p className="ft-phone">
+						<p className="ft-phone -ml-3">
 							<i>+521 569 8966.</i>
 						</p>
-						<p className="ft-mail">
-							<a href="mailto:mail@company.com"><i>mail@company.com</i></a>
+						<p className="ft-mail ml-6">
+							<a className="underline hover:no-underline" href="mailto:mail@company.com"><i>mail@company.com</i></a>
 						</p>
 					</div>
 				</div>
 
 				{/* Footer Pages Section */}
-				<div className="footer-pages text-left mt-[200px]">
-					<h3 className="footer-title">Pages</h3>
+				<div className="footer-pages relative text-left mt-[200px]">
+					<h3 className="footer-title font-semibold text-white">Pages</h3>
 					<ul className="footer-links">
-						<li><a href="/">Home</a></li>
-						<li><a href="/">About</a></li>
-						<li><a href="/">Services</a></li>
-						<li><a href="/">Gallery</a></li>
-						<li><a href="/">Team</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Home</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">About</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Services</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Gallery</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Team</a></li>
 					</ul>
 				</div>
 
 				{/* Footer Info Section */}
-				<div className="footer-info text-left mt-[200px]">
-					<h3 className="footer-title">Informations</h3>
+				<div className="footer-info relative text-left mt-[200px]">
+					<h3 className="footer-title font-semibold text-white">Informations</h3>
 					<ul className="footer-links">
-						<li><a href="/">Terms & conditions</a></li>
-						<li><a href="/">Privacy policy</a></li>
-						<li><a href="/">Blog</a></li>
-						<li><a href="/">Contact</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Terms & conditions</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Privacy policy</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Blog</a></li>
+						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Contact</a></li>
 					</ul>
 				</div>
 			</div>
 
 			{/* Footer Bottom */}
-			<div className="footer-bottom flex items-center justify-between mt-36 pt-8">
+			<div className="footer-bottom relative flex items-center justify-between top-40">
 				<div className="footer-social flex gap-5">
-					<img src={facebookIcon} alt="Facebook" />
-					<img src={twitterIcon} alt="Twitter" />
-					<img src={linkedinIcon} alt="LinkedIn" />
-					<img src={youtubeIcon} alt="YouTube" />
-					<img src={instagramIcon} alt="Instagram" />
+					<img className="w-[38px] h-[38px] cursor-pointer" src={facebookIcon} alt="Facebook" />
+					<img className="w-[38px] h-[38px] cursor-pointer" src={twitterIcon} alt="Twitter" />
+					<img className="w-[38px] h-[38px] cursor-pointer" src={linkedinIcon} alt="LinkedIn" />
+					<img className="w-[38px] h-[38px] cursor-pointer" src={youtubeIcon} alt="YouTube" />
+					<img className="w-[38px] h-[38px] cursor-pointer" src={instagramIcon} alt="Instagram" />
 				</div>
-				<p className="footer-copyright">
+				<p className="footer-copyright relative right-5 bottom-1 tracking-widest">
 					&copy; AltDesain Studio 2021 ─ All right reserved.
 				</p>
 			</div>

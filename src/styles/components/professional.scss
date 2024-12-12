@@ -38,14 +38,14 @@
 		}
 	}
 	@media (max-width: 1440px) {
-		padding: 100px 10%; top: -254px;
+		padding: 100px 10%; top: -256px;
 		.professional-title {
-			.professional-subtitle { font-size: 16px; margin-bottom: 5px; letter-spacing: 0.006rem; }
-			.professional-heading { font-size: 35px; margin-bottom: 16px; letter-spacing: 0.03rem; }
+			.professional-subtitle { font-size: 16px; margin-bottom: 6px; letter-spacing: 0.006rem; }
+			.professional-heading { font-size: 35px; margin-bottom: 17px; letter-spacing: 0.03rem; }
 			.professional-description { font-size: 16px; }
 		}
 		.professional-boxes {
-			top: 90px;
+			top: 89px;
 			.pro-box {
 				width: 505px; height: 614px;
 				&.active { width: 564px; }

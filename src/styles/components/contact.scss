@@ -47,7 +47,7 @@
 		}
 	}
 	@media (max-width: 1440px) {
-		padding: 120px 5%; top: -320px;
+		padding: 120px 5%; top: -322px;
 		.contact-container {
 			.contact-image { top: 156px; left: 78px; width: 520px; }
 			.contact-form-container {
@@ -127,8 +127,6 @@
 		.contact-container {
 			flex-direction: column;
 			gap: 20px;
-			align-items: center;
-			text-align: center;
 			.contact-image { width: 400px; }
 			.contact-form-container { top: 120px;
 				.contact-title .contact-heading { font-size: 32px; }
