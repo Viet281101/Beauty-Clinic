@@ -202,9 +202,9 @@ function Services() {
 			<BoxesWrapper>
 				{serviceData.map((service) => (
 					<ServiceBox key={service.id} position={ service.id === 1 ? "left" : service.id === 3 ? "right" : "mid" } >
-					<ServiceIcon src={service.icon} alt={service.title} />
-					<ServiceTitle>{service.title}</ServiceTitle>
-					<ServiceDescription>{service.description}</ServiceDescription>
+						<ServiceIcon src={service.icon} alt={service.title} />
+						<ServiceTitle>{service.title}</ServiceTitle>
+						<ServiceDescription>{service.description}</ServiceDescription>
 					</ServiceBox>
 				))}
 			</BoxesWrapper>

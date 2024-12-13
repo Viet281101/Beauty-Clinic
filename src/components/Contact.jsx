@@ -1,42 +1,179 @@
 import React from "react";
-import "../styles/components/contact.scss";
+import tw, { styled } from "twin.macro";
 import bubbleBackground from "../assets/bubble_contact_bg.svg";
 import contactFrame from "../assets/contact_frame.svg";
 
+const ContactSection = styled.section`
+	${tw`relative -top-[5px] py-[150px] px-[10%]`}
+	background-image: url(${bubbleBackground});
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 80%;
+	@media (max-width: 1440px) {
+		${tw`py-[120px] px-[5%] -top-[322px]`}
+	}
+	@media (max-width: 1280px) {
+		${tw`py-[100px] px-[5%] top-0`}
+	}
+`;
+
+const Container = styled.div`
+	${tw`flex justify-between items-center gap-5`}
+	@media (max-width: 1280px) {
+		${tw`flex-col gap-20`}
+	}
+`;
+
+const ContactImage = styled.div`
+	${tw`relative w-[740px] h-auto`}
+	img {
+		${tw`w-full h-auto`}
+	}
+	@media (max-width: 1440px) {
+		${tw`w-[520px] top-[156px] left-[78px]`}
+	}
+	@media (max-width: 1280px) {
+		${tw`w-[400px]`}
+	}
+`;
+
+const FormContainer = styled.div`
+	${tw`relative -top-4 w-full max-w-2xl`}
+	@media (max-width: 1440px) {
+		${tw`top-[82px] right-[58px] max-w-[540px]`}
+	}
+	@media (max-width: 1280px) {
+		${tw`top-[120px]`}
+	}
+`;
+
+const TitleWrapper = styled.div`
+	${tw`text-left mb-5`}
+`;
+
+const Subtitle = styled.p`
+	${tw`font-semibold mb-3 text-[22px] text-[#FF64AE]`}
+	@media (max-width: 1440px) {
+		${tw`text-[17px] mb-[9px] -tracking-[0.03rem]`}
+	}
+`;
+
+const Heading = styled.h2`
+	${tw`font-semibold mb-6 tracking-normal leading-[60px] text-[50px] text-[#091156]`}
+	@media (max-width: 1440px) {
+		${tw`text-[36px] leading-[46px] mb-[17px] -tracking-[0.005rem]`}
+	}
+	@media (max-width: 1280px) {
+		${tw`text-[32px]`}
+	}
+`;
+
+const Description = styled.p`
+	${tw`tracking-widest font-medium text-[22px] text-[#8B8B8B]`}
+	@media (max-width: 1440px) {
+		${tw`text-[17px] tracking-[0.062rem]`}
+	}
+`;
+
+const Form = styled.form`
+	${tw`flex flex-col gap-6`}
+	@media (max-width: 1440px) {
+		.email {
+			top: 41px;
+			height: 60px;
+			padding: 0 23px;
+			padding-bottom: 2px;
+		}
+		.subject { top: 57px; height: 60px; padding: 24px 22px; }
+	}
+`;
+
+const FormRow = styled.div`
+	${tw`flex gap-4`}
+	.first-name, .last-name {
+		${tw`flex-1 py-[15px] px-5 rounded-[14px] border border-[#E0E3EB] text-[16px] text-[#C5C5C5]`}
+	}
+	@media (max-width: 1440px) {
+		.first-name, .last-name {
+			${tw`top-[26px] max-w-[242px] h-[62px] py-[15px] px-5 rounded-[14px] text-[16px]`}
+		}
+		.first-name { ${tw`left-0 py-0 px-[23px] pb-0.5`} }
+		.last-name { ${tw`left-[21px] py-0 px-[26px] pb-0.5`} }
+	}
+`;
+
+const Input = styled.input`
+	${tw`relative h-16 w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#C5C5C5]`}
+	&::placeholder {
+		${tw`text-[#C5C5C5] tracking-[0.1rem]`}
+	}
+	@media (max-width: 1440px) {
+		${tw`max-w-[520px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-[14px] py-3 px-[18px]`}
+	}
+`;
+
+const TextArea = styled.textarea`
+	${tw`relative w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#C5C5C5] resize-none h-64`}
+	&::placeholder {
+		${tw`text-[#C5C5C5] tracking-[0.1rem]`}
+	}
+	@media (max-width: 1440px) {
+		${tw`max-w-[520px] top-[73px] h-[238px] py-6 px-[22px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-[14px] py-3 px-[18px]`}
+	}
+`;
+
+const SubmitButton = styled.button`
+	${tw`relative text-white rounded-[50px] w-[330px] h-[78px] border-none font-semibold cursor-pointer tracking-widest z-10 bg-[#FF64AE] shadow-md`}
+	transition: all 0.3s ease;
+	&:hover {
+		background-color: #e05497;
+		box-shadow: 0px 12px 24px rgba(224, 84, 151, 0.3);
+	}
+	@media (max-width: 1440px) {
+		${tw`top-[104px] w-[250px] h-[58px] text-[16px] pb-0.5`}
+	}
+	@media (max-width: 1280px) {
+		${tw`w-[200px] h-[50px] text-[14px]`}
+	}
+`;
+
 function Contact() {
 	return (
-		<section className="contact relative -top-[5px] py-[150px] px-[10%]" id="contact" style={{ backgroundImage: `url(${bubbleBackground})` }} >
-			<div className="contact-container flex justify-between items-center gap-5 ">
+		<ContactSection id="contact">
+			<Container>
 				{/* Contact Image */}
-				<div className="contact-image relative w-[740px] h-auto">
-					<img className="w-full h-auto" src={contactFrame} alt="Contact Frame" />
-				</div>
+				<ContactImage>
+					<img src={contactFrame} alt="Contact Frame" />
+				</ContactImage>
+
 				{/* Contact Form */}
-				<div className="contact-form-container relative -top-4 w-full max-w-2xl">
-					{/* Contact Title */}
-					<div className="contact-title text-left mb-5">
-						<p className="contact-subtitle font-semibold mb-3">Contact Us</p>
-						<h2 className="contact-heading font-semibold mb-6 tracking-normal leading-[60px]">
-							Send your inquiry to <br /> our expert team
-						</h2>
-						<p className="contact-description tracking-widest font-medium">
-							Lorem ipsum dolor sit amet nulla turapis tellus.
-						</p>
-					</div>
+				<FormContainer>
+					<TitleWrapper>
+						<Subtitle>Contact Us</Subtitle>
+						<Heading>Send your inquiry to <br /> our expert team</Heading>
+						<Description>Lorem ipsum dolor sit amet nulla turapis tellus.</Description>
+					</TitleWrapper>
+
 					{/* Contact Input Boxes */}
-					<form className="contact-form flex flex-col gap-6">
-						<div className="form-row flex gap-4">
-							<input className="first-name relative h-16" type="text" placeholder="First name" name="first_name" required />
-							<input className="last-name relative h-16" type="text" placeholder="Last name" name="last_name" required />
-						</div>
-						<input className="email relative h-16" type="email" placeholder="Email address" name="email" required />
-						<input className="subject relative h-16" type="text" placeholder="Subject message" name="subject" required />
-						<textarea className="relative h-64" placeholder="Your inquiry here" name="message" rows="4" required ></textarea>
-						<button type="submit" className="send-button relative text-white rounded-[50px] w-[330px] h-[78px] border-none font-semibold cursor-pointer tracking-widest z-10">Send Message</button>
-					</form>
-				</div>
-			</div>
-		</section>
+					<Form>
+						<FormRow>
+							<Input className="first-name" type="text" placeholder="First name" name="first_name" required />
+							<Input className="last-name" type="text" placeholder="Last name" name="last_name" required />
+						</FormRow>
+						<Input className="email" type="email" placeholder="Email address" name="email" required />
+						<Input className="subject" type="text" placeholder="Subject message" name="subject" required />
+						<TextArea placeholder="Your inquiry here" name="message" rows="4" required />
+						<SubmitButton type="submit">Send Message</SubmitButton>
+					</Form>
+				</FormContainer>
+			</Container>
+		</ContactSection>
 	);
 }
 

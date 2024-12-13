@@ -8,7 +8,10 @@
 
 **Figma Link:** [Beauty and Clinic](https://www.figma.com/design/Ry2YV1BCuUR3m0xPZdqrGP/Beautice---Clinic-%26-Beauty-Consultation-Website-Design?node-id=513-2&node-type=canvas&t=vKCDwo3FlkNBcL8j-0)
 
-Build the **Home1 page** in Beauty Clinic using the **ReactJS library**:
+Using the **ReactJS library**:
+
+- [X] Build the **Home1 page** in Beauty Clinic 
+- [ ] Build the **Home2 page** in Beauty Clinic 
 
 ---
 
