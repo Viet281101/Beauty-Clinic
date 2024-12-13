@@ -15,12 +15,24 @@ const ContactSection = styled.section`
 	@media (max-width: 1280px) {
 		${tw`py-[100px] px-[5%] top-0`}
 	}
+	@media (max-width: 768px) {
+		${tw`py-[80px] px-[5%]`}
+		background-size: cover;
+	}
+	@media (max-width: 480px) {
+		${tw`py-[50px] px-[5%]`}
+		background-size: cover;
+	}
 `;
 
 const Container = styled.div`
 	${tw`flex justify-between items-center gap-5`}
 	@media (max-width: 1280px) {
 		${tw`flex-col gap-20`}
+	}
+	@media (max-width: 768px) {
+		${tw`flex-col gap-10`}
+		text-align: center;
 	}
 `;
 
@@ -35,6 +47,12 @@ const ContactImage = styled.div`
 	@media (max-width: 1280px) {
 		${tw`w-[400px]`}
 	}
+	@media (max-width: 768px) {
+		${tw`w-[90%] mx-auto`}
+	}
+	@media (max-width: 480px) {
+		${tw`w-[80%] mx-auto`}
+	}
 `;
 
 const FormContainer = styled.div`
@@ -45,16 +63,25 @@ const FormContainer = styled.div`
 	@media (max-width: 1280px) {
 		${tw`top-[120px]`}
 	}
+	@media (max-width: 768px) {
+		${tw`w-full max-w-full flex flex-col justify-between items-center`}
+	}
 `;
 
 const TitleWrapper = styled.div`
 	${tw`text-left mb-5`}
+	@media (max-width: 768px) {
+		${tw`flex-1 text-center mb-4`}
+	}
 `;
 
 const Subtitle = styled.p`
 	${tw`font-semibold mb-3 text-[22px] text-[#FF64AE]`}
 	@media (max-width: 1440px) {
 		${tw`text-[17px] mb-[9px] -tracking-[0.03rem]`}
+	}
+	@media (max-width: 768px) {
+		${tw`text-[16px] mb-2`}
 	}
 `;
 
@@ -66,6 +93,9 @@ const Heading = styled.h2`
 	@media (max-width: 1280px) {
 		${tw`text-[32px]`}
 	}
+	@media (max-width: 768px) {
+		${tw`text-[28px] leading-[38px] mb-4`}
+	}
 `;
 
 const Description = styled.p`
@@ -73,25 +103,26 @@ const Description = styled.p`
 	@media (max-width: 1440px) {
 		${tw`text-[17px] tracking-[0.062rem]`}
 	}
+	@media (max-width: 768px) {
+		${tw`text-[16px] tracking-[0.05rem]`}
+	}
 `;
 
 const Form = styled.form`
 	${tw`flex flex-col gap-6`}
 	@media (max-width: 1440px) {
-		.email {
-			top: 41px;
-			height: 60px;
-			padding: 0 23px;
-			padding-bottom: 2px;
-		}
-		.subject { top: 57px; height: 60px; padding: 24px 22px; }
+		.email { ${tw`top-[41px] h-[60px] py-[0] px-[23px] pb-0.5`} }
+		.subject { ${tw`top-[57px] h-[60px] py-[24px] px-[22px]`} }
+	}
+	@media (max-width: 768px) {
+		${tw`gap-4 items-center`}
 	}
 `;
 
 const FormRow = styled.div`
 	${tw`flex gap-4`}
 	.first-name, .last-name {
-		${tw`flex-1 py-[15px] px-5 rounded-[14px] border border-[#E0E3EB] text-[16px] text-[#C5C5C5]`}
+		${tw`flex-1 py-[15px] px-5 rounded-[14px] border border-[#E0E3EB] text-[16px] text-[#000]`}
 	}
 	@media (max-width: 1440px) {
 		.first-name, .last-name {
@@ -100,10 +131,19 @@ const FormRow = styled.div`
 		.first-name { ${tw`left-0 py-0 px-[23px] pb-0.5`} }
 		.last-name { ${tw`left-[21px] py-0 px-[26px] pb-0.5`} }
 	}
+	@media (max-width: 768px) {
+		${tw`flex-col gap-3`}
+		.first-name, .last-name {
+			${tw`w-full min-w-full`}
+		}
+		.last-name {
+			${tw`left-0`}
+		}
+	}
 `;
 
 const Input = styled.input`
-	${tw`relative h-16 w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#C5C5C5]`}
+	${tw`relative h-16 w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#000]`}
 	&::placeholder {
 		${tw`text-[#C5C5C5] tracking-[0.1rem]`}
 	}
@@ -113,10 +153,13 @@ const Input = styled.input`
 	@media (max-width: 1024px) {
 		${tw`text-[14px] py-3 px-[18px]`}
 	}
+	@media (max-width: 768px) {
+		${tw`min-w-full`}
+	}
 `;
 
 const TextArea = styled.textarea`
-	${tw`relative w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#C5C5C5] resize-none h-64`}
+	${tw`relative w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#000] resize-none h-64`}
 	&::placeholder {
 		${tw`text-[#C5C5C5] tracking-[0.1rem]`}
 	}
@@ -125,6 +168,9 @@ const TextArea = styled.textarea`
 	}
 	@media (max-width: 1024px) {
 		${tw`text-[14px] py-3 px-[18px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`min-w-full`}
 	}
 `;
 
@@ -140,6 +186,9 @@ const SubmitButton = styled.button`
 	}
 	@media (max-width: 1280px) {
 		${tw`w-[200px] h-[50px] text-[14px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`w-[200px] h-[50px] text-[14px] mx-auto`}
 	}
 `;
 
