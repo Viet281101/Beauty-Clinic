@@ -131,7 +131,7 @@ const FormRow = styled.div`
 	@media (max-width: 768px) {
 		${tw`flex-col gap-3`}
 		.first-name, .last-name {
-			${tw`w-full min-w-full`}
+			${tw`w-full min-w-full py-2`}
 		}
 		.last-name {
 			${tw`left-0`}
