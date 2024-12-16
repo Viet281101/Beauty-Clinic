@@ -10,16 +10,27 @@
 
 Using the **ReactJS library**:
 
-- [X] Build the **Home1 page** in Beauty Clinic 
-- [ ] Build the **Home2 page** in Beauty Clinic 
+- [X] Build the **Home1 page**.
+- [ ] Build the **Home2 page**.
+- [ ] Build the **About page**.
+- [ ] Build the **Blog page**.
+- [ ] Build the **Gallery page**.
+- [ ] Build the **Service page**.
+- [ ] Build the **Team page**.
+- [ ] Build the **Contact page**.
 
 ---
 
 ### Requirements:
 1. **Develop and build the webpage with absolute precision.**
-   - **Suggestion:** Reuse code from **Exercise 0** as a starting point.
    - Focus on creating a **well-structured and highly reusable codebase**.
    - Learn and apply **TailwindCSS**, **styled-components**, and **twin.macro** to style the application. Use these tools to replace plain CSS. You can convert the previously written plain CSS into these modern styling methods.
+
+   - Use Jotai/Redux for state management.
+   - Ensure responsiveness across all pages.
+   - Note:
+      - The navbar requires creativity to achieve a good UI/UX.
+      - Pay attention to the consistency of newly added components (not included in the current design) with the overall design.
 
 2. **Deployment:**
    - After completing the project, deploy the website using one of the following platforms:

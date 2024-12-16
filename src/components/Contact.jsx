@@ -16,12 +16,10 @@ const ContactSection = styled.section`
 		${tw`py-[100px] px-[5%] top-0`}
 	}
 	@media (max-width: 768px) {
-		${tw`py-[80px] px-[5%]`}
-		background-size: cover;
+		${tw`py-[80px] px-[5%] top-[100px] bg-cover`}
 	}
 	@media (max-width: 480px) {
-		${tw`py-[50px] px-[5%]`}
-		background-size: cover;
+		${tw`py-[50px] px-[5%] top-[160px] bg-cover`}
 	}
 `;
 
@@ -31,8 +29,7 @@ const Container = styled.div`
 		${tw`flex-col gap-20`}
 	}
 	@media (max-width: 768px) {
-		${tw`flex-col gap-10`}
-		text-align: center;
+		${tw`flex-col px-[10%] gap-10`}
 	}
 `;
 
@@ -48,7 +45,7 @@ const ContactImage = styled.div`
 		${tw`w-[400px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-[90%] mx-auto`}
+		${tw`w-[90%] -left-[20px] min-w-[360Px] mx-auto`}
 	}
 	@media (max-width: 480px) {
 		${tw`w-[80%] mx-auto`}
@@ -64,7 +61,7 @@ const FormContainer = styled.div`
 		${tw`top-[120px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-full max-w-full flex flex-col justify-between items-center`}
+		${tw`top-[160px] right-0 w-full max-w-full flex flex-col justify-between items-center`}
 	}
 `;
 
@@ -115,7 +112,7 @@ const Form = styled.form`
 		.subject { ${tw`top-[57px] h-[60px] py-[24px] px-[22px]`} }
 	}
 	@media (max-width: 768px) {
-		${tw`gap-4 items-center`}
+		${tw`gap-4`}
 	}
 `;
 
@@ -178,8 +175,7 @@ const SubmitButton = styled.button`
 	${tw`relative text-white rounded-[50px] w-[330px] h-[78px] border-none font-semibold cursor-pointer tracking-widest z-10 bg-[#FF64AE] shadow-md`}
 	transition: all 0.3s ease;
 	&:hover {
-		background-color: #e05497;
-		box-shadow: 0px 12px 24px rgba(224, 84, 151, 0.3);
+		${tw`bg-[#E05497] shadow-custom-pink`}
 	}
 	@media (max-width: 1440px) {
 		${tw`top-[104px] w-[250px] h-[58px] text-[16px] pb-0.5`}

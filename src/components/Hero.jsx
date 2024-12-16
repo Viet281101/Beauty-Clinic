@@ -9,8 +9,7 @@ const HeroSection = styled.section`
 		${tw`mt-[180px] gap-[2.6rem]`}
 	}
 	@media (max-width: 768px) {
-		${tw`flex-col h-auto`}
-		padding: 0 5%;
+		${tw`flex-col h-auto py-0 px-[5%]`}
 	}
 `;
 
@@ -45,6 +44,7 @@ const Description = styled.p`
 	@media (max-width: 768px) {
 		${tw`text-center`}
 		margin: 0 auto 20px;
+		white-space: normal;
 	}
 `;
 
@@ -52,8 +52,7 @@ const Button = styled.button`
 	${tw`rounded-full cursor-pointer border-none w-[260px] h-20 text-white tracking-[0.12rem] bg-[#FF64AE] shadow-md`}
 	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 	&:hover {
-		${tw`bg-[#E05497]`}
-		box-shadow: 0px 17px 22px rgba(255, 237, 246, 1);
+		${tw`bg-[#E05497] shadow-btn-pink`}
 	}
 	@media (max-width: 1440px) {
 		${tw`w-[201px] h-[58px] text-[16px] ml-[44px] tracking-[0.1rem]`}
@@ -71,11 +70,9 @@ const ImageWrapper = styled.div`
 		${tw`right-[8px] top-[-26px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-full text-center`}
-		margin: 20px auto;
+		${tw`w-full text-center my-5 mx-auto`}
 		img {
-			${tw`w-full`}
-			margin: 20px auto;
+			${tw`w-full my-5 mx-auto`}
 		}
 	}
 `;
