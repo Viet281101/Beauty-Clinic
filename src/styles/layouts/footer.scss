@@ -85,7 +85,7 @@
 		.footer-bottom-bar { height: 200px; }
 	}
 	@media (max-width: 1024px) {
-		margin-top: 300px; height: auto;
+		margin-top: 200px; height: auto;
 		background-size: cover;
 		.footer-content {
 			flex-direction: column;
@@ -97,7 +97,7 @@
 					font-size: 12px;
 				}
 			}
-			.footer-pages, .footer-info { top: 0; text-align: center; }
+			.footer-pages, .footer-info { top: 60px; left: 0; margin-top: 0; padding-bottom: 30px;}
 			.footer-title { font-size: 22px; }
 			.footer-links { li a { font-size: 18px; }}
 		}
@@ -109,5 +109,15 @@
 			p { font-size: 16px; padding-bottom: 50px; }
 		}
 		.footer-bottom-bar { height: 150px; }
+	}
+	@media (max-width: 768px) {
+		margin-top: 420px; max-width: 100%;
+		.footer-content {
+			.footer-logo {
+				min-width: 320px; margin: 0;
+				.ft-desc { margin: 0; }
+				.footer-contact-info { margin: 0; white-space: pre-wrap; }
+			}
+		}
 	}
 }

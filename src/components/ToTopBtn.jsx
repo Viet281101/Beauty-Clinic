@@ -16,14 +16,16 @@ const ToTopButton = styled.div(({ isVisible }) => [
 	@media (max-width: 768px) {
 		right: 70px;
 	}
+	@media (max-width: 480px) {
+		right: 20px;
+	}
 	`,
 ]);
 
 const ToTopIcon = styled.img`
 	${tw`w-[26px] h-[26px]`}
 	@media (max-width: 1440px) {
-		width: 18px;
-		height: 18px;
+		${tw`w-[18px] h-[18px]`}
 	}
 `;
 

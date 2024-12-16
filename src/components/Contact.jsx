@@ -19,7 +19,7 @@ const ContactSection = styled.section`
 		${tw`py-[80px] px-[5%] top-[100px] bg-cover`}
 	}
 	@media (max-width: 480px) {
-		${tw`py-[50px] px-[5%] top-[160px] bg-cover`}
+		${tw`py-[50px] px-[5%] top-[200px] bg-cover`}
 	}
 `;
 

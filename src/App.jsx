@@ -1,4 +1,5 @@
 import React from "react";
+import tw, { styled } from "twin.macro";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -9,21 +10,32 @@ import Professional from "./components/Professional";
 import Contact from "./components/Contact";
 import ToTopBtn from "./components/ToTopBtn";
 
+const AppContainer = styled.div`
+	${tw`relative`}
+	@media (max-width: 768px) {
+		${tw`overflow-x-hidden`}
+	}
+`;
+
+const HeaderHeroContainer = styled.div`
+	${tw`relative`}
+`;
+
 function App() {
 	return (
-		<div className="app">
-			<div className="header-hero-container">
+		<AppContainer>
+			<HeaderHeroContainer>
 				<Header />
 				<Hero />
 				<SlideButton />
-			</div>
+			</HeaderHeroContainer>
 			<Services />
 			<About />
 			<Professional />
 			<Contact />
 			<Footer />
 			<ToTopBtn />
-		</div>
+		</AppContainer>
 	);
 }
 

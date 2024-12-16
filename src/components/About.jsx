@@ -5,40 +5,33 @@ import playButtonIcon from "../assets/icons/play_button.svg";
 import aboutImage from "../assets/images/about_img.jpeg";
 
 const AboutSection = styled.section`
-	${tw`relative flex items-center justify-between z-0`}
+	${tw`relative -top-[28px] flex items-center justify-between py-[150px] px-[10%] z-0`}
 	background-image: url(${bubbleBackground});
 	background-repeat: no-repeat;
 	background-position: top right;
 	background-size: 65%;
-	padding: 150px 10%;
-	top: -28px;
 	@media (max-width: 1440px) {
-		top: -146px;
-		padding: 150px 10%;
+		${tw`-top-[146px]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`flex-col text-center top-20`}
-		padding: 100px 8%;
+		${tw`flex-col text-center top-20 py-[100px] px-[8%]`}
 		background-size: 90%;
 	}
 	@media (max-width: 768px) {
-		padding: 80px 6%;
+		${tw`top-[200px] py-[80px] px-[6%]`}
 	}
 	@media (max-width: 480px) {
-		padding: 50px 10px;
+		${tw`py-[50px] px-[10px]`}
 	}
 `;
 
 const ContentWrapper = styled.div`
 	${tw`flex items-center gap-10 mt-[323px] z-10`}
 	@media (max-width: 1440px) {
-		margin-top: 202px;
-		gap: 40px;
+		${tw`mt-[202px] gap-[40px]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`flex-col`}
-		margin-top: 50px;
-		gap: 30px;
+		${tw`flex-col mt-[50px] gap-[30px]`}
 	}
 `;
 
@@ -74,16 +67,15 @@ const Heading = styled.h2`
 
 const Description = styled.p`
 	${tw`font-medium tracking-widest w-[90%] my-7 leading-8 text-[21px] text-[#8B8B8B]`}
+	white-space: normal;
 	@media (max-width: 1440px) {
 		${tw`text-[17px] leading-[24px] w-[86%] tracking-[0.062rem] mb-0 ml-1.5`}
 	}
 	@media (max-width: 1024px) {
-		${tw`w-full text-center`}
-		font-size: 18px;
-		line-height: 28px;
+		${tw`w-full text-center text-[18px] leading-[28px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`text-[16px] leading-[26px]`}
+		${tw`w-[90%] pl-2.5 text-[16px] leading-[26px]`}
 	}
 	@media (max-width: 480px) {
 		${tw`text-[14px] leading-[22px]`}
@@ -153,7 +145,7 @@ const ImageWrapper = styled.div`
 			${tw`w-full min-w-[420px] max-h-[300px]`}
 		}
 		@media (max-width: 768px) {
-			${tw`w-full`}
+			${tw`w-full min-w-[360px]`}
 		}
 		@media (max-width: 480px) {
 			${tw`mt-5`}

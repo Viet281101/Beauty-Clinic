@@ -78,6 +78,8 @@
 		padding: 80px 5%; top: 20px;
 		.professional-boxes {
 			flex-direction: column; gap: 40px;
+			.pro-box.left { right: 0; }
+			.pro-box.right { left: 0; }
 			.pro-box {
 				width: 440px; height: 580px;
 				&.active { width: 460px; }
@@ -111,7 +113,7 @@
 		}
 	}
 	@media (max-width: 480px) {
-		padding: 40px 15px; top: 160px;
+		padding: 40px 15px; top: 200px;
 		.professional-boxes {
 			gap: 60px;
 			.pro-box {
