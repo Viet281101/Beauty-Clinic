@@ -1,41 +1,16 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import SlideButton from "./components/SlideBtn";
-import Services from "./components/Services";
-import About from "./components/About";
-import Professional from "./components/Professional";
-import Contact from "./components/Contact";
-import ToTopBtn from "./components/ToTopBtn";
-
-const AppContainer = styled.div`
-	${tw`relative`}
-	@media (max-width: 768px) {
-		${tw`overflow-x-hidden`}
-	}
-`;
-
-const HeaderHeroContainer = styled.div`
-	${tw`relative`}
-`;
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home1 from "./pages/Home1";
+import Home2 from "./pages/Home2";
 
 function App() {
 	return (
-		<AppContainer>
-			<HeaderHeroContainer>
-				<Header />
-				<Hero />
-				<SlideButton />
-			</HeaderHeroContainer>
-			<Services />
-			<About />
-			<Professional />
-			<Contact />
-			<Footer />
-			<ToTopBtn />
-		</AppContainer>
+		<Router basename="/BeautyClinic">
+		<Routes>
+			<Route path="/" element={<Home1 />} />
+			<Route path="/home" element={<Home2 />} />
+		</Routes>
+		</Router>
 	);
 }
 
