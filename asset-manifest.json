@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/BeautyClinic/static/css/main.ed4b555f.css",
-    "main.js": "/BeautyClinic/static/js/main.b7c7b05d.js",
+    "main.css": "/BeautyClinic/static/css/main.44f14bd3.css",
+    "main.js": "/BeautyClinic/static/js/main.bd055141.js",
+    "static/media/home2_hero_bg.svg": "/BeautyClinic/static/media/home2_hero_bg.cf9c7ea259533884aa31d1363ac25001.svg",
     "static/media/about_img.jpeg": "/BeautyClinic/static/media/about_img.2e523b56bd34b9c83ac7.jpeg",
     "static/media/contact_frame.svg": "/BeautyClinic/static/media/contact_frame.4b34758f4345204edc560f616ce211f0.svg",
     "static/media/ser_art_2.svg": "/BeautyClinic/static/media/ser_art_2.af5f464c215d15c2a5d7fef9637fae54.svg",
@@ -16,7 +17,7 @@
     "static/media/ft_instagram.svg": "/BeautyClinic/static/media/ft_instagram.3188a9ff6199bf1dfb7db6f94fd5da5d.svg",
     "static/media/bubble_contact_bg.svg": "/BeautyClinic/static/media/bubble_contact_bg.f60b7eede78531b9be77ecc403332382.svg",
     "static/media/bubble_about_bg.svg": "/BeautyClinic/static/media/bubble_about_bg.b52e372c8624e8dd93abd3c8a183b08a.svg",
-    "static/media/bubble_header_bg.svg": "/BeautyClinic/static/media/bubble_header_bg.90223eb5cbd963ed96df.svg",
+    "static/media/bubble_header_bg.svg": "/BeautyClinic/static/media/bubble_header_bg.90223eb5cbd963ed96df5c4e93ca6674.svg",
     "static/media/ft_twitter.svg": "/BeautyClinic/static/media/ft_twitter.35f751757635bcd7226286ed907dedb2.svg",
     "static/media/twitter.svg": "/BeautyClinic/static/media/twitter.1cbb7aea231fa9a0fcd815fbaeeff3d8.svg",
     "static/media/footer_bg.svg": "/BeautyClinic/static/media/footer_bg.e08efd59c1ef6a10354b.svg",
@@ -27,11 +28,11 @@
     "static/media/ft_facebook.svg": "/BeautyClinic/static/media/ft_facebook.7aeed30080ab5eceaddb47d85bdea526.svg",
     "static/media/play_button.svg": "/BeautyClinic/static/media/play_button.003f9594799136cabb2583a0be2d6bd8.svg",
     "static/media/facebook.svg": "/BeautyClinic/static/media/facebook.11a984cc9278f8f70ab26650a323f4fd.svg",
-    "main.ed4b555f.css.map": "/BeautyClinic/static/css/main.ed4b555f.css.map",
-    "main.b7c7b05d.js.map": "/BeautyClinic/static/js/main.b7c7b05d.js.map"
+    "main.44f14bd3.css.map": "/BeautyClinic/static/css/main.44f14bd3.css.map",
+    "main.bd055141.js.map": "/BeautyClinic/static/js/main.bd055141.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed4b555f.css",
-    "static/js/main.b7c7b05d.js"
+    "static/css/main.44f14bd3.css",
+    "static/js/main.bd055141.js"
   ]
 }
