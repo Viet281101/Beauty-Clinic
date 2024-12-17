@@ -3,7 +3,7 @@ import { useAtom } from "jotai";
 import { currentPageAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
 import tw, { styled } from "twin.macro";
-import logo from "../assets/images/main_logo.png";
+import logo from "../assets/images/main_logo_2.png";
 
 const HeaderContainer = styled.header`
 	${tw`w-4/5 flex p-0 justify-between items-center my-[41px] mx-auto`}
@@ -11,10 +11,9 @@ const HeaderContainer = styled.header`
 
 const Logo = styled(Link)`
 	${tw`relative flex justify-center items-center gap-4 top-[14px] left-[6px]`}
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
 	img { ${tw`min-w-[104px] h-auto`} }
 	span {
-		${tw`font-bold tracking-[0.2rem] py-0 px-2.5 text-[32px] text-[#091156]`}
+		${tw`font-normal tracking-[0.06rem] py-0 px-2.5 text-[26px] text-[#fff]`}
 	}
 	@media (max-width: 1440px) {
 		${tw`gap-2.5 top-0 left-1`}
@@ -38,9 +37,9 @@ const NavMenu = styled.nav`
 	ul {
 		${tw`flex w-full justify-around font-semibold list-none`}
 		li a {
-			${tw`relative leading-4 tracking-[0.12rem] text-[#8B8B8B] text-[1.3rem] no-underline`}
+			${tw`relative leading-4 tracking-[0.12rem] text-[#D8DCFF] text-[1.3rem] no-underline`}
 			&:hover { ${tw`text-[#FF64AE]`} }
-			&.active { ${tw`text-[#414880]`} }
+			&.active { ${tw`text-[#fff]`} }
 		}
 		li a.about { ${tw`-top-0.5`} }
 		li a.service { ${tw`-left-0.5`} }
@@ -75,16 +74,16 @@ const NavMenu = styled.nav`
 `;
 
 const Overlay = styled.div`
-	${tw`fixed top-0 left-0 w-full h-0 bg-[#E4E7FF] overflow-hidden transition-all duration-500 z-50`}
+	${tw`fixed top-0 left-0 w-full h-0 bg-[#091156] bg-opacity-95 overflow-hidden transition-all duration-500 z-50`}
 	&.open { ${tw`h-full`} }
 `;
 
 const OverlayContent = styled.div`
 	${tw`relative top-1/4 text-center`}
 	a {
-		${tw`block py-3 text-2xl font-semibold text-[#8B8B8B] hover:text-[#FF64AE] transition-all`}
+		${tw`block py-3 text-2xl font-semibold text-[#D8DCFF] hover:text-[#FF64AE] transition-all`}
 	}
-	.home-btn { ${tw`text-[#091156]`} }
+	.home-btn { ${tw`text-[#fff]`} }
 	.contact-btn {
 		${tw`bg-[#FF64AE] hover:bg-[#E05497] w-[210px] my-5 mx-auto flex items-center justify-center rounded-full text-white`}
 	}
@@ -95,7 +94,7 @@ const HamburgerButton = styled.button`
 	svg { ${tw`w-full h-full`} }
 	.line {
 		fill: none;
-		stroke: #091156;
+		stroke: #fff;
 		stroke-linecap: round;
 		stroke-width: 10;
 		transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
