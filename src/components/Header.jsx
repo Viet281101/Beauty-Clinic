@@ -47,15 +47,11 @@ const NavMenu = styled.nav`
 	}
 	@media (max-width: 1690px) {
 		${tw`left-[46px] min-w-[682px]`}
-		ul li a {
-			${tw`tracking-[0.12rem] text-[18px]`}
-		}
+		ul li a { ${tw`tracking-[0.12rem] text-[18px]`} }
 	}
 	@media (max-width: 1550px) {
 		${tw`left-[26px] min-w-[602px]`}
-		ul li a {
-			${tw`tracking-[0.11rem]`}
-		}
+		ul li a { ${tw`tracking-[0.11rem]`} }
 	}
 	@media (max-width: 1440px) {
 		${tw`-top-[1px] left-[80px] min-w-[526px]`}
@@ -75,16 +71,12 @@ const NavMenu = styled.nav`
 		${tw`top-0 left-0 min-w-[340px]`}
 		ul li a { ${tw`text-[12px] tracking-[0.04rem]`} }
 	}
-	@media (max-width: 768px) {
-		${tw`hidden`}
-	}
+	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
 const Overlay = styled.div`
 	${tw`fixed top-0 left-0 w-full h-0 bg-[#E4E7FF] overflow-hidden transition-all duration-500 z-50`}
-	&.open {
-		${tw`h-full`}
-	}
+	&.open { ${tw`h-full`} }
 `;
 
 const OverlayContent = styled.div`
@@ -92,37 +84,48 @@ const OverlayContent = styled.div`
 	a {
 		${tw`block py-3 text-2xl font-semibold text-[#8B8B8B] hover:text-[#FF64AE] transition-all`}
 	}
-	.home-btn {
-		${tw`text-[#091156]`}
-	}
+	.home-btn { ${tw`text-[#091156]`} }
 	.contact-btn {
 		${tw`bg-[#FF64AE] hover:bg-[#E05497] w-[210px] my-5 mx-auto flex items-center justify-center rounded-full text-white`}
 	}
 `;
 
-const CloseButton = styled.span`
-	${tw`absolute top-[38px] right-[36px] text-5xl text-[#091156] cursor-pointer hover:text-[#FF64AE]`}
-`;
-
 const HamburgerButton = styled.button`
-	${tw`block md:hidden text-3xl text-[#091156] cursor-pointer`}
+	${tw`block md:hidden relative w-[40px] h-[40px] cursor-pointer z-[100] bg-transparent border-none`}
+	svg { ${tw`w-full h-full`} }
+	.line {
+		fill: none;
+		stroke: #091156;
+		stroke-width: 6;
+		transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+					stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	.line1 { stroke-dasharray: 60 207; }
+	.line2 { stroke-dasharray: 60 60; }
+	.line3 { stroke-dasharray: 60 207; }
+	&.opened .line1 {
+		stroke-dasharray: 90 207;
+		stroke-dashoffset: -134;
+	}
+	&.opened .line2 {
+		stroke-dasharray: 1 60;
+		stroke-dashoffset: -30;
+	}
+	&.opened .line3 {
+		stroke-dasharray: 90 207;
+		stroke-dashoffset: -134;
+	}
 `;
 
 const HomePlus = styled.span`
 	${tw`font-light text-[18px]`}
-	@media (max-width: 1440px) {
-		${tw`text-[12px]`}
-	}
-	@media (max-width: 768px) {
-		${tw`text-[26px]`}
-	}
+	@media (max-width: 1440px) { ${tw`text-[12px]`} }
+	@media (max-width: 768px) { ${tw`text-[26px]`} }
 `;
 
 const ContactButton = styled(Link)`
 	${tw`relative top-[10px] font-semibold cursor-pointer rounded-full tracking-[0.12rem] w-[210px] h-[68px] text-white bg-[#FF64AE] text-[1.3rem] flex items-center justify-center`}
-	&:hover {
-		${tw`bg-[#E05497]`}
-	}
+	&:hover { ${tw`bg-[#E05497]`} }
 	@media (max-width: 1440px) {
 		${tw`-top-[1px] right-1 w-[160px] h-[52px] text-[1rem]`}
 	}
@@ -132,9 +135,7 @@ const ContactButton = styled(Link)`
 	@media (max-width: 940px) {
 		${tw`w-[120px] h-[40px] text-[12px] tracking-[0.06rem]`}
 	}
-	@media (max-width: 768px) {
-		${tw`hidden`}
-	}
+	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
 function Header() {
@@ -164,11 +165,16 @@ function Header() {
 			<ContactButton to="/contact">Contact</ContactButton>
 
 			{/* Hamburger Button */}
-			<HamburgerButton onClick={toggleMenu}>&#9776;</HamburgerButton>
+			<HamburgerButton className={isMenuOpen ? "opened" : ""} onClick={toggleMenu} aria-label="Main Menu">
+				<svg viewBox="0 0 100 100">
+					<path className="line line1" d="M 20,29 H 80 C 80,29 94.5,28.8 94.5,66.7 94.5,77.9 90.9,81.7 85.2,81.6 79.5,81.6 75,75 75,75 L 25,25" />
+					<path className="line line2" d="M 20,50 H 80" />
+					<path className="line line3" d="M 20,71 H 80 C 80,71 94.5,71.2 94.5,33.3 94.5,22 90.9,18.3 85.2,18.3 79.5,18.3 75,25 75,25 L 25,75" />
+				</svg>
+			</HamburgerButton>
 
 			{/* Overlay Menu */}
 			<Overlay className={isMenuOpen ? "open" : ""}>
-				<CloseButton onClick={toggleMenu}>&times;</CloseButton>
 				<OverlayContent>
 					<Link className="home-btn" to={getHomePath()} onClick={() => { toggleMenu(); toggleHomePage(); }}>Home<HomePlus> +</HomePlus></Link>
 					<Link to="/about" onClick={toggleMenu}>About</Link>

@@ -48,9 +48,11 @@ function Professional() {
 					if (entry.isIntersecting) {
 						boxes.forEach((box) => box.classList.remove("active"));
 						entry.target.classList.add("active");
+					} else {
+						entry.target.classList.remove("active");
 					}
 				});
-			}, { threshold: 0.6 }
+			}, { threshold: 0.3 }
 		);
 
 		const applyHoverOrScroll = () => {
@@ -68,7 +70,11 @@ function Professional() {
 
 		const handleResize = () => {
 			boxes.forEach((box) => box.classList.remove("active"));
-			boxes.forEach((box) => box.replaceWith(box.cloneNode(true)));
+			boxes.forEach((box) => {
+				const newBox = box.cloneNode(true);
+				box.replaceWith(newBox);
+				observer.observe(newBox);
+			});
 			applyHoverOrScroll();
 		};
 		window.addEventListener("resize", handleResize);
