@@ -1,4 +1,6 @@
 import React from "react";
+import { useAtom } from "jotai"; 
+import { currentPageAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import logo from "../assets/images/main_logo.png";
@@ -99,6 +101,14 @@ const ContactButton = styled(Link)`
 
 function Header() {
 	const location = useLocation();
+	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+	const getHomePath = () => {
+		return currentPage === "Home1" ? "/home" : "/";
+	};
+	const toggleHomePage = () => {
+		setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
+	};
+
 	return (
 		<HeaderContainer>
 			<Logo to="/">
@@ -107,7 +117,7 @@ function Header() {
 			</Logo>
 			<NavMenu>
 				<ul>
-					<li><Link to="/" className={location.pathname === "/" ? "active" : ""}>Home<HomePlus> +</HomePlus></Link></li>
+					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : ""}>Home<HomePlus> +</HomePlus></Link></li>
 					<li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
 					<li><Link to="/service" className={location.pathname === "/service" ? "active" : ""}>Service</Link></li>
 					<li><Link to="/gallery" className={location.pathname === "/gallery" ? "active" : ""}>Gallery</Link></li>

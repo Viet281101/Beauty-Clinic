@@ -30,21 +30,18 @@ const Heading = styled.h1`
 		${tw`text-[50px] leading-[60px] -tracking-[0.068rem] -mt-[70px] ml-[45px] mb-2`}
 	}
 	@media (max-width: 768px) {
-		${tw`text-[2.5rem] leading-[3rem] m-0`}
+		${tw`text-[2.5rem] leading-[3rem] m-0 pb-10`}
 	}
 `;
 
 const Description = styled.p`
-	${tw`tracking-widest leading-[1.8rem] text-[1.3rem] text-[#091156] mb-10`}
+	${tw`tracking-widest leading-[1.8rem] text-[1.3rem] text-[#091156] mb-10 whitespace-nowrap`}
 	margin: 0 0 2.45rem 8px;
-	white-space: nowrap;
 	@media (max-width: 1440px) {
 		${tw`text-[17px] leading-[24px] tracking-[0.068rem] ml-[45px] mb-[34px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`text-center`}
-		margin: 0 auto 20px;
-		white-space: normal;
+		${tw`text-center my-0 mx-auto pb-10 whitespace-normal`}
 	}
 `;
 
@@ -58,8 +55,7 @@ const Button = styled.button`
 		${tw`w-[201px] h-[58px] text-[16px] ml-[44px] tracking-[0.1rem]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-auto h-auto px-6 py-[0.8rem] text-[1rem]`}
-		margin: 0 auto;
+		${tw`w-auto h-auto px-6 py-[0.8rem] my-0 mx-auto text-[1rem]`}
 	}
 `;
 
