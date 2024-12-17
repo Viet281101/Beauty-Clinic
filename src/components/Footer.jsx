@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useAtom } from "jotai";
+import { currentPageAtom } from "../state/atom";
 import "../styles/components/footer.scss";
 import facebookIcon from "../assets/icons/ft_facebook.svg";
 import twitterIcon from "../assets/icons/ft_twitter.svg";
@@ -8,6 +11,12 @@ import instagramIcon from "../assets/icons/ft_instagram.svg";
 import footerLogo from "../assets/footer_logo.svg";
 
 function Footer() {
+	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+	const getHomePath = () => (currentPage === "Home1" ? "/home" : "/");
+	const toggleHomePage = () => {
+		setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
+	};
+
 	return (
 		<footer className="footer relative -mt-[58px] py-[100px] px-[10%] h-[940px]" id="footer">
 			<div className="footer-content flex justify-between items-start">
@@ -34,11 +43,13 @@ function Footer() {
 				<div className="footer-pages relative text-left mt-[200px]">
 					<h3 className="footer-title font-semibold text-white">Pages</h3>
 					<ul className="footer-links">
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Home</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">About</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Services</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Gallery</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Team</a></li>
+						<li className="relative pl-5 pb-3">
+							<Link to={getHomePath()} onClick={toggleHomePage} className="no-underline hover:underline">Home</Link>
+						</li>
+						<li className="relative pl-5 pb-3"><Link to="/about" className="no-underline hover:underline">About</Link></li>
+						<li className="relative pl-5 pb-3"><Link to="/service" className="no-underline hover:underline">Services</Link></li>
+						<li className="relative pl-5 pb-3"><Link to="/gallery" className="no-underline hover:underline">Gallery</Link></li>
+						<li className="relative pl-5 pb-3"><Link to="/team" className="no-underline hover:underline">Team</Link></li>
 					</ul>
 				</div>
 
@@ -46,10 +57,10 @@ function Footer() {
 				<div className="footer-info relative text-left mt-[200px]">
 					<h3 className="footer-title font-semibold text-white">Informations</h3>
 					<ul className="footer-links">
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Terms & conditions</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Privacy policy</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Blog</a></li>
-						<li className="relative pl-5 pb-3"><a href="/" className="no-underline hover:underline">Contact</a></li>
+						<li className="relative pl-5 pb-3"><Link to="/terms" className="no-underline hover:underline">Terms & conditions</Link></li>
+						<li className="relative pl-5 pb-3"><Link to="/privacy" className="no-underline hover:underline">Privacy policy</Link></li>
+						<li className="relative pl-5 pb-3"><Link to="/blog" className="no-underline hover:underline">Blog</Link></li>
+						<li className="relative pl-5 pb-3"><Link to="/contact" className="no-underline hover:underline">Contact</Link></li>
 					</ul>
 				</div>
 			</div>

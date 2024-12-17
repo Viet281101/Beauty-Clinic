@@ -40,8 +40,12 @@ const Description = styled.p`
 	@media (max-width: 1440px) {
 		${tw`text-[17px] leading-[24px] tracking-[0.068rem] ml-[45px] mb-[34px]`}
 	}
+	@media (max-width: 1180px) {
+		${tw`text-[16px] leading-[20px] tracking-[0.06rem] ml-[25px] whitespace-normal`}
+		br { display: none; }
+	}
 	@media (max-width: 768px) {
-		${tw`text-center my-0 mx-auto pb-10 whitespace-normal`}
+		${tw`text-center my-0 mx-auto pb-10`}
 	}
 `;
 

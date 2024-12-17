@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useAtom } from "jotai"; 
 import { currentPageAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
@@ -7,9 +7,6 @@ import logo from "../assets/images/main_logo.png";
 
 const HeaderContainer = styled.header`
 	${tw`w-4/5 flex p-0 justify-between items-center my-[41px] mx-auto`}
-	@media (max-width: 1180px) {
-		${tw`flex-col`}
-	}
 `;
 
 const Logo = styled(Link)`
@@ -31,8 +28,8 @@ const Logo = styled(Link)`
 	}
 	@media (max-width: 1180px) {
 		${tw`static`}
-		img { ${tw`min-w-[90px]`} }
-		span { ${tw`tracking-[0.15rem] text-[20px]`} }
+		img { ${tw`min-w-[50px] max-w-[56px]`} }
+		span { ${tw`tracking-[0.1rem] text-[20px]`} }
 	}
 `;
 
@@ -71,18 +68,53 @@ const NavMenu = styled.nav`
 		${tw`top-0 left-[40px] min-w-[500px]`}
 	}
 	@media (max-width: 1180px) {
-		${tw`static pt-5`}
-		ul {
-			${tw`flex-col items-center gap-2.5`}
-			li a { ${tw`text-[1rem] tracking-[0.1rem]`} }
-		}
+		${tw`top-0 left-[10px] min-w-[360px]`}
+		ul li a { ${tw`text-[14px] tracking-[0.06rem]`} }
 	}
+	@media (max-width: 940px) {
+		${tw`top-0 left-0 min-w-[340px]`}
+		ul li a { ${tw`text-[12px] tracking-[0.04rem]`} }
+	}
+	@media (max-width: 768px) {
+		${tw`hidden`}
+	}
+`;
+
+const Overlay = styled.div`
+	${tw`fixed top-0 left-0 w-full h-0 bg-[#E4E7FF] overflow-hidden transition-all duration-500 z-50`}
+	&.open {
+		${tw`h-full`}
+	}
+`;
+
+const OverlayContent = styled.div`
+	${tw`relative top-1/4 text-center`}
+	a {
+		${tw`block py-3 text-2xl font-semibold text-[#8B8B8B] hover:text-[#FF64AE] transition-all`}
+	}
+	.home-btn {
+		${tw`text-[#091156]`}
+	}
+	.contact-btn {
+		${tw`bg-[#FF64AE] hover:bg-[#E05497] w-[210px] my-5 mx-auto flex items-center justify-center rounded-full text-white`}
+	}
+`;
+
+const CloseButton = styled.span`
+	${tw`absolute top-[38px] right-[36px] text-5xl text-[#091156] cursor-pointer hover:text-[#FF64AE]`}
+`;
+
+const HamburgerButton = styled.button`
+	${tw`block md:hidden text-3xl text-[#091156] cursor-pointer`}
 `;
 
 const HomePlus = styled.span`
 	${tw`font-light text-[18px]`}
 	@media (max-width: 1440px) {
 		${tw`text-[12px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`text-[26px]`}
 	}
 `;
 
@@ -95,19 +127,24 @@ const ContactButton = styled(Link)`
 		${tw`-top-[1px] right-1 w-[160px] h-[52px] text-[1rem]`}
 	}
 	@media (max-width: 1180px) {
-		${tw`static top-0 mt-5 w-[160px] h-[50px]`}
+		${tw`static top-0 w-[160px] h-[50px] text-[14px] tracking-[0.1rem]`}
+	}
+	@media (max-width: 940px) {
+		${tw`w-[120px] h-[40px] text-[12px] tracking-[0.06rem]`}
+	}
+	@media (max-width: 768px) {
+		${tw`hidden`}
 	}
 `;
 
 function Header() {
 	const location = useLocation();
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
-	const getHomePath = () => {
-		return currentPage === "Home1" ? "/home" : "/";
-	};
-	const toggleHomePage = () => {
-		setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
-	};
+	const [isMenuOpen, setMenuOpen] = useState(false);
+
+	const getHomePath = () => (currentPage === "Home1" ? "/home" : "/");
+	const toggleHomePage = () => setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
+	const toggleMenu = () => setMenuOpen((prev) => !prev);
 
 	return (
 		<HeaderContainer>
@@ -117,7 +154,7 @@ function Header() {
 			</Logo>
 			<NavMenu>
 				<ul>
-					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : ""}>Home<HomePlus> +</HomePlus></Link></li>
+					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : ""}>Home<HomePlus> + </HomePlus></Link></li>
 					<li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
 					<li><Link to="/service" className={location.pathname === "/service" ? "active" : ""}>Service</Link></li>
 					<li><Link to="/gallery" className={location.pathname === "/gallery" ? "active" : ""}>Gallery</Link></li>
@@ -125,6 +162,22 @@ function Header() {
 				</ul>
 			</NavMenu>
 			<ContactButton to="/contact">Contact</ContactButton>
+
+			{/* Hamburger Button */}
+			<HamburgerButton onClick={toggleMenu}>&#9776;</HamburgerButton>
+
+			{/* Overlay Menu */}
+			<Overlay className={isMenuOpen ? "open" : ""}>
+				<CloseButton onClick={toggleMenu}>&times;</CloseButton>
+				<OverlayContent>
+					<Link className="home-btn" to={getHomePath()} onClick={() => { toggleMenu(); toggleHomePage(); }}>Home<HomePlus> +</HomePlus></Link>
+					<Link to="/about" onClick={toggleMenu}>About</Link>
+					<Link to="/service" onClick={toggleMenu}>Service</Link>
+					<Link to="/gallery" onClick={toggleMenu}>Gallery</Link>
+					<Link to="/blog" onClick={toggleMenu}>Blog</Link>
+					<Link className="contact-btn" to="/contact" onClick={toggleMenu}>Contact</Link>
+				</OverlayContent>
+			</Overlay>
 		</HeaderContainer>
 	);
 }
