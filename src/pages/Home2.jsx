@@ -35,6 +35,6 @@ function Home2() {
 			</HeaderHeroContainer>
 		</HomeContainer>
 	);
-}
+};
 
 export default Home2;

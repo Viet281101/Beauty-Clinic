@@ -17,7 +17,7 @@ const Logo = styled(Link)`
 	}
 	@media (max-width: 1440px) {
 		${tw`gap-2.5 top-0 left-1`}
-		img { ${tw`min-w-[80px]`} }
+		img { ${tw`min-w-[78px]`} }
 		span { ${tw`tracking-[0.15rem] text-[24px]`} }
 	}
 	@media (max-width: 1320px) {
@@ -53,14 +53,19 @@ const NavMenu = styled.nav`
 		ul li a { ${tw`tracking-[0.11rem]`} }
 	}
 	@media (max-width: 1440px) {
-		${tw`-top-[1px] left-[80px] min-w-[526px]`}
+		${tw`-top-[1px] left-[83px] min-w-[526px]`}
 		ul li a { ${tw`text-[1rem] tracking-[0.1rem]`} }
-		ul li a.about { ${tw`-top-[1px] left-0`} }
-		ul li a.service { ${tw`left-0`} }
+		ul li a.active { ${tw`-top-[3px]`} }
+		ul li a.about { ${tw`-top-[2px] -left-0.5`} }
+		ul li a.service { ${tw`-left-[3px]`} }
 		ul li a.gallery { ${tw`-left-0.5`} }
 	}
 	@media (max-width: 1320px) {
 		${tw`top-0 left-[40px] min-w-[500px]`}
+		ul li a.active { ${tw`top-0`} }
+		ul li a.about { ${tw`top-0 left-0`} }
+		ul li a.service { ${tw`left-0`} }
+		ul li a.gallery { ${tw`left-0`} }
 	}
 	@media (max-width: 1180px) {
 		${tw`top-0 left-[10px] min-w-[360px]`}
@@ -155,11 +160,11 @@ function Header() {
 			</Logo>
 			<NavMenu>
 				<ul>
-					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : ""}>Home<HomePlus> + </HomePlus></Link></li>
-					<li><Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link></li>
-					<li><Link to="/service" className={location.pathname === "/service" ? "active" : ""}>Service</Link></li>
-					<li><Link to="/gallery" className={location.pathname === "/gallery" ? "active" : ""}>Gallery</Link></li>
-					<li><Link to="/blog" className={location.pathname === "/blog" ? "active" : ""}>Blog</Link></li>
+					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : "home"}>Home<HomePlus> + </HomePlus></Link></li>
+					<li><Link to="/about" className={location.pathname === "/about" ? "active" : "about"}>About</Link></li>
+					<li><Link to="/service" className={location.pathname === "/service" ? "active" : "service"}>Service</Link></li>
+					<li><Link to="/gallery" className={location.pathname === "/gallery" ? "active" : "gallery"}>Gallery</Link></li>
+					<li><Link to="/blog" className={location.pathname === "/blog" ? "active" : "blog"}>Blog</Link></li>
 				</ul>
 			</NavMenu>
 			<ContactButton to="/contact">Contact</ContactButton>

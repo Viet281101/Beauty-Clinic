@@ -51,6 +51,6 @@ function Home1() {
 			<ToTopBtn />
 		</HomeContainer>
 	);
-}
+};
 
 export default Home1;

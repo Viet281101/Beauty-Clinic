@@ -17,7 +17,7 @@ function Layout({ children }) {
 			{children}
 		</>
 	);
-}
+};
 
 function App() {
 	const setCurrentPage = useSetAtom(currentPageAtom);
@@ -41,6 +41,6 @@ function App() {
 			</Routes>
 		</Router>
 	);
-}
+};
 
 export default App;

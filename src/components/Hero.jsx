@@ -98,6 +98,6 @@ function Hero() {
 			</ImageWrapper>
 		</HeroSection>
 	);
-}
+};
 
 export default Hero;

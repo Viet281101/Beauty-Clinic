@@ -83,6 +83,6 @@ function Footer() {
 			<div className="footer-bottom-bar bg-[#0D165C] h-[600px] absolute bottom-0 left-0 w-full -z-[1]"></div>
 		</footer>
 	);
-}
+};
 
 export default Footer;

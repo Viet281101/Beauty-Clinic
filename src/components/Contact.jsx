@@ -13,7 +13,10 @@ const ContactSection = styled.section`
 		${tw`py-[120px] px-[5%] -top-[322px]`}
 	}
 	@media (max-width: 1280px) {
-		${tw`py-[100px] px-[5%] top-0`}
+		${tw`py-[100px] px-[5%] -top-[200px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`py-[100px] px-[5%] -top-[20px]`}
 	}
 	@media (max-width: 768px) {
 		${tw`py-[80px] px-[5%] top-[100px] bg-cover`}
@@ -220,6 +223,6 @@ function Contact() {
 			</Container>
 		</ContactSection>
 	);
-}
+};
 
 export default Contact;

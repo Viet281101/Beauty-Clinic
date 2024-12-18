@@ -84,11 +84,14 @@
 		}
 		.footer-bottom-bar { height: 200px; }
 	}
+	@media (max-width: 1280px) {
+		margin-top: -200px;
+	}
 	@media (max-width: 1024px) {
-		margin-top: 200px; height: auto;
+		margin-top: 200px; height: auto; max-width: 100%;
 		background-size: cover;
 		.footer-content {
-			flex-direction: column;
+			flex-direction: column; margin-top: -300px;
 			.footer-logo {
 				margin-left: 0;
 				.footer-logo-img { width: 260px; }
@@ -111,8 +114,9 @@
 		.footer-bottom-bar { height: 150px; }
 	}
 	@media (max-width: 768px) {
-		margin-top: 420px; max-width: 100%;
+		margin-top: 420px;
 		.footer-content {
+			margin-top: 0;
 			.footer-logo {
 				min-width: 320px; margin: 0;
 				.ft-desc { margin: 0; }
