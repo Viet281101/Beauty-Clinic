@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../components/Header2";
 import Hero2 from "../components/Hero2";
+import About2 from "../components/About2";
+import Services2 from "../components/Services2";
 import heroBg from "../assets/images/home2_hero_bg.svg";
 
 const HomeContainer = styled.div`
@@ -21,7 +23,7 @@ function Home2() {
 
 		document.body.style.backgroundImage = `url(${heroBg})`;
 		document.body.style.backgroundRepeat = "no-repeat";
-		document.body.style.backgroundSize = "cover";
+		document.body.style.backgroundSize = "100%";
 		document.body.style.backgroundPosition = "top left";
 
 		return () => {
@@ -35,6 +37,8 @@ function Home2() {
 				<Header />
 				<Hero2 />
 			</HeaderHeroContainer>
+			<About2 />
+			<Services2 />
 		</HomeContainer>
 	);
 };

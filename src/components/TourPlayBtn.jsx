@@ -20,8 +20,8 @@ const PlayIcon = styled.img`
 function TourPlayButton() {
 	return (
 		<TourPlayIc>
-            <PlayIcon src={tourPlayIcon} alt="Tour Play Icon" />
-        </TourPlayIc>
+			<PlayIcon src={tourPlayIcon} alt="Tour Play Icon" />
+		</TourPlayIc>
 	);
 };
 

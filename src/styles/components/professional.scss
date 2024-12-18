@@ -74,14 +74,14 @@
 			}
 		}
 	}
-	@media (max-width: 1024px) {
+	@media (max-width: 1130px) {
 		padding: 80px 5%; top: 20px;
 		.professional-boxes {
 			flex-direction: column; gap: 40px;
 			.pro-box.left { right: 0; }
 			.pro-box.right { left: 0; }
 			.pro-box {
-				width: 440px; height: 580px;
+				width: 520px; height: 580px;
 				&.active { width: 460px; }
 				.pro-avatar { margin: 80px auto -12px; width: 130px; height: 130px; }
 				.pro-role { font-size: 14px; }

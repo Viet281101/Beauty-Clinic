@@ -15,8 +15,11 @@ const ContactSection = styled.section`
 	@media (max-width: 1280px) {
 		${tw`py-[100px] px-[5%] -top-[200px]`}
 	}
+	@media (max-width: 1130px) {
+		${tw`-top-[40px]`}
+	}
 	@media (max-width: 1024px) {
-		${tw`py-[100px] px-[5%] -top-[20px]`}
+		${tw`-top-[20px]`}
 	}
 	@media (max-width: 768px) {
 		${tw`py-[80px] px-[5%] top-[100px] bg-cover`}
