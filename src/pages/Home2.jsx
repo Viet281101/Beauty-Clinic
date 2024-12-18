@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../components/Header2";
+import Hero2 from "../components/Hero2";
 import heroBg from "../assets/images/home2_hero_bg.svg";
 
 const HomeContainer = styled.div`
@@ -32,6 +33,7 @@ function Home2() {
 		<HomeContainer>
 			<HeaderHeroContainer>
 				<Header />
+				<Hero2 />
 			</HeaderHeroContainer>
 		</HomeContainer>
 	);

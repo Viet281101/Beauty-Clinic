@@ -14,6 +14,7 @@ const Logo = styled(Link)`
 	img { ${tw`min-w-[104px] h-auto`} }
 	span {
 		${tw`font-normal tracking-[0.06rem] py-0 px-2.5 text-[26px] text-[#fff]`}
+		&:hover { ${tw`[text-shadow: 0 0 8px #fff;]`} }
 	}
 	@media (max-width: 1440px) {
 		${tw`gap-2.5 top-0 left-1`}
@@ -39,7 +40,7 @@ const NavMenu = styled.nav`
 		li a {
 			${tw`relative leading-4 tracking-[0.12rem] text-[#D8DCFF] text-[1.3rem] no-underline`}
 			&:hover { ${tw`text-[#FF64AE]`} }
-			&.active { ${tw`text-[#fff]`} }
+			&.active { ${tw`text-[#fff]`} &:hover { ${tw`[text-shadow: 0 0 8px #fff;]`} } }
 		}
 		li a.about { ${tw`-top-0.5`} }
 		li a.service { ${tw`-left-0.5`} }
@@ -53,17 +54,15 @@ const NavMenu = styled.nav`
 		ul li a { ${tw`tracking-[0.11rem]`} }
 	}
 	@media (max-width: 1440px) {
-		${tw`-top-[1px] left-[83px] min-w-[526px]`}
+		${tw`-top-[2px] left-[83px] min-w-[526px]`}
 		ul li a { ${tw`text-[1rem] tracking-[0.1rem]`} }
-		ul li a.active { ${tw`-top-[3px]`} }
-		ul li a.about { ${tw`-top-[2px] -left-0.5`} }
-		ul li a.service { ${tw`-left-[3px]`} }
-		ul li a.gallery { ${tw`-left-0.5`} }
+		ul li a.about { ${tw`-left-0.5`} }
+		ul li a.service { ${tw`-left-[2px]`} }
+		ul li a.gallery { ${tw`-left-[1px]`} }
 	}
 	@media (max-width: 1320px) {
 		${tw`top-0 left-[40px] min-w-[500px]`}
-		ul li a.active { ${tw`top-0`} }
-		ul li a.about { ${tw`top-0 left-0`} }
+		ul li a.about { ${tw`left-0`} }
 		ul li a.service { ${tw`left-0`} }
 		ul li a.gallery { ${tw`left-0`} }
 	}
