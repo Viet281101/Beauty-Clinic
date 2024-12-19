@@ -8,7 +8,7 @@ const ToTopButton = styled.div(({ isVisible }) => [
 	isVisible && tw`opacity-100 visible`,
 	`
 	@media (max-width: 1440px) {
-		bottom: 176px;
+		bottom: 170px;
 		right: 66px;
 		width: 36px;
 		height: 36px;

@@ -45,7 +45,7 @@ const Subtitle = styled.p`
 		${tw`text-[16px] mb-1.5 ml-[7px]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`text-center`}
+		${tw`text-center mb-[12px]`}
 	}
 `;
 
@@ -55,7 +55,7 @@ const Heading = styled.h2`
 		${tw`text-[36px] ml-1.5 -mb-[13px] -tracking-[0.003rem]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`text-center leading-[1.3rem]`}
+		${tw`text-center leading-[1.3rem] mb-0`}
 	}
 	@media (max-width: 768px) {
 		${tw`text-[28px]`}
@@ -99,7 +99,7 @@ const Button = styled.button`
 		${tw`w-[200px] h-[59px] text-[16px] tracking-[0.1rem]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`w-auto px-5 py-[15px] text-[18px]`}
+		${tw`px-5 py-[15px] text-[18px]`}
 	}
 	@media (max-width: 768px) {
 		${tw`text-[16px] px-[15px] py-[10px]`}
@@ -142,13 +142,13 @@ const ImageWrapper = styled.div`
 			${tw`max-w-[474px] max-h-[350px] rounded-[48px]`}
 		}
 		@media (max-width: 1024px) {
-			${tw`w-full min-w-[420px] max-h-[300px]`}
+			${tw`w-full min-w-[620px] max-h-[470px]`}
 		}
 		@media (max-width: 768px) {
-			${tw`w-full min-w-[360px]`}
+			${tw`w-full min-w-[460px] max-h-[360px]`}
 		}
 		@media (max-width: 480px) {
-			${tw`mt-5`}
+			${tw`min-w-[320px] max-h-[280px] mt-5`}
 		}
 	}
 `;

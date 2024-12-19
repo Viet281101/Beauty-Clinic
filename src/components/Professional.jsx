@@ -35,7 +35,7 @@ function Professional() {
 	];
 
 	useEffect(() => {
-		const boxes = professionalRef.current.querySelectorAll(".pro-box");
+		let boxes = professionalRef.current.querySelectorAll(".pro-box");
 
 		const handleHover = (event) => {
 			boxes.forEach((box) => box.classList.remove("active"));
@@ -56,33 +56,48 @@ function Professional() {
 		);
 
 		const applyHoverOrScroll = () => {
-			if (window.innerWidth > 768) {
+			if (window.innerWidth > 1000) {
 				boxes.forEach((box) => {
 					box.addEventListener("mouseenter", handleHover);
+					box.addEventListener("mouseleave", () => {
+						boxes.forEach((box) => box.classList.remove("active"));
+						const midIndex = Math.floor(boxes.length / 2);
+						boxes[midIndex].classList.add("active");
+					});
 				});
-				if (observer) observer.disconnect();
+				observer.disconnect();
 			} else {
 				boxes.forEach((box) => observer.observe(box));
 			}
 		};
 
-		applyHoverOrScroll();
-
 		const handleResize = () => {
+			const isLargeScreen = window.innerWidth > 1000;
 			boxes.forEach((box) => box.classList.remove("active"));
+
+			if (isLargeScreen) {
+				const midIndex = Math.floor(boxes.length / 2);
+				boxes[midIndex].classList.add("active");
+			}
+
+			const updatedBoxes = [];
 			boxes.forEach((box) => {
 				const newBox = box.cloneNode(true);
 				box.replaceWith(newBox);
-				observer.observe(newBox);
+				updatedBoxes.push(newBox);
 			});
+
+			boxes = professionalRef.current.querySelectorAll(".pro-box");
 			applyHoverOrScroll();
 		};
+
+		applyHoverOrScroll();
 		window.addEventListener("resize", handleResize);
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
 			boxes.forEach((box) => box.removeEventListener("mouseenter", handleHover));
-			if (observer) { observer.disconnect(); }
+			observer.disconnect();
 		};
 	}, []);
 

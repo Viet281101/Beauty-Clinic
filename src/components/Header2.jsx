@@ -3,10 +3,24 @@ import { useAtom } from "jotai";
 import { currentPageAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
 import tw, { styled } from "twin.macro";
+import { createGlobalStyle } from "styled-components";
 import logo from "../assets/images/main_logo_2.png";
+
+const GlobalStyle = createGlobalStyle`
+	body.no-scroll {
+		overflow: hidden;
+		height: 100vh;
+	}
+`;
 
 const HeaderContainer = styled.header`
 	${tw`w-4/5 flex p-0 justify-between items-center my-[41px] mx-auto`}
+	@media (max-width: 900px) {
+		${tw`w-[90%] my-[40px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`w-4/5`}
+	}
 `;
 
 const Logo = styled(Link)`
@@ -60,13 +74,13 @@ const NavMenu = styled.nav`
 		ul li a.service { ${tw`-left-[2px]`} }
 		ul li a.gallery { ${tw`-left-[1px]`} }
 	}
+	@media (max-width: 1370px) {
+		${tw`top-0 left-[60px] min-w-[500px]`}
+	}
 	@media (max-width: 1320px) {
 		${tw`top-0 left-[40px] min-w-[500px]`}
-		ul li a.about { ${tw`left-0`} }
-		ul li a.service { ${tw`left-0`} }
-		ul li a.gallery { ${tw`left-0`} }
 	}
-	@media (max-width: 1180px) {
+	@media (max-width: 1190px) {
 		${tw`top-0 left-[10px] min-w-[360px]`}
 		ul li a { ${tw`text-[14px] tracking-[0.06rem]`} }
 	}
@@ -95,6 +109,7 @@ const OverlayContent = styled.div`
 
 const HamburgerButton = styled.button`
 	${tw`block md:hidden relative w-[40px] h-[40px] cursor-pointer z-[100] bg-transparent border-none`}
+	@media (max-width: 768px) { ${tw`block`} }
 	svg { ${tw`w-full h-full`} }
 	.line {
 		fill: none;
@@ -149,10 +164,21 @@ function Header() {
 
 	const getHomePath = () => (currentPage === "Home1" ? "/home" : "/");
 	const toggleHomePage = () => setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
-	const toggleMenu = () => setMenuOpen((prev) => !prev);
+	const toggleMenu = () => {
+		setMenuOpen((prev) => {
+			const isOpen = !prev;
+			if (isOpen) {
+				document.body.classList.add("no-scroll");
+			} else {
+				document.body.classList.remove("no-scroll");
+			}
+			return isOpen;
+		});
+	};
 
 	return (
 		<HeaderContainer>
+			<GlobalStyle />
 			<Logo to="/">
 				<img src={logo} alt="Beautice Icon" />
 				<span>Beautice</span>

@@ -39,29 +39,31 @@ function Footer() {
 					</div>
 				</div>
 
-				{/* Footer Pages Section */}
-				<div className="footer-pages relative text-left mt-[200px]">
-					<h3 className="footer-title font-semibold text-white">Pages</h3>
-					<ul className="footer-links">
-						<li className="relative pl-5 pb-3">
-							<Link to={getHomePath()} onClick={toggleHomePage} className="no-underline hover:underline">Home</Link>
-						</li>
-						<li className="relative pl-5 pb-3"><Link to="/about" className="no-underline hover:underline">About</Link></li>
-						<li className="relative pl-5 pb-3"><Link to="/service" className="no-underline hover:underline">Services</Link></li>
-						<li className="relative pl-5 pb-3"><Link to="/gallery" className="no-underline hover:underline">Gallery</Link></li>
-						<li className="relative pl-5 pb-3"><Link to="/team" className="no-underline hover:underline">Team</Link></li>
-					</ul>
-				</div>
+				<div className="links-container relative inline-flex">
+					{/* Footer Pages Section */}
+					<div className="footer-pages relative text-left">
+						<h3 className="footer-title font-semibold text-white">Pages</h3>
+						<ul className="footer-links">
+							<li className="relative pl-5 pb-3">
+								<Link to={getHomePath()} onClick={toggleHomePage} className="no-underline hover:underline">Home</Link>
+							</li>
+							<li className="relative pl-5 pb-3"><Link to="/about" className="no-underline hover:underline">About</Link></li>
+							<li className="relative pl-5 pb-3"><Link to="/service" className="no-underline hover:underline">Services</Link></li>
+							<li className="relative pl-5 pb-3"><Link to="/gallery" className="no-underline hover:underline">Gallery</Link></li>
+							<li className="relative pl-5 pb-3"><Link to="/team" className="no-underline hover:underline">Team</Link></li>
+						</ul>
+					</div>
 
-				{/* Footer Info Section */}
-				<div className="footer-info relative text-left mt-[200px]">
-					<h3 className="footer-title font-semibold text-white">Informations</h3>
-					<ul className="footer-links">
-						<li className="relative pl-5 pb-3"><Link to="/terms" className="no-underline hover:underline">Terms & conditions</Link></li>
-						<li className="relative pl-5 pb-3"><Link to="/privacy" className="no-underline hover:underline">Privacy policy</Link></li>
-						<li className="relative pl-5 pb-3"><Link to="/blog" className="no-underline hover:underline">Blog</Link></li>
-						<li className="relative pl-5 pb-3"><Link to="/contact" className="no-underline hover:underline">Contact</Link></li>
-					</ul>
+					{/* Footer Info Section */}
+					<div className="footer-info relative text-left">
+						<h3 className="footer-title font-semibold text-white">Informations</h3>
+						<ul className="footer-links">
+							<li className="relative pl-5 pb-3"><Link to="/terms" className="no-underline hover:underline">Terms & conditions</Link></li>
+							<li className="relative pl-5 pb-3"><Link to="/privacy" className="no-underline hover:underline">Privacy policy</Link></li>
+							<li className="relative pl-5 pb-3"><Link to="/blog" className="no-underline hover:underline">Blog</Link></li>
+							<li className="relative pl-5 pb-3"><Link to="/contact" className="no-underline hover:underline">Contact</Link></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 

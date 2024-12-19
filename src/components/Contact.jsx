@@ -25,7 +25,7 @@ const ContactSection = styled.section`
 		${tw`py-[80px] px-[5%] top-[100px] bg-cover`}
 	}
 	@media (max-width: 480px) {
-		${tw`py-[50px] px-[5%] top-[200px] bg-cover`}
+		${tw`py-[50px] px-[2%] top-[200px] bg-cover`}
 	}
 `;
 
@@ -118,7 +118,7 @@ const Form = styled.form`
 		.subject { ${tw`top-[57px] h-[60px] py-[24px] px-[22px]`} }
 	}
 	@media (max-width: 768px) {
-		${tw`gap-4`}
+		${tw`gap-4 min-w-full`}
 	}
 `;
 

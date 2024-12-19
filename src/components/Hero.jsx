@@ -3,13 +3,12 @@ import tw, { styled } from "twin.macro";
 import heroImage from "../assets/bg_frame_1.svg";
 
 const HeroSection = styled.section`
-	${tw`relative flex w-full items-center justify-between gap-[2.6rem] mt-[168px]`}
-	padding: 0 10%;
+	${tw`relative flex w-full items-center justify-between gap-[2.6rem] mt-[168px] py-0 px-[10%]`}
 	@media (max-width: 1440px) {
 		${tw`mt-[180px] gap-[2.6rem]`}
 	}
-	@media (max-width: 768px) {
-		${tw`flex-col h-auto py-0 px-[5%]`}
+	@media (max-width: 950px) {
+		${tw`flex-col h-auto py-0 px-[5%] mt-0 top-10`}
 	}
 `;
 
@@ -18,7 +17,7 @@ const ContentWrapper = styled.div`
 	@media (max-width: 1440px) {
 		${tw`w-1/2`}
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		${tw`w-full text-center`}
 	}
 `;
@@ -29,8 +28,12 @@ const Heading = styled.h1`
 	@media (max-width: 1440px) {
 		${tw`text-[50px] leading-[60px] -tracking-[0.068rem] -mt-[70px] ml-[45px] mb-2`}
 	}
-	@media (max-width: 768px) {
-		${tw`text-[2.5rem] leading-[3rem] m-0 pb-10`}
+	@media (max-width: 1180px) {
+		${tw`-mt-[70px] ml-[45px] mb-[20px]`}
+	}
+	@media (max-width: 950px) {
+		${tw`text-[46px] leading-[3rem] m-0 pb-10`}
+		br { display: none; }
 	}
 `;
 
@@ -41,10 +44,10 @@ const Description = styled.p`
 		${tw`text-[17px] leading-[24px] tracking-[0.068rem] ml-[45px] mb-[34px]`}
 	}
 	@media (max-width: 1180px) {
-		${tw`text-[16px] leading-[20px] tracking-[0.06rem] ml-[25px] whitespace-normal`}
+		${tw`text-[16px] leading-[20px] tracking-[0.06rem] whitespace-normal`}
 		br { display: none; }
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		${tw`text-center my-0 mx-auto pb-10`}
 	}
 `;
@@ -58,7 +61,7 @@ const Button = styled.button`
 	@media (max-width: 1440px) {
 		${tw`w-[201px] h-[58px] text-[16px] ml-[44px] tracking-[0.1rem]`}
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		${tw`w-auto h-auto px-6 py-[0.8rem] my-0 mx-auto text-[1rem]`}
 	}
 `;
@@ -69,7 +72,7 @@ const ImageWrapper = styled.div`
 	@media (max-width: 1440px) {
 		${tw`right-[8px] top-[-26px]`}
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 950px) {
 		${tw`w-full text-center my-5 mx-auto`}
 		img {
 			${tw`w-full my-5 mx-auto`}
@@ -82,9 +85,7 @@ function Hero() {
 		<HeroSection id="hero">
 			<ContentWrapper>
 				<Heading>
-					Clinic & beauty
-					<br />
-					consultant
+					Clinic & beauty <br /> consultant
 				</Heading>
 				<Description>
 					It is a long established fact that a reader will be
