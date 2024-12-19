@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BeautyClinic/static/css/main.eb1b3615.css",
-    "main.js": "/BeautyClinic/static/js/main.9c35d4a4.js",
+    "main.css": "/BeautyClinic/static/css/main.b9ef63e9.css",
+    "main.js": "/BeautyClinic/static/js/main.190ac755.js",
     "static/media/home2_hero_bg.svg": "/BeautyClinic/static/media/home2_hero_bg.cf9c7ea259533884aa31d1363ac25001.svg",
     "static/media/about_img.jpeg": "/BeautyClinic/static/media/about_img.2e523b56bd34b9c83ac7.jpeg",
     "static/media/contact_frame.svg": "/BeautyClinic/static/media/contact_frame.4b34758f4345204edc560f616ce211f0.svg",
@@ -35,11 +35,11 @@
     "static/media/play_button.svg": "/BeautyClinic/static/media/play_button.003f9594799136cabb2583a0be2d6bd8.svg",
     "static/media/facebook.svg": "/BeautyClinic/static/media/facebook.11a984cc9278f8f70ab26650a323f4fd.svg",
     "static/media/tour_play.svg": "/BeautyClinic/static/media/tour_play.2b60cae09d983fc4ecac8cd3e69bb2d8.svg",
-    "main.eb1b3615.css.map": "/BeautyClinic/static/css/main.eb1b3615.css.map",
-    "main.9c35d4a4.js.map": "/BeautyClinic/static/js/main.9c35d4a4.js.map"
+    "main.b9ef63e9.css.map": "/BeautyClinic/static/css/main.b9ef63e9.css.map",
+    "main.190ac755.js.map": "/BeautyClinic/static/js/main.190ac755.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb1b3615.css",
-    "static/js/main.9c35d4a4.js"
+    "static/css/main.b9ef63e9.css",
+    "static/js/main.190ac755.js"
   ]
 }
