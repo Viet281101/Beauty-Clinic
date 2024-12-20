@@ -49,7 +49,7 @@ const ServiceBoxes = styled.div`
 `;
 
 const ServiceBox = styled.div`
-	${tw`bg-white border border-[#E2E2E2] rounded-[24px] w-[400px] h-[380px] p-8 items-start relative`}
+	${tw`bg-white border border-[#E2E2E2] rounded-[24px] w-[400px] h-[380px] p-8 items-start relative z-10`}
 	&:hover {
 		${tw`border-[#9BA2E0]`}
 		transition: all 0.3s ease;
