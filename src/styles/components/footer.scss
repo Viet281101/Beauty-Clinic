@@ -1,7 +1,7 @@
 @use "../base/variables" as vars;
 
 .footer {
-	background: url('../../assets/footer_bg.svg') no-repeat center bottom;
+	background: url('../../assets/footer_bg.png') no-repeat center bottom;
 	background-size: contain;
 	color: vars.$ft_txt;
 	.footer-content {
@@ -43,12 +43,20 @@
 		}
 		p { font-size: 22px; }
 	}
+	@media (max-width: 1590px) {
+		.footer-content {
+			.footer-logo { margin-left: 5px; margin-top: 300px; }
+			.links-container {
+				.footer-pages, .footer-info { top: 100px; left: 40px; }
+			}
+		}
+	}
 	@media (max-width: 1440px) {
 		margin-top: -420px;
 		padding: 100px 10%;
 		height: 940px;
 		.footer-content .footer-logo {
-			margin-left: 5px; margin-top: 377px;
+			margin-top: 377px;
 			.footer-logo-img { width: 260px; margin-bottom: 32px; }
 			.ft-desc {
 				margin-left: 32px;
@@ -89,12 +97,19 @@
 			.footer-social { gap: 40px; img { width: 30px; height: 30px; } }
 			p { right: 8px; font-size: 16px; }
 		}
-		.footer-bottom-bar { height: 200px; }
 	}
 	@media (max-width: 1280px) {
 		margin-top: -200px;
 		.footer-content .links-container {
 			min-width: 410px;
+		}
+	}
+	@media (max-width: 1200px) {
+		.footer-content {
+			.footer-logo { margin-top: 390px; }
+			.links-container {
+				.footer-pages, .footer-info { top: 200px; left: 0; }
+			}
 		}
 	}
 	@media (max-width: 1160px) {
@@ -126,7 +141,6 @@
 			.footer-social { gap: 30px; padding-bottom: 50px; img { width: 28px; height: 28px; } }
 			p { font-size: 16px; padding-bottom: 50px; }
 		}
-		.footer-bottom-bar { height: 150px; }
 	}
 	@media (max-width: 768px) {
 		margin-top: 420px;

@@ -4,6 +4,7 @@ import Header from "../components/Header2";
 import Hero2 from "../components/Hero2";
 import About2 from "../components/About2";
 import Services2 from "../components/Services2";
+import Why from "../components/Why";
 import heroBg from "../assets/images/home2_hero_bg.svg";
 
 const HomeContainer = styled.div`
@@ -39,6 +40,7 @@ function Home2() {
 			</HeaderHeroContainer>
 			<About2 />
 			<Services2 />
+			<Why />
 		</HomeContainer>
 	);
 };

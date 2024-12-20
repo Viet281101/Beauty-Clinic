@@ -25,24 +25,24 @@ const HeaderContainer = styled.header`
 
 const Logo = styled(Link)`
 	${tw`relative flex justify-center items-center gap-4 top-[14px] left-[6px]`}
-	img { ${tw`min-w-[104px] h-auto`} }
+	img { ${tw`relative max-w-[104px] h-auto`} }
 	span {
 		${tw`font-normal tracking-[0.06rem] py-0 px-2.5 text-[26px] text-[#fff]`}
 		&:hover { ${tw`[text-shadow: 0 0 8px #fff;]`} }
 	}
 	@media (max-width: 1440px) {
 		${tw`gap-2.5 top-0 left-1`}
-		img { ${tw`min-w-[78px]`} }
+		img { ${tw`max-w-[78px] left-0.5`} }
 		span { ${tw`tracking-[0.15rem] text-[24px]`} }
 	}
 	@media (max-width: 1320px) {
 		${tw`left-0`}
-		img { ${tw`min-w-[60px]`} }
+		img { ${tw`max-w-[60px] left-0`} }
 		span { ${tw`tracking-[0.15rem] text-[18px]`} }
 	}
 	@media (max-width: 1180px) {
 		${tw`static`}
-		img { ${tw`min-w-[50px] max-w-[56px]`} }
+		img { ${tw`max-w-[56px]`} }
 		span { ${tw`tracking-[0.1rem] text-[20px]`} }
 	}
 `;

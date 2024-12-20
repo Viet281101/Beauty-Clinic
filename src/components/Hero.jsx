@@ -8,7 +8,10 @@ const HeroSection = styled.section`
 		${tw`mt-[180px] gap-[2.6rem]`}
 	}
 	@media (max-width: 950px) {
-		${tw`flex-col h-auto py-0 px-[5%] mt-0 top-10`}
+		${tw`flex-col h-auto py-0 px-[10%] mt-0 top-10`}
+	}
+	@media (max-width: 768px) {
+		${tw`px-[5%] top-[50px]`}
 	}
 `;
 
@@ -88,9 +91,7 @@ function Hero() {
 					Clinic & beauty <br /> consultant
 				</Heading>
 				<Description>
-					It is a long established fact that a reader will be
-					<br />
-					by the readable content of a page.
+					It is a long established fact that a reader will be <br /> by the readable content of a page.
 				</Description>
 				<Button>More Details</Button>
 			</ContentWrapper>

@@ -32,10 +32,13 @@ const ContactSection = styled.section`
 const Container = styled.div`
 	${tw`flex justify-between items-center gap-5`}
 	@media (max-width: 1280px) {
-		${tw`flex-col gap-20`}
+		${tw`gap-20`}
+	}
+	@media (max-width: 1000px) {
+		${tw`flex-col`}
 	}
 	@media (max-width: 768px) {
-		${tw`flex-col px-[10%] gap-10`}
+		${tw`px-[10%] gap-10`}
 	}
 `;
 
@@ -48,7 +51,7 @@ const ContactImage = styled.div`
 		${tw`w-[520px] top-[156px] left-[78px]`}
 	}
 	@media (max-width: 1280px) {
-		${tw`w-[400px]`}
+		${tw`w-[600px] left-0`}
 	}
 	@media (max-width: 768px) {
 		${tw`w-[90%] -left-[20px] min-w-[360Px] mx-auto`}
@@ -65,6 +68,12 @@ const FormContainer = styled.div`
 	}
 	@media (max-width: 1280px) {
 		${tw`top-[120px]`}
+	}
+	@media (max-width: 1000px) {
+		${tw`max-w-3xl -right-[100px]`}
+	}
+	@media (max-width: 840px) {
+		${tw`-right-[60px]`}
 	}
 	@media (max-width: 768px) {
 		${tw`top-[160px] right-0 w-full max-w-full flex flex-col justify-between items-center`}
@@ -96,6 +105,9 @@ const Heading = styled.h2`
 	@media (max-width: 1280px) {
 		${tw`text-[32px]`}
 	}
+	@media (max-width: 1000px) {
+		br { display: none; }
+	}
 	@media (max-width: 768px) {
 		${tw`text-[28px] leading-[38px] mb-4`}
 	}
@@ -117,8 +129,11 @@ const Form = styled.form`
 		.email { ${tw`top-[41px] h-[60px] py-[0] px-[23px] pb-0.5`} }
 		.subject { ${tw`top-[57px] h-[60px] py-[24px] px-[22px]`} }
 	}
+	@media (max-width: 1000px) {
+		${tw`min-w-full`}
+	}
 	@media (max-width: 768px) {
-		${tw`gap-4 min-w-full`}
+		${tw`gap-4`}
 	}
 `;
 
@@ -133,6 +148,11 @@ const FormRow = styled.div`
 		}
 		.first-name { ${tw`left-0 py-0 px-[23px] pb-0.5`} }
 		.last-name { ${tw`left-[21px] py-0 px-[26px] pb-0.5`} }
+	}
+	@media (max-width: 1000px) {
+		.first-name, .last-name {
+			${tw`max-w-[280px]`}
+		}
 	}
 	@media (max-width: 768px) {
 		${tw`flex-col gap-3`}
@@ -156,6 +176,9 @@ const Input = styled.input`
 	@media (max-width: 1024px) {
 		${tw`text-[14px] py-3 px-[18px]`}
 	}
+	@media (max-width: 1000px) {
+		${tw`max-w-[600px]`}
+	}
 	@media (max-width: 768px) {
 		${tw`min-w-full`}
 	}
@@ -171,6 +194,9 @@ const TextArea = styled.textarea`
 	}
 	@media (max-width: 1024px) {
 		${tw`text-[14px] py-3 px-[18px]`}
+	}
+	@media (max-width: 1000px) {
+		${tw`max-w-[600px]`}
 	}
 	@media (max-width: 768px) {
 		${tw`min-w-full`}

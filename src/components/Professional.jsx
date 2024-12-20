@@ -107,7 +107,7 @@ function Professional() {
 				<p className="professional-subtitle tracking-widest font-semibold">
 					Professional Teams
 				</p>
-				<h2 className="professional-heading tracking-widest font-semibold">
+				<h2 className="professional-heading tracking-[0.01rem] font-semibold">
 					The Professional expert
 				</h2>
 				<p className="professional-description tracking-widest font-normal leading-6">
