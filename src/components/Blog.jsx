@@ -7,9 +7,9 @@ import vectorAngleIcon from "../assets/icons/vector_angle_double_right.svg";
 import waveLineBlog from "../assets/wave_line_blog.svg";
 
 const BlogSection = styled.section`
-	${tw`relative top-[500px] w-4/5 mx-auto py-24 mb-[500px]`}
+	${tw`relative top-[540px] w-4/5 mx-auto py-24 mb-[500px] z-10`}
 	@media (max-width: 1440px) {
-		${tw`top-[265px] py-[260px] mb-[300px]`}
+		${tw`top-[265px] py-[260px] mb-[75px]`}
 	}
 `;
 
@@ -104,9 +104,9 @@ const LearnMore = styled.a`
 `;
 
 const WaveLine = styled.img`
-	${tw`absolute top-0 right-0 w-[300px]`}
+	${tw`absolute top-0 -right-[180px] w-[600px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`top-[118px] -right-[143px] w-[524px]`}
 	}
 `;
 

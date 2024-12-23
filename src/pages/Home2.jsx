@@ -25,14 +25,23 @@ const HeaderHeroContainer = styled.div`
 function Home2() {
 	useEffect(() => {
 		const previousBackground = document.body.style.backgroundImage;
+		const previousBackgroundSize = document.body.style.backgroundSize;
+
+		const updateBackground = () => {
+			document.body.style.backgroundSize = (window.innerWidth < 1440) ? "1440px auto" : "100% auto";
+			document.body.style.backgroundRepeat = "no-repeat";
+			document.body.style.backgroundPosition = "top center";
+		};
 
 		document.body.style.backgroundImage = `url(${heroBg})`;
-		document.body.style.backgroundRepeat = "no-repeat";
-		document.body.style.backgroundSize = "100%";
-		document.body.style.backgroundPosition = "top left";
+		updateBackground();
+
+		window.addEventListener("resize", updateBackground);
 
 		return () => {
 			document.body.style.backgroundImage = previousBackground;
+			document.body.style.backgroundSize = previousBackgroundSize;
+			window.removeEventListener("resize", updateBackground);
 		};
 	}, []);
 
@@ -51,6 +60,6 @@ function Home2() {
 			<ToTopBtn />
 		</HomeContainer>
 	);
-};
+}
 
 export default Home2;

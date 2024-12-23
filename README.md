@@ -1,4 +1,4 @@
-# Beauty-Clinic
+# Beauty Clinic
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Viet281101/BeautyClinic) ![Github language count](https://img.shields.io/github/languages/count/Viet281101/BeautyClinic) ![GitHub Created At](https://img.shields.io/github/created-at/Viet281101/BeautyClinic)
 
