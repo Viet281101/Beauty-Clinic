@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../components/Header2";
+import Footer from "../components/Footer";
 import Hero2 from "../components/Hero2";
 import About2 from "../components/About2";
 import Services2 from "../components/Services2";
 import Why from "../components/Why";
+import Blog from "../components/Blog";
+import RequestCall from "../components/RequestCall";
+import ToTopBtn from "../components/ToTopBtn";
 import heroBg from "../assets/images/home2_hero_bg.svg";
 
 const HomeContainer = styled.div`
@@ -41,6 +45,10 @@ function Home2() {
 			<About2 />
 			<Services2 />
 			<Why />
+			<Blog />
+			<RequestCall />
+			<Footer />
+			<ToTopBtn />
 		</HomeContainer>
 	);
 };
