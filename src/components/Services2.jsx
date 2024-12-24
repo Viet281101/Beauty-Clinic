@@ -150,6 +150,6 @@ function Services2() {
 			<WaveLine src={waveLine} alt="Wave Line" />
 		</ServicesSection>
 	);
-}
+};
 
 export default Services2;

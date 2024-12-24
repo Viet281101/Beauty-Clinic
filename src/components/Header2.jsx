@@ -216,6 +216,6 @@ function Header() {
 			</Overlay>
 		</HeaderContainer>
 	);
-}
+};
 
 export default Header;

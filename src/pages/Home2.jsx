@@ -60,6 +60,6 @@ function Home2() {
 			<ToTopBtn />
 		</HomeContainer>
 	);
-}
+};
 
 export default Home2;

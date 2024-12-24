@@ -69,9 +69,9 @@ const StatItem = styled.div`
 `;
 
 const Icon = styled.img`
-	${tw`w-[64px] h-[64px] mr-4`}
+	${tw`w-[70px] h-[70px] mr-4`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`w-[64px] h-[64px]`}
 	}
 `;
 
@@ -134,6 +134,6 @@ function Why() {
 			</ContentContainer>
 		</WhySection>
 	);
-}
+};
 
 export default Why;

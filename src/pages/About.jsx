@@ -2,6 +2,9 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../components/Header";
 import AboutHero from "../components/AboutHero";
+import Professional from "../components/Professional";
+import Slogan from "../components/Slogan";
+import Vision from "../components/Vision";
 import Footer from "../components/Footer";
 import ToTopBtn from "../components/ToTopBtn";
 
@@ -23,6 +26,9 @@ function AboutPage() {
 				<Header />
 				<AboutHero />
 			</HeaderHeroContainer>
+			<Professional />
+			<Slogan />
+			<Vision />
 			<Footer />
 			<ToTopBtn />
 		</AboutContainer>

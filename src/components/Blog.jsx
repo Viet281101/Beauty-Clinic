@@ -7,7 +7,7 @@ import vectorAngleIcon from "../assets/icons/vector_angle_double_right.svg";
 import waveLineBlog from "../assets/wave_line_blog.svg";
 
 const BlogSection = styled.section`
-	${tw`relative top-[540px] w-4/5 mx-auto py-24 mb-[500px] z-10`}
+	${tw`relative top-[580px] w-4/5 mx-auto py-24 mb-[580px] z-10`}
 	@media (max-width: 1440px) {
 		${tw`top-[265px] py-[260px] mb-[75px]`}
 	}
@@ -16,7 +16,7 @@ const BlogSection = styled.section`
 const TitleContainer = styled.div`
 	${tw`text-center mb-16`}
 	@media (max-width: 1440px) {
-		${tw`mb-[86px]`}
+		${tw`mb-[84px]`}
 	}
 `;
 
@@ -52,7 +52,7 @@ const BlogBoxes = styled.div`
 `;
 
 const BlogBox = styled.div`
-	${tw`bg-white border border-gray-200 rounded-[24px] shadow-md overflow-hidden`}
+	${tw`bg-white border border-gray-200 rounded-[24px] w-[460px] h-[580px] shadow-md overflow-hidden`}
 	&:hover {
 		${tw`[box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)]`}
 		transition: all 0.3s ease;
@@ -70,36 +70,39 @@ const BlogImage = styled.img`
 `;
 
 const BlogContent = styled.div`
-	${tw`p-6`}
+	${tw`relative top-[40px] left-0 p-6`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`top-[26px] left-[8px] p-[30px]`}
 	}
 `;
 
 const BlogTitle = styled.h3`
-	${tw`text-[#091156] text-[22px] font-semibold mb-4`}
+	${tw`relative text-[#091156] text-[22px] font-semibold mb-4`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[18px] leading-[22px] mb-[15px]`}
 	}
 `;
 
 const BlogDesc = styled.p`
 	${tw`text-[#8B8B8B] text-[16px] leading-[24px] mb-6`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[14px] leading-[21px] tracking-[0.088rem] mb-[22px] max-w-[260px]`}
 	}
 `;
 
 const LearnMore = styled.a`
 	${tw`inline-flex items-center text-[#FF64AE] text-[16px] font-medium cursor-pointer`}
 	img {
-		${tw`w-5 h-5 ml-2`}
+		${tw`w-5 h-5 ml-2 mt-0`}
 	}
 	&:hover {
 		${tw`text-[#E05497]`}
 	}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[14px]`}
+		img {
+			${tw`w-[15px] h-[15px] ml-[10px] mt-[2px]`}
+		}
 	}
 `;
 
@@ -154,6 +157,6 @@ function Blog() {
 			<WaveLine src={waveLineBlog} alt="Wave Line" />
 		</BlogSection>
 	);
-}
+};
 
 export default Blog;

@@ -1,17 +1,17 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 import aboutVideoThumbnail from "../assets/images/about_vid.jpeg";
-import playButtonIcon from "../assets/icons/play_button.svg";
+import playButtonIcon from "../assets/icons/play_btn_sd.svg";
 
 const AboutHeroSection = styled.section`
-	${tw`w-4/5 mx-auto py-24`}
+	${tw`top-0 left-0 relative w-4/5 mx-auto py-24`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`top-[14px] left-[6px] py-[68px] mb-[236px]`}
 	}
 `;
 
 const ContentWrapper = styled.div`
-	${tw`flex flex-col items-center text-center gap-8`}
+	${tw`flex flex-col items-start text-left gap-8`}
 	@media (max-width: 1440px) {
 		${tw``}
 	}
@@ -27,53 +27,54 @@ const TitleContainer = styled.div`
 const SectionLabel = styled.h4`
 	${tw`text-[#FF64AE] text-[22px] font-semibold tracking-[0.1rem] mb-2`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[16px] -tracking-[0.01rem] mb-[10px]`}
 	}
 `;
 
 const SectionTitle = styled.h2`
 	${tw`text-[#091156] text-[44px] font-semibold leading-[54px] mb-4`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[36px] leading-[44px] mb-[21px]`}
 	}
 `;
 
 const SectionDesc = styled.p`
 	${tw`text-[#8B8B8B] text-[18px] leading-[28px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[16px] max-w-[680px] leading-[24px] tracking-[0.1rem]`}
 	}
 `;
 
 const VideoContainer = styled.div`
-	${tw`relative w-full max-w-4xl mt-8`}
+	${tw`relative w-full mt-8 overflow-hidden rounded-[48px] shadow-lg`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`max-w-[1140px] max-h-[542px]`}
 	}
 `;
 
 const VideoThumbnail = styled.img`
-	${tw`w-full h-auto rounded-lg shadow-lg`}
+	${tw`w-full h-full object-cover`}
 	@media (max-width: 1440px) {
-		${tw``}
+		aspect-ratio: 1140 / 542;
+		${tw`h-auto`}
 	}
 `;
 
 const PlayButton = styled.button`
-	${tw`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 flex items-center justify-center rounded-full shadow-lg cursor-pointer`}
+	${tw`absolute mt-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] flex items-center justify-center rounded-full cursor-pointer`}
 	transition: transform 0.3s ease;
 	&:hover {
 		${tw`scale-110`}
 	}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`mt-[4px] w-[174px] h-[174px]`}
 	}
 `;
 
 const PlayIcon = styled.img`
-	${tw`w-10 h-10`}
+	${tw`w-[180px] h-[180px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`w-[174px] h-[174px]`}
 	}
 `;
 

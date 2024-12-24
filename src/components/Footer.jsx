@@ -68,7 +68,7 @@ function Footer() {
 			</div>
 
 			{/* Footer Bottom */}
-			<div className="footer-bottom relative flex items-center justify-between top-40">
+			<div className="footer-bottom relative flex items-center justify-between top-[200px]">
 				<div className="footer-social flex gap-5">
 					<img className="w-[38px] h-[38px] cursor-pointer" src={facebookIcon} alt="Facebook" />
 					<img className="w-[38px] h-[38px] cursor-pointer" src={twitterIcon} alt="Twitter" />
