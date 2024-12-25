@@ -56,7 +56,6 @@ const NavMenu = styled.nav`
 			&:hover { ${tw`text-[#FF64AE]`} }
 			&.active { ${tw`text-[#fff]`} &:hover { ${tw`[text-shadow: 0 0 8px #fff;]`} } }
 		}
-		li a.about { ${tw`-top-0.5`} }
 		li a.service { ${tw`-left-0.5`} }
 	}
 	@media (max-width: 1690px) {
@@ -70,7 +69,7 @@ const NavMenu = styled.nav`
 	@media (max-width: 1440px) {
 		${tw`-top-[2px] left-[83px] min-w-[526px]`}
 		ul li a { ${tw`text-[1rem] tracking-[0.1rem]`} }
-		ul li a.about { ${tw`-left-0.5`} }
+		ul li a.about { ${tw`-left-0.5 -top-[1px]`} }
 		ul li a.service { ${tw`-left-[2px]`} }
 		ul li a.gallery { ${tw`-left-[1px]`} }
 	}

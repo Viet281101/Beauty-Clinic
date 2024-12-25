@@ -5,6 +5,8 @@ import AboutHero from "../components/AboutHero";
 import Professional from "../components/Professional";
 import Slogan from "../components/Slogan";
 import Vision from "../components/Vision";
+import Mission from "../components/Mission";
+import Clients from "../components/Clients";
 import Footer from "../components/Footer";
 import ToTopBtn from "../components/ToTopBtn";
 
@@ -29,6 +31,8 @@ function AboutPage() {
 			<Professional />
 			<Slogan />
 			<Vision />
+			<Mission />
+			<Clients />
 			<Footer />
 			<ToTopBtn />
 		</AboutContainer>

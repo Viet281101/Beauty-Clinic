@@ -56,7 +56,6 @@ const NavMenu = styled.nav`
 			&:hover { ${tw`text-[#FF64AE]`} }
 			&.active { ${tw`text-[#414880]`} }
 		}
-		li a.about { ${tw`-top-0.5`} }
 		li a.service { ${tw`-left-0.5`} }
 	}
 	@media (max-width: 1690px) {
