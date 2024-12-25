@@ -3,14 +3,9 @@
 .professional {
 	padding: 100px 10%;
 	.professional-title {
-		margin-bottom: 30px;
-		.professional-subtitle { font-size: 22px; margin-bottom: 4px; color: vars.$btn; }
-		.professional-heading { font-size: 48px; margin-bottom: 20px; color: vars.$h_txt; }
-		.professional-description {
-			font-size: 22px;
-			color: vars.$desc_txt;
-			margin: 0 auto;
-		}
+		.professional-subtitle { margin-bottom: 4px; color: vars.$btn; }
+		.professional-heading { margin-bottom: 20px; color: vars.$h_txt; }
+		.professional-description { color: vars.$desc_txt; margin: 0 auto; }
 	}
 	.professional-boxes {
 		.pro-box {
@@ -18,16 +13,13 @@
 			transition: all 0.3s ease;
 			&.active {
 				transform: scale(1.02);
+				background-color: rgba(255, 255, 255, 1);
 				box-shadow: 0px 12px 36px rgba(85, 73, 104, 0.2);
 			}
-			.pro-avatar { margin: 120px auto 0; width: 190px; height: 190px; }
-			.pro-role { margin-top: 60px; font-size: 22px; color: vars.$btn; }
-			.pro-name { font-size: 24px; color: vars.$h_txt; }
-			.pro-desc {
-				margin: 20px 40px 0;
-				font-size: 18px;
-				color: vars.$desc_txt;
-			}
+			.pro-avatar { margin: 120px auto 0; }
+			.pro-role { color: vars.$btn; }
+			.pro-name { color: vars.$h_txt; }
+			.pro-desc { margin: 20px 40px 0; color: vars.$desc_txt; }
 			.pro-social {
 				img {
 					box-shadow: 0px 4px 8px rgba(32, 32, 75, 0.1);
@@ -50,7 +42,7 @@
 				width: 505px; height: 614px;
 				&.active { width: 564px; }
 				.pro-avatar { margin: 88px auto -10px; width: 144px; height: 144px; }
-				.pro-role { font-size: 16px; }
+				.pro-role { margin-top: 60px;; font-size: 16px; }
 				.pro-name { margin-top: 10px; font-size: 18px; letter-spacing: -0.02rem; }
 				.pro-desc {
 					margin-top: 16px;

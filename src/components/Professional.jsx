@@ -103,14 +103,14 @@ function Professional() {
 
 	return (
 		<section className="professional relative text-center -top-16" id="professional" ref={professionalRef} >
-			<div className="professional-title">
-				<p className="professional-subtitle tracking-widest font-semibold">
+			<div className="professional-title mb-[30px]">
+				<p className="professional-subtitle text-[22px] tracking-widest font-semibold">
 					Professional Teams
 				</p>
-				<h2 className="professional-heading tracking-[0.01rem] font-semibold">
+				<h2 className="professional-heading text-[48px] tracking-[0.01rem] font-semibold">
 					The Professional expert
 				</h2>
-				<p className="professional-description tracking-widest font-normal leading-6">
+				<p className="professional-description text-[22px] tracking-widest font-normal leading-6">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.
 				</p>
 			</div>
@@ -119,11 +119,11 @@ function Professional() {
 					<div className={`pro-box ${index === 1 ? "active w-[570px] z-20 bg-white" : ""} ${
 							index === 0 ? "left" : index === 2 ? "right" : "mid"
 						} z-10 relative w-[510px] h-[820px] rounded-[40px] shadow-none`} key={team.id} >
-						<img src={team.image} alt={team.name} className="pro-avatar object-cover rounded-full" />
-						<p className="pro-role font-semibold">{team.role}</p>
-						<p className="pro-name font-bold">{team.name}</p>
-						<p className="pro-desc font-medium leading-7">{team.desc}</p>
-						<div className="pro-social flex justify-center gap-6 mt-10">
+						<img src={team.image} alt={team.name} className="pro-avatar object-cover rounded-full w-[190px] h-[190px]" />
+						<p className="pro-role font-semibold mt-24 text-[22px]">{team.role}</p>
+						<p className="pro-name font-bold mt-5 text-[24px]">{team.name}</p>
+						<p className="pro-desc font-medium leading-7 text-[18px]">{team.desc}</p>
+						<div className="pro-social flex justify-center gap-6 mt-20">
 							{team.socials.map((social, idx) => (
 								<img src={social} alt={`Social Icon ${idx + 1}`} key={idx} className="cursor-pointer rounded-full bg-white hover:scale-125 w-12 h-12 p-[10px]" />
 							))}
@@ -133,6 +133,6 @@ function Professional() {
 			</div>
 		</section>
 	);
-}
+};
 
 export default Professional;

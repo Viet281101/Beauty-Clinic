@@ -58,7 +58,7 @@ const LogoContainer = styled.div`
 `;
 
 const ClientLogo = styled.img`
-	${tw`w-[220px] h-auto opacity-90 hover:opacity-100 transition-opacity duration-300`}
+	${tw`w-[220px] h-auto hover:scale-105 cursor-pointer transition-opacity duration-300`}
 	@media (max-width: 1440px) {
 		${tw`w-[150px]`}
 	}

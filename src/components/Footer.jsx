@@ -21,7 +21,7 @@ function Footer() {
 		<footer className="footer relative -mt-[58px] py-[100px] px-[10%] h-[940px]" id="footer">
 			<div className="footer-content flex justify-between items-start">
 				{/* Footer Logo Section */}
-				<div className="footer-logo text-left ml-[10px] mt-56 min-w-[620px]">
+				<div className="footer-logo flex-1 text-left ml-[10px] mt-56 min-w-[620px]">
 					<img src={footerLogo} alt="Beautice Logo" className="footer-logo-img w-[340px] mb-11" />
 					<p className="ft-desc ml-8 mb-5">
 						<b>Beautice</b> is a Beauty Clinic WordPress Theme.
@@ -39,9 +39,9 @@ function Footer() {
 					</div>
 				</div>
 
-				<div className="links-container relative inline-flex">
+				<div className="links-container relative inline-flex top-[200px] right-[50px] w-[610px]">
 					{/* Footer Pages Section */}
-					<div className="footer-pages relative text-left">
+					<div className="footer-pages relative text-left flex-1">
 						<h3 className="footer-title font-semibold text-white">Pages</h3>
 						<ul className="footer-links">
 							<li className="relative pl-5 pb-3">
@@ -55,7 +55,7 @@ function Footer() {
 					</div>
 
 					{/* Footer Info Section */}
-					<div className="footer-info relative text-left">
+					<div className="footer-info relative text-left flex-1">
 						<h3 className="footer-title font-semibold text-white">Informations</h3>
 						<ul className="footer-links">
 							<li className="relative pl-5 pb-3"><Link to="/terms" className="no-underline hover:underline">Terms & conditions</Link></li>
