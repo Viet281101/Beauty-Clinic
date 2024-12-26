@@ -82,17 +82,13 @@ const ServiceDesc = styled.p`
 
 const LearnMore = styled.a`
 	${tw`inline-flex items-center text-[#FF64AE] text-[16px] font-semibold cursor-pointer`}
-	img {
-		${tw`relative w-5 h-5 left-2`}
-	}
+	img { ${tw`relative w-5 h-5 left-2`} }
 	&:hover {
 		${tw`text-[#E05497]`}
 	}
 	@media (max-width: 1440px) {
 		${tw`text-[14px]`}
-		img {
-			${tw`w-[14px] h-[14px] top-[1px] left-[10px]`}
-		}
+		img { ${tw`w-[14px] h-[14px] top-[1px] left-[10px]`} }
 	}
 `;
 

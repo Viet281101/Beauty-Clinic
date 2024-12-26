@@ -4,7 +4,7 @@
 	"private": true,
 	"homepage": "https://Viet281101.github.io/BeautyClinic",
 	"dependencies": {
-		"@craco/craco": "^7.1.0",
+		"@craco/craco": "^5.9.0",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
 		"@testing-library/jest-dom": "^5.17.0",

@@ -2,6 +2,9 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../components/Header";
 import ServiceHero from "../components/ServiceHero";
+import ServiceConsultation from "../components/ServiceConsultation";
+import ServiceTreatment from "../components/ServiceTreatment";
+import ServiceProduct from "../components/ServiceProduct";
 import Footer from "../components/Footer";
 import ToTopBtn from "../components/ToTopBtn";
 
@@ -23,6 +26,9 @@ function ServicePage() {
 				<Header />
 				<ServiceHero />
 			</HeaderHeroContainer>
+			<ServiceConsultation />
+			<ServiceTreatment />
+			<ServiceProduct />
 			<Footer />
 			<ToTopBtn />
 		</ServiceContainer>
