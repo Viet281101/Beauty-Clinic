@@ -7,4 +7,11 @@ module.exports = {
 			},
 		},
 	},
+	eslint: {
+		enable: true,
+		mode: "extends",
+		configure: {
+			extends: ["react-app", "react-app/jest"]
+		}
+	}
 };

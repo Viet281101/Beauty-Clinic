@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home1 from "./pages/Home1";
 import Home2 from "./pages/Home2";
@@ -9,7 +9,11 @@ import TeamPage from "./pages/Team";
 import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
 
-function Layout({ children }) {
+interface LayoutProps {
+	children: ReactNode;
+};
+
+function Layout({ children }: LayoutProps) {
 	return <>{children}</>;
 };
 
