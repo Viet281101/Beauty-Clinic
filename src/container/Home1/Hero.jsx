@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import heroImage from "../assets/bg_frame_1.svg";
+import heroImage from "../../assets/bg_frame_1.svg";
 
 const HeroSection = styled.section`
 	${tw`relative flex w-full items-center justify-between gap-[2.6rem] mt-[168px] py-0 px-[10%]`}

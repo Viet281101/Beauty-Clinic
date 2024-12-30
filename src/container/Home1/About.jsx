@@ -1,8 +1,8 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import bubbleBackground from "../assets/bubble_about_bg.svg";
-import playButtonIcon from "../assets/icons/play_button.svg";
-import aboutImage from "../assets/images/about_img.jpeg";
+import bubbleBackground from "../../assets/background/bubbles/home1_about.svg";
+import playButtonIcon from "../../assets/icons/play_button.svg";
+import aboutImage from "../../assets/images/about_img.jpeg";
 
 const AboutSection = styled.section`
 	${tw`relative -top-[28px] flex items-center justify-between py-[150px] px-[10%] z-0`}

@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import TourPlayButton from "./TourPlayBtn";
+import TourPlayButton from "../../components/TourPlayBtn";
 
 const HeroSection = styled.section`
 	${tw`relative flex items-center justify-between w-4/5 mx-auto py-16`}

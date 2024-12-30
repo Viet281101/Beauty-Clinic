@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import aboutImage from "../assets/about_img.svg";
+import aboutImage from "../../assets/about_img.svg";
 
 const AboutSection = styled.section`
 	${tw`relative top-[600px] flex items-center justify-between w-4/5 mx-auto py-24`}

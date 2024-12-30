@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import bubbleBackground from "../assets/bubble_contact_bg.svg";
-import contactFrame from "../assets/contact_frame.svg";
+import bubbleBackground from "../../assets/background/bubbles/home1_contact.svg";
+import contactFrame from "../../assets/contact_frame.svg";
 
 const ContactSection = styled.section`
 	${tw`relative -top-[5px] py-[150px] px-[10%]`}

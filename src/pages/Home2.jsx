@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
-import Header from "../components/Header2";
-import Footer from "../components/Footer";
-import Hero2 from "../components/Hero2";
-import About2 from "../components/About2";
-import Services2 from "../components/Services2";
-import Why from "../components/Why";
-import Blog from "../components/Blog";
-import RequestCall from "../components/RequestCall";
+import Header from "../container/Home2/Header";
+import Footer from "../layouts/Footer";
+import Hero2 from "../container/Home2/Hero";
+import About2 from "../container/Home2/About";
+import Services2 from "../container/Home2/Services";
+import Why from "../container/Home2/Why";
+import Blog from "../container/Home2/Blog";
+import RequestCall from "../container/Home2/RequestCall";
 import ToTopBtn from "../components/ToTopBtn";
 import heroBg from "../assets/images/home2_hero_bg.svg";
 

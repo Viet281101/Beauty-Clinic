@@ -1,10 +1,10 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import productImg from "../assets/service_product.svg";
-import vectorAngleIcon from "../assets/icons/vector_angle_double_right.svg";
+import treatmentImg from "../../assets/service_treatment.svg";
+import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
 
 const ServiceContainer = styled.div`
-	${tw`flex items-center justify-between px-[80px] py-12 z-10 mb-[200px]`}
+	${tw`flex items-center justify-between px-[80px] py-12 z-10`}
 	@media (max-width: 1440px) {
 		${tw``}
 	}
@@ -54,18 +54,18 @@ const CTAButton = styled.a`
 	}
 `;
 
-function ServiceProduct() {
+function ServiceTreatment() {
 	return (
 		<ServiceContainer>
-			<Image src={productImg} alt="Beauty Product" />
 			<Content>
-				<Subtitle>Beauty Product</Subtitle>
-				<Title>We present quality beauty products</Title>
+				<Subtitle>Skin Treatments</Subtitle>
+				<Title>Skin care and treatment by expert</Title>
 				<Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</Description>
 				<CTAButton>Make an Appointment<img src={vectorAngleIcon} alt="Vector Angle"/></CTAButton>
 			</Content>
+			<Image src={treatmentImg} alt="Skin Treatments" />
 		</ServiceContainer>
 	);
 };
 
-export default ServiceProduct;
+export default ServiceTreatment;

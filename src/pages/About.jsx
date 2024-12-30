@@ -1,16 +1,16 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import Header from "../components/Header";
-import AboutHero from "../components/AboutHero";
+import Header from "../layouts/Header";
+import AboutHero from "../container/About/Hero";
 import Professional from "../components/Professional";
-import Slogan from "../components/Slogan";
-import Vision from "../components/Vision";
-import Mission from "../components/Mission";
-import Clients from "../components/Clients";
-import Footer from "../components/Footer";
+import Slogan from "../container/About/Slogan";
+import Vision from "../container/About/Vision";
+import Mission from "../container/About/Mission";
+import Clients from "../container/About/Clients";
+import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
-import bubbleBg1 from "../assets/about_bubble_bg_1.svg";
-import bubbleBg2 from "../assets/about_bubble_2.svg";
+import bubbleBg1 from "../assets/background/bubbles/about_1.svg"
+import bubbleBg2 from "../assets/background/bubbles/about_2.svg"
 
 const AboutContainer = styled.div`
 	${tw`relative`}

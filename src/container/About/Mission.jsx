@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import missionImage from "../assets/mission_img.svg";
+import missionImage from "../../assets/mission_img.svg";
 
 const MissionSection = styled.section`
 	${tw`relative top-[260px] w-4/5 mx-auto py-24 flex items-center justify-between gap-12 z-10`}

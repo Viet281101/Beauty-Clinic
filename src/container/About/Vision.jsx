@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import visionImage from "../assets/about_img.svg";
+import visionImage from "../../assets/about_img.svg";
 
 const VisionSection = styled.section`
 	${tw`relative top-[260px] w-4/5 mx-auto flex items-center justify-between gap-12 z-10`}

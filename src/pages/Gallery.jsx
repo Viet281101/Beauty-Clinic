@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import Header from "../components/Header";
+import Header from "../layouts/Header";
 
 const GalleryContainer = styled.div`
 	${tw`relative`}

@@ -1,11 +1,11 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import Header from "../components/Header";
-import ServiceHero from "../components/ServiceHero";
-import ServiceConsultation from "../components/ServiceConsultation";
-import ServiceTreatment from "../components/ServiceTreatment";
-import ServiceProduct from "../components/ServiceProduct";
-import Footer from "../components/Footer";
+import Header from "../layouts/Header";
+import ServiceHero from "../container/Service/Hero";
+import ServiceConsultation from "../container/Service/Consultation";
+import ServiceTreatment from "../container/Service/Treatment";
+import ServiceProduct from "../container/Service/Product";
+import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
 
 const ServiceContainer = styled.div`

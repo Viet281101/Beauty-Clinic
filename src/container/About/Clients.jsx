@@ -1,10 +1,10 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import clientLogo1 from "../assets/icons/client_logo_1.svg";
-import clientLogo2 from "../assets/icons/client_logo_2.svg";
-import clientLogo3 from "../assets/icons/client_logo_3.svg";
-import clientLogo4 from "../assets/icons/client_logo_4.svg";
-import clientLogo5 from "../assets/icons/client_logo_5.svg";
+import clientLogo1 from "../../assets/icons/client_logo_1.svg";
+import clientLogo2 from "../../assets/icons/client_logo_2.svg";
+import clientLogo3 from "../../assets/icons/client_logo_3.svg";
+import clientLogo4 from "../../assets/icons/client_logo_4.svg";
+import clientLogo5 from "../../assets/icons/client_logo_5.svg";
 
 const ClientSection = styled.section`
 	${tw`relative top-[260px] w-4/5 mx-auto py-24 text-center z-10 mb-[400px]`}

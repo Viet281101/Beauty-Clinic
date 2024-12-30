@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
+import Header from "../layouts/Header";
+import Footer from "../layouts/Footer";
+import Hero from "../container/Home1/Hero";
 import SlideButton from "../components/SlideBtn";
-import Services from "../components/Services";
-import About from "../components/About";
+import Services from "../container/Home1/Services";
+import About from "../container/Home1/About";
 import Professional from "../components/Professional";
-import Contact from "../components/Contact";
+import Contact from "../container/Home1/Contact";
 import ToTopBtn from "../components/ToTopBtn";
-import heroBg from "../assets/bubble_header_bg.svg";
+import heroBg from "../assets/background/bubbles/home1_hero.svg";
 
 const HomeContainer = styled.div`
 	${tw`relative`}

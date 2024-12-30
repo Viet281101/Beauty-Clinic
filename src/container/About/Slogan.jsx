@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import sloganBg from "../assets/images/slogan_full_img.jpeg";
+import sloganBg from "../../assets/images/slogan_full_img.jpeg";
 
 const SloganSection = styled.section`
 	${tw`relative top-[100px] w-full h-[529px] flex items-center justify-center text-center`}

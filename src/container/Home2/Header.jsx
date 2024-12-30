@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import { useAtom } from "jotai"; 
-import { currentPageAtom } from "../state/atom";
+import { currentPageAtom } from "../../state/atom";
 import { Link, useLocation } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import { createGlobalStyle } from "styled-components";
-import logo from "../assets/images/main_logo_2.png";
+import logo from "../../assets/images/main_logo_2.png";
 
 const GlobalStyle = createGlobalStyle`
 	body.no-scroll {

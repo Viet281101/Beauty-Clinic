@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import treatmentImg from "../assets/service_treatment.svg";
-import vectorAngleIcon from "../assets/icons/vector_angle_double_right.svg";
+import consultationImg from "../../assets/service_consultation.svg";
+import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
 
 const ServiceContainer = styled.div`
 	${tw`flex items-center justify-between px-[80px] py-12 z-10`}
@@ -11,14 +11,14 @@ const ServiceContainer = styled.div`
 `;
 
 const Content = styled.div`
-	${tw`w-1/2`}
+	${tw`relative w-1/2`}
 	@media (max-width: 1440px) {
 		${tw``}
 	}
 `;
 
 const Image = styled.img`
-	${tw`w-1/2`}
+	${tw`relative w-1/2`}
 	@media (max-width: 1440px) {
 		${tw`max-w-[475px]`}
 	}
@@ -32,9 +32,9 @@ const Subtitle = styled.h4`
 `;
 
 const Title = styled.h2`
-	${tw`text-[#091156] text-[28px] font-bold mb-4`}
+	${tw`text-[#091156] text-[44px] font-semibold mb-4`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`text-[38px]`}
 	}
 `;
 
@@ -54,18 +54,18 @@ const CTAButton = styled.a`
 	}
 `;
 
-function ServiceTreatment() {
+function ServiceConsultation() {
 	return (
 		<ServiceContainer>
+			<Image src={consultationImg} alt="Beauty Consultation" />
 			<Content>
-				<Subtitle>Skin Treatments</Subtitle>
-				<Title>Skin care and treatment by expert</Title>
+				<Subtitle>Beauty Consultation</Subtitle>
+				<Title>We services beauty consultation</Title>
 				<Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</Description>
 				<CTAButton>Make an Appointment<img src={vectorAngleIcon} alt="Vector Angle"/></CTAButton>
 			</Content>
-			<Image src={treatmentImg} alt="Skin Treatments" />
 		</ServiceContainer>
 	);
 };
 
-export default ServiceTreatment;
+export default ServiceConsultation;

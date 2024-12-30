@@ -1,10 +1,10 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import blogImage1 from "../assets/images/blog_box_1.jpeg";
-import blogImage2 from "../assets/images/blog_box_2.jpeg";
-import blogImage3 from "../assets/images/blog_box_3.jpeg";
-import vectorAngleIcon from "../assets/icons/vector_angle_double_right.svg";
-import waveLineBlog from "../assets/wave_line_blog.svg";
+import blogImage1 from "../../assets/images/blog_box_1.jpeg";
+import blogImage2 from "../../assets/images/blog_box_2.jpeg";
+import blogImage3 from "../../assets/images/blog_box_3.jpeg";
+import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
+import waveLineBlog from "../../assets/background/wave_line/wave_line_blog.svg";
 
 const BlogSection = styled.section`
 	${tw`relative top-[580px] w-4/5 mx-auto py-24 mb-[580px] z-10`}

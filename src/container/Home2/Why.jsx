@@ -1,10 +1,10 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import handshakeIcon from "../assets/icons/handshake_1.svg";
-import brotherhoodIcon from "../assets/icons/brotherhood_1.svg";
-import earthIcon from "../assets/icons/earth_1.svg";
-import doctorIcon from "../assets/icons/doctor_1.svg";
-import backgroundImage from "../assets/images/home2_why_bg.svg";
+import handshakeIcon from "../../assets/icons/handshake_1.svg";
+import brotherhoodIcon from "../../assets/icons/brotherhood_1.svg";
+import earthIcon from "../../assets/icons/earth_1.svg";
+import doctorIcon from "../../assets/icons/doctor_1.svg";
+import backgroundImage from "../../assets/images/home2_why_bg.svg";
 
 const WhySection = styled.section`
 	${tw`relative top-[580px] w-full py-[360px] px-[10%] text-white`}

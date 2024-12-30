@@ -1,9 +1,9 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import serviceHeroImg1 from "../assets/images/service_hero_img_1.jpeg";
-import serviceHeroImg2 from "../assets/images/service_hero_img_2.jpeg";
-import serviceHeroImg3 from "../assets/images/service_hero_img_3.jpeg";
-import briyanNevalli from "../assets/images/briyan_nevalli.jpeg";
+import serviceHeroImg1 from "../../assets/images/service_hero_img_1.jpeg";
+import serviceHeroImg2 from "../../assets/images/service_hero_img_2.jpeg";
+import serviceHeroImg3 from "../../assets/images/service_hero_img_3.jpeg";
+import briyanNevalli from "../../assets/images/briyan_nevalli.jpeg";
 
 const HeroSection = styled.section`
 	${tw`relative flex flex-col items-center text-center py-16 z-10`}
@@ -22,7 +22,7 @@ const TitleContainer = styled.div`
 const SectionLabel = styled.h4`
 	${tw`text-[#FF64AE] text-[22px] font-semibold tracking-[0.01rem] mb-2`}
 	@media (max-width: 1440px) {
-		${tw`text-[16px] tracking-[0.008rem] mb-[5px]`}
+		${tw`text-[16px] -tracking-[0.002rem] mb-[5px]`}
 	}
 `;
 
@@ -34,9 +34,9 @@ const SectionTitle = styled.h2`
 `;
 
 const SectionDesc = styled.p`
-	${tw`text-[#8B8B8B] text-[18px] mb-8`}
+	${tw`relative text-[#8B8B8B] text-[18px] mb-8`}
 	@media (max-width: 1440px) {
-		${tw`text-[16px] tracking-[0.1rem] mb-[26px]`}
+		${tw`left-[1px] text-[16px] tracking-[0.1rem] mb-[26px]`}
 	}
 `;
 

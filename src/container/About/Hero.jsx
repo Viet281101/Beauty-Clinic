@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import aboutVideoThumbnail from "../assets/images/about_vid.jpeg";
-import playButtonIcon from "../assets/icons/play_btn_sd.svg";
+import aboutVideoThumbnail from "../../assets/images/about_vid.jpeg";
+import playButtonIcon from "../../assets/icons/play_btn_sd.svg";
 
 const AboutHeroSection = styled.section`
 	${tw`top-0 left-0 relative w-4/5 mx-auto py-24`}
