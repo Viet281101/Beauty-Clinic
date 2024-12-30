@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import consultationImg from "../../assets/service_consultation.svg";
+import consultationImg from "../../assets/services/consultation.svg";
 import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
 
 const ServiceContainer = styled.div`

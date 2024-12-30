@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/components/professional.scss";
-import twitterIcon from "../assets/icons/twitter.svg";
-import facebookIcon from "../assets/icons/facebook.svg";
-import instagramIcon from "../assets/icons/instagram.svg";
+import twitterIcon from "../assets/icons/social/twitter.svg";
+import facebookIcon from "../assets/icons/social/facebook.svg";
+import instagramIcon from "../assets/icons/social/instagram.svg";
 import briyanImage from "../assets/images/briyan_nevalli.jpeg";
 import bellaImage from "../assets/images/bella_sebastian.jpeg";
 import lillyImage from "../assets/images/lilly_adams.jpeg";

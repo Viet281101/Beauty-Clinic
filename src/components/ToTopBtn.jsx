@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import tw, { styled } from "twin.macro";
-import arrowUpIcon from "../assets/arrow_up.svg";
+import arrowUpIcon from "../assets/icons/arrow_up.svg";
 
 const ToTopButton = styled.div(({ isVisible }) => [
 	tw`fixed flex justify-center items-center bg-[#ff64ae] shadow-lg rounded-md cursor-pointer opacity-0 invisible transition-all duration-300 z-20`,

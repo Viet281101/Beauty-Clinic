@@ -1,7 +1,7 @@
 @use "../base/variables" as vars;
 
 .footer {
-	background: url('../../assets/footer_bg.png') no-repeat center bottom;
+	background: url('../../assets/background/footer.png') no-repeat center bottom;
 	background-size: contain;
 	color: vars.$ft_txt;
 	.footer-content {

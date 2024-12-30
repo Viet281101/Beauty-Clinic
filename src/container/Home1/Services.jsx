@@ -1,8 +1,8 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import art1 from "../../assets/ser_art_1.svg";
-import art2 from "../../assets/ser_art_2.svg";
-import art3 from "../../assets/ser_art_3.svg";
+import art1 from "../../assets/services/art_1.svg";
+import art2 from "../../assets/services/art_2.svg";
+import art3 from "../../assets/services/art_3.svg";
 
 const serviceData = [
 	{

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
 import { currentPageAtom } from "../state/atom";
 import "../styles/components/footer.scss";
-import facebookIcon from "../assets/icons/ft_facebook.svg";
-import twitterIcon from "../assets/icons/ft_twitter.svg";
-import linkedinIcon from "../assets/icons/ft_linkedin_in.svg";
-import youtubeIcon from "../assets/icons/ft_youtube.svg";
-import instagramIcon from "../assets/icons/ft_instagram.svg";
+import facebookIcon from "../assets/icons/footer_social/facebook.svg";
+import twitterIcon from "../assets/icons/footer_social/twitter.svg";
+import linkedinIcon from "../assets/icons/footer_social/linkedin_in.svg";
+import youtubeIcon from "../assets/icons/footer_social/youtube.svg";
+import instagramIcon from "../assets/icons/footer_social/instagram.svg";
 import footerLogo from "../assets/footer_logo.svg";
 
 function Footer() {

@@ -1,9 +1,9 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import handshakeIcon from "../../assets/icons/handshake_1.svg";
-import brotherhoodIcon from "../../assets/icons/brotherhood_1.svg";
-import earthIcon from "../../assets/icons/earth_1.svg";
-import doctorIcon from "../../assets/icons/doctor_1.svg";
+import handshakeIcon from "../../assets/icons/review/handshake.svg";
+import brotherhoodIcon from "../../assets/icons/review/brotherhood.svg";
+import earthIcon from "../../assets/icons/review/earth.svg";
+import doctorIcon from "../../assets/icons/review/doctor.svg";
 import backgroundImage from "../../assets/images/home2_why_bg.svg";
 
 const WhySection = styled.section`
