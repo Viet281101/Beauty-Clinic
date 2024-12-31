@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 
 const SlideButtonContainer = styled.div`
 	${tw`flex justify-center items-center relative transform translate-y-[15.6rem] gap-[0.6rem]`}
@@ -11,24 +12,24 @@ const SlideButtonContainer = styled.div`
 	}
 `;
 
-const Bar = styled.div(({ isActive }) => [
+const Bar = styled.div<{ $isActive?: boolean }>(({ $isActive }) => [
 	tw`w-5 h-1 bg-[#eee] rounded-full transition-all duration-300`,
-	isActive && tw`w-8 h-2 bg-[#414880]`, `
+	$isActive && tw`w-8 h-2 bg-[#414880]`, `
 	@media (max-width: 1440px) {
-		width: ${isActive ? '25px' : '16px'};
-		height: ${isActive ? '8px' : '4px'};
+		width: ${$isActive ? '25px' : '16px'};
+		height: ${$isActive ? '8px' : '4px'};
 	}
 	`,
 ]);
 
-function SlideButton() {
+const SlideButton: React.FC = () => {
 	return (
 		<SlideButtonContainer>
 			<Bar />
-			<Bar isActive />
+			<Bar $isActive />
 			<Bar />
 		</SlideButtonContainer>
 	);
-}
+};
 
 export default SlideButton;

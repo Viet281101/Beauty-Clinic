@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import { useAtom } from "jotai"; 
+import React, { useState } from "react";
+import { useAtom } from "jotai";
 import { currentPageAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import logo from "../assets/images/main_logo.png";
 
@@ -90,6 +91,12 @@ const NavMenu = styled.nav`
 	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
+const HomePlus = styled.span`
+	${tw`font-light text-[18px]`}
+	@media (max-width: 1440px) { ${tw`text-[12px]`} }
+	@media (max-width: 768px) { ${tw`text-[26px]`} }
+`;
+
 const Overlay = styled.div`
 	${tw`fixed top-0 left-0 w-full h-0 bg-[#E4E7FF] overflow-hidden transition-all duration-500 z-50`}
 	&.open { ${tw`h-full`} }
@@ -135,12 +142,6 @@ const HamburgerButton = styled.button`
 	}
 `;
 
-const HomePlus = styled.span`
-	${tw`font-light text-[18px]`}
-	@media (max-width: 1440px) { ${tw`text-[12px]`} }
-	@media (max-width: 768px) { ${tw`text-[26px]`} }
-`;
-
 const ContactButton = styled(Link)`
 	${tw`relative top-[10px] font-semibold cursor-pointer rounded-full tracking-[0.12rem] w-[210px] h-[68px] text-white bg-[#FF64AE] text-[1.3rem] flex items-center justify-center`}
 	&:hover { ${tw`bg-[#E05497]`} }
@@ -156,32 +157,19 @@ const ContactButton = styled(Link)`
 	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
-function Header() {
+function Header(): JSX.Element {
 	const location = useLocation();
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
-	const [isMenuOpen, setMenuOpen] = useState(false);
+	const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
-	const getHomePath = () => (currentPage === "Home1" ? "/home" : "/");
-	const toggleHomePage = () => setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
-	const toggleMenu = () => {
-		setMenuOpen((prev) => {
-			const isOpen = !prev;
-			if (isOpen) {
-				document.body.classList.add("no-scroll");
-			} else {
-				document.body.classList.remove("no-scroll");
-			}
-			return isOpen;
-		});
-	};
+	const getHomePath = (): string => (currentPage === "Home1" ? "/home" : "/");
+	const toggleHomePage = (): void => setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
+	const toggleMenu = (): void => setMenuOpen(!isMenuOpen);
 
 	return (
 		<HeaderContainer>
 			<GlobalStyle />
-			<Logo to="/">
-				<img src={logo} alt="Beautice Icon" />
-				<span>Beautice</span>
-			</Logo>
+			<Logo to="/"><img src={logo} alt="Logo" /><span>Beautice</span></Logo>
 			<NavMenu>
 				<ul>
 					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : "home"}>Home<HomePlus> + </HomePlus></Link></li>
@@ -202,7 +190,6 @@ function Header() {
 				</svg>
 			</HamburgerButton>
 
-			{/* Overlay Menu */}
 			<Overlay className={isMenuOpen ? "open" : ""}>
 				<OverlayContent>
 					<Link className="home-btn" to={getHomePath()} onClick={() => { toggleMenu(); toggleHomePage(); }}>Home<HomePlus> +</HomePlus></Link>
@@ -215,6 +202,6 @@ function Header() {
 			</Overlay>
 		</HeaderContainer>
 	);
-}
+};
 
 export default Header;

@@ -5,6 +5,7 @@ import ServiceHero from "../container/Service/Hero";
 import ServiceConsultation from "../container/Service/Consultation";
 import ServiceTreatment from "../container/Service/Treatment";
 import ServiceProduct from "../container/Service/Product";
+import Slogan from "../container/Service/Slogan";
 import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
 
@@ -29,6 +30,7 @@ function ServicePage() {
 			<ServiceConsultation />
 			<ServiceTreatment />
 			<ServiceProduct />
+			<Slogan />
 			<Footer />
 			<ToTopBtn />
 		</ServiceContainer>
