@@ -26,7 +26,7 @@ const HeaderContainer = styled.header`
 
 const Logo = styled(Link)`
 	${tw`relative flex justify-center items-center gap-4 top-[14px] left-[6px]`}
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
+	// filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
 	img { ${tw`min-w-[104px] h-auto`} }
 	span {
 		${tw`font-bold tracking-[0.2rem] py-0 px-2.5 text-[32px] text-[#091156]`}

@@ -21,6 +21,6 @@ function BlogPage() {
 			</HeaderHeroContainer>
 		</BlogContainer>
 	);
-}
+};
 
 export default BlogPage;

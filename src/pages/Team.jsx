@@ -21,6 +21,6 @@ function TeamPage() {
 			</HeaderHeroContainer>
 		</TeamContainer>
 	);
-}
+};
 
 export default TeamPage;

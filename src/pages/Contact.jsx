@@ -21,6 +21,6 @@ function ContactPage() {
 			</HeaderHeroContainer>
 		</ContactContainer>
 	);
-}
+};
 
 export default ContactPage;
