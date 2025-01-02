@@ -24,7 +24,7 @@ const HeaderHeroContainer = styled.div`
 `;
 
 const BubbleBg1 = styled.img`
-	${tw`absolute top-[800px] right-0 w-[1420px] h-auto z-[-1]`}
+	${tw`absolute top-[800px] right-0 w-[1420px] h-auto z-0`}
 	@media (max-width: 1440px) {
 		${tw`w-[1150px] top-[596px]`}
 	}
@@ -34,7 +34,7 @@ const BubbleBg1 = styled.img`
 `;
 
 const BubbleBg2 = styled.img`
-	${tw`absolute top-[3500px] left-0 w-[1420px] h-auto z-[-1]`}
+	${tw`absolute top-[3500px] left-0 w-[1420px] h-auto z-0`}
 	@media (max-width: 1440px) {
 		${tw`w-[1222px] top-[2846px]`}
 	}

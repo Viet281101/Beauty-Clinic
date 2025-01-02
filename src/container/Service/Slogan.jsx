@@ -4,7 +4,7 @@ import serviceSloganBg from "../../assets/images/service_slogan_full_img.jpeg";
 import TourPlayButton from "../../components/TourPlayBtn";
 
 const SloganSection = styled.section`
-	${tw`relative w-full h-[700px] flex items-center justify-between py-24 px-12 overflow-hidden z-10 mb-[200px]`}
+	${tw`relative w-full h-[700px] flex items-center justify-between py-24 px-12 overflow-hidden z-10`}
 	background: url(${serviceSloganBg}) no-repeat center center/cover;
 	@media (max-width: 1440px) {
 		${tw`h-[529px]`}
