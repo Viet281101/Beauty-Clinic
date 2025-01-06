@@ -1,8 +1,16 @@
 @use "../base/variables" as vars;
 
+.team-page .professional {
+	.professional-title {
+		margin-bottom: 14px; right: 40px;
+		.professional-subtitle { margin-bottom: 4px; }
+		.professional-heading { margin-bottom: 22px; }
+	}
+}
 .professional {
 	padding: 100px 10%;
 	.professional-title {
+		margin-bottom: 30px;
 		.professional-subtitle { margin-bottom: 4px; color: vars.$btn; }
 		.professional-heading { margin-bottom: 20px; color: vars.$h_txt; }
 		.professional-description { color: vars.$desc_txt; margin: 0 auto; }

@@ -52,7 +52,7 @@ function AboutPage() {
 				<Header />
 				<AboutHero />
 			</HeaderHeroContainer>
-			<Professional />
+			<Professional isTeamPage={false} />
 			<Slogan />
 			<Vision />
 			<Mission />

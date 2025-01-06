@@ -1,6 +1,10 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../layouts/Header";
+import Professional from "../components/Professional";
+import Assistance from "../container/Team/Assistance";
+import Footer from "../layouts/Footer";
+import ToTopBtn from "../components/ToTopBtn";
 
 const TeamContainer = styled.div`
 	${tw`relative`}
@@ -11,14 +15,21 @@ const TeamContainer = styled.div`
 
 const HeaderHeroContainer = styled.div`
 	${tw`relative`}
+	@media (max-width: 1440px) {
+		${tw`mb-[279px]`}
+	}
 `;
 
 function TeamPage() {
 	return (
-		<TeamContainer>
+		<TeamContainer className="team-page">
 			<HeaderHeroContainer>
 				<Header />
 			</HeaderHeroContainer>
+			<Professional isTeamPage={true} />
+			<Assistance />
+			<Footer />
+			<ToTopBtn />
 		</TeamContainer>
 	);
 };

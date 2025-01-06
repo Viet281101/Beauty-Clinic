@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 import phoneIcon from "../../assets/icons/phone_vector.svg";
-import waveLineCall from "../../assets/background/wave_line/wave_line_call.svg";
+import waveLineCall from "../../assets/background/wave_line/hom2_call.svg";
 import { Link } from "react-router-dom";
 
 const RequestCallSection = styled.section`

@@ -1,6 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import serviceSloganBg from "../../assets/images/service_slogan_full_img.jpeg";
+import serviceSloganBg from "../../assets/images/service/slogan_full_img.jpeg";
 import TourPlayButton from "../../components/TourPlayBtn";
 
 const SloganSection = styled.section`

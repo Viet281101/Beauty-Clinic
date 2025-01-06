@@ -1,8 +1,8 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import serviceHeroImg1 from "../../assets/images/service_hero_img_1.jpeg";
-import serviceHeroImg2 from "../../assets/images/service_hero_img_2.jpeg";
-import serviceHeroImg3 from "../../assets/images/service_hero_img_3.jpeg";
+import serviceHeroImg1 from "../../assets/images/service/hero_img_1.jpeg";
+import serviceHeroImg2 from "../../assets/images/service/hero_img_2.jpeg";
+import serviceHeroImg3 from "../../assets/images/service/hero_img_3.jpeg";
 import briyanNevalli from "../../assets/images/briyan_nevalli.jpeg";
 
 const HeroSection = styled.section`

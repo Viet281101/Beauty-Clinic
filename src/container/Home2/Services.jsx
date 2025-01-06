@@ -4,7 +4,7 @@ import serviceIcon1 from "../../assets/icons/service/1.svg";
 import serviceIcon2 from "../../assets/icons/service/2.svg";
 import serviceIcon3 from "../../assets/icons/service/3.svg";
 import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
-import waveLine from "../../assets/background/wave_line/wave_line_service.svg";
+import waveLine from "../../assets/background/wave_line/home2_service.svg";
 
 const ServicesSection = styled.section`
 	${tw`relative top-[500px] w-4/5 mx-auto py-24`}

@@ -1,5 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
+import { Link } from "react-router-dom";
 
 import row1_img1 from "../../assets/images/gallery/row1_img1.jpeg";
 import row1_img2 from "../../assets/images/gallery/row1_img2.jpeg";
@@ -12,23 +13,23 @@ import row3_img2 from "../../assets/images/gallery/row3_img2.jpeg";
 import row3_img3 from "../../assets/images/gallery/row3_img3.jpeg";
 
 const HeroSection = styled.section`
-	${tw`relative flex flex-col items-center text-center py-16 z-10 mb-[200px]`}
+	${tw`relative flex flex-col items-center text-center py-16 z-10 mb-[120px]`}
 	@media (max-width: 1440px) {
-		${tw`top-[18px]`}
+		${tw`top-[18px] mb-0`}
 	}
 `;
 
 const TitleContainer = styled.div`
 	${tw`mb-12 w-4/5 text-left`}
 	@media (max-width: 1440px) {
-		${tw`w-[1100px]`}
+		${tw`w-[1140px] mb-[40px]`}
 	}
 `;
 
 const SectionLabel = styled.h4`
 	${tw`text-[#FF64AE] text-[22px] font-semibold tracking-[0.01rem] mb-2`}
 	@media (max-width: 1440px) {
-		${tw`text-[16px]`}
+		${tw`text-[16px] mb-[10px]`}
 	}
 `;
 
@@ -43,23 +44,23 @@ const SectionContent = styled.div`
 `;
 
 const SectionTitle = styled.h2`
-	${tw`text-[#091156] text-[44px] font-semibold`}
+	${tw`text-[#091156] text-[44px] w-[120%] font-semibold`}
 	@media (max-width: 1440px) {
-		${tw`text-[36px]`}
+		${tw`text-[36px] leading-[44.6px]`}
 	}
 `;
 
 const SectionDesc = styled.p`
-	${tw`text-[#8B8B8B] text-[18px] leading-[28px]`}
+	${tw`relative left-[150px] text-[#8B8B8B] text-[22px] w-[80%] leading-[28px]`}
 	@media (max-width: 1440px) {
-		${tw`text-[16px]`}
+		${tw`text-[16px] left-[127px] -top-[1px] leading-[24px] tracking-[0.1rem]`}
 	}
 `;
 
 const GalleryGrid = styled.div`
-	${tw`grid grid-cols-3 w-[80%] h-auto gap-6 mb-8`}
+	${tw`grid grid-cols-3 w-[80%] h-auto gap-[40px] mb-8`}
 	@media (max-width: 1440px) {
-		${tw`w-[1140px] h-[706px]`}
+		${tw`w-[1140px] h-[706px] gap-x-[36px] gap-y-[38px]`}
 	}
 	@media (max-width: 1024px) {
 		${tw`grid-cols-2`}
@@ -70,7 +71,7 @@ const GalleryGrid = styled.div`
 `;
 
 const GalleryImage = styled.div`
-	${tw`overflow-hidden rounded-[12px]`}
+	${tw`overflow-hidden rounded-[20px]`}
 	img {
 		${tw`w-full h-full object-cover`}
 	}
@@ -80,19 +81,16 @@ const GalleryImage = styled.div`
 `;
 
 const FooterText = styled.p`
-	${tw`text-[#8B8B8B] text-[16px] leading-[24px] text-left w-4/5 mx-auto`}
+	${tw`relative top-[40px] text-[#8B8B8B] text-[22px] leading-[34px] text-left w-[80%] pr-[620px]`}
 	@media (max-width: 1440px) {
-		${tw`w-[1100px]`}
+		${tw`top-[35px] text-[16px] tracking-[0.1rem] leading-[24px] w-[79%] pr-[460px]`}
 	}
 `;
 
-const HighlightText = styled.a`
+const HighlightText = styled(Link)`
 	${tw`text-[#091156] font-semibold cursor-pointer`}
 	&:hover {
 		${tw`underline`}
-	}
-	@media (max-width: 1440px) {
-		${tw``}
 	}
 `;
 
@@ -105,7 +103,7 @@ function Hero() {
 				<SectionContent>
 					<SectionTitle>Check out the collection pictures from our clinic</SectionTitle>
 					<SectionDesc>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis
 					</SectionDesc>
 				</SectionContent>
 			</TitleContainer>
@@ -143,7 +141,7 @@ function Hero() {
 
 			{/* Footer Text */}
 			<FooterText>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim, <HighlightText href="/team">our teams.</HighlightText>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim, <HighlightText to="/team">our teams.</HighlightText>
 			</FooterText>
 		</HeroSection>
 	);

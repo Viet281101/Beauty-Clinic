@@ -4,7 +4,7 @@ import handshakeIcon from "../../assets/icons/review/handshake.svg";
 import brotherhoodIcon from "../../assets/icons/review/brotherhood.svg";
 import earthIcon from "../../assets/icons/review/earth.svg";
 import doctorIcon from "../../assets/icons/review/doctor.svg";
-import backgroundImage from "../../assets/images/home2_why_bg.svg";
+import backgroundImage from "../../assets/images/home2/why_bg.svg";
 
 const WhySection = styled.section`
 	${tw`relative top-[580px] w-full py-[360px] px-[10%] text-white`}

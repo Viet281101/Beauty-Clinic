@@ -45,7 +45,7 @@ function Home1() {
 			</HeaderHeroContainer>
 			<Services />
 			<About />
-			<Professional />
+			<Professional isTeamPage={false} />
 			<Contact />
 			<Footer />
 			<ToTopBtn />

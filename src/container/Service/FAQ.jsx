@@ -28,7 +28,7 @@ const FAQItem = styled.div`
 	${tw`py-4 cursor-pointer`}
 	@media (max-width: 1440px) {
 		${tw`py-[1px]`}
-		:last-child, :nth-child(2) { ${tw`py-0`} }
+		:last-child { ${tw`py-0`} }
 	}
 `;
 

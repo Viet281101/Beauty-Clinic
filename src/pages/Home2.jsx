@@ -9,7 +9,7 @@ import Why from "../container/Home2/Why";
 import Blog from "../container/Home2/Blog";
 import RequestCall from "../container/Home2/RequestCall";
 import ToTopBtn from "../components/ToTopBtn";
-import heroBg from "../assets/images/home2_hero_bg.svg";
+import heroBg from "../assets/images/home2/hero_bg.svg";
 
 const HomeContainer = styled.div`
 	${tw`relative`}
