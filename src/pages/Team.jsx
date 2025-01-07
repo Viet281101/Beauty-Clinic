@@ -3,6 +3,8 @@ import tw, { styled } from "twin.macro";
 import Header from "../layouts/Header";
 import Professional from "../components/Professional";
 import Assistance from "../container/Team/Assistance";
+import Slogan from "../container/Team/Slogan";
+import Testimonials from "../container/Team/Testimonials";
 import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
 
@@ -28,6 +30,8 @@ function TeamPage() {
 			</HeaderHeroContainer>
 			<Professional isTeamPage={true} />
 			<Assistance />
+			<Slogan />
+			<Testimonials />
 			<Footer />
 			<ToTopBtn />
 		</TeamContainer>
