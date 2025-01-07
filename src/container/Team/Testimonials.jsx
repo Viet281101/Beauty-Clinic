@@ -11,14 +11,17 @@ import waveLine1 from "../../assets/background/wave_line/team1.svg";
 import waveLine2 from "../../assets/background/wave_line/team2.svg";
 
 const TestimonialsSection = styled.section`
-	${tw`relative w-full py-16 text-center mb-[300px] overflow-hidden`}
+	${tw`relative top-[40px] w-full py-16 text-center mb-[160px] overflow-hidden`}
 	@media (max-width: 1440px) {
-		${tw`-top-[140px]`}
+		${tw`-top-[140px] mb-[120px]`}
 	}
 `;
 
 const WaveLineTop = styled.img`
 	${tw`absolute top-0 left-0 w-[300px] h-auto z-0`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 	@media (max-width: 768px) {
 		${tw`w-[200px]`}
 	}
@@ -26,35 +29,53 @@ const WaveLineTop = styled.img`
 
 const WaveLineBottom = styled.img`
 	${tw`absolute bottom-0 right-0 w-[300px] h-auto z-0`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 	@media (max-width: 768px) {
 		${tw`w-[200px]`}
 	}
 `;
 
 const TitleContainer = styled.div`
-	${tw`mb-12`}
+	${tw`mb-[80px]`}
+	@media (max-width: 1440px) {
+		${tw`mb-[64px]`}
+	}
 `;
 
 const SectionLabel = styled.h4`
 	${tw`text-[#FF64AE] text-[22px] font-semibold mb-2`}
+	@media (max-width: 1440px) {
+		${tw`text-[16px] mb-[5px]`}
+	}
 `;
 
 const SectionTitle = styled.h2`
 	${tw`text-[#091156] text-[44px] font-semibold mb-4`}
+	@media (max-width: 1440px) {
+		${tw`text-[36px] mb-[20px]`}
+	}
 	@media (max-width: 768px) {
-		${tw`text-[36px]`}
+		${tw``}
 	}
 `;
 
 const SectionDesc = styled.p`
-	${tw`text-[#8B8B8B] text-[18px] mb-8`}
+	${tw`relative text-[#8B8B8B] text-[18px] tracking-[0.1rem] mb-8`}
+	@media (max-width: 1440px) {
+		${tw`text-[16px] left-[1px]`}
+	}
 	@media (max-width: 768px) {
-		${tw`text-[16px]`}
+		${tw``}
 	}
 `;
 
 const TestimonialsWrapper = styled.div`
 	${tw`relative flex items-center justify-center`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 const ArrowButton = styled.button`
@@ -62,37 +83,59 @@ const ArrowButton = styled.button`
 	&:hover {
 		${tw`bg-gray-100`}
 	}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 const ArrowLeft = styled(ArrowButton)`
-	${tw`left-0`}
+	${tw`left-[400px]`}
+	@media (max-width: 1440px) {
+		${tw`left-[300px]`}
+	}
 `;
 
 const ArrowRight = styled(ArrowButton)`
-	${tw`right-0`}
+	${tw`right-[400px]`}
+	@media (max-width: 1440px) {
+		${tw`right-[300px]`}
+	}
 `;
 
 const TestimonialContent = styled.div`
 	${tw`flex flex-col items-center text-center max-w-[800px] px-4`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 const AvatarContainer = styled.div`
 	${tw`w-[100px] h-[100px] rounded-full overflow-hidden mb-4`}
-	img {
-		${tw`w-full h-full object-cover`}
+	img { ${tw`w-full h-full object-cover`} }
+	@media (max-width: 1440px) {
+		${tw`w-[73px] h-[73px]`}
 	}
 `;
 
 const TestimonialText = styled.p`
 	${tw`text-[#8B8B8B] text-[16px] leading-[1.8] mb-4`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 const StarsContainer = styled.div`
 	${tw`flex justify-center gap-1`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 const Star = styled.img`
 	${tw`w-[24px] h-[24px]`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 function Testimonials() {
