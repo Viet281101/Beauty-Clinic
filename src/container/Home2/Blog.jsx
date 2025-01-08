@@ -52,7 +52,8 @@ const BlogBoxes = styled.div`
 `;
 
 const BlogBox = styled.div`
-	${tw`bg-white border border-gray-200 rounded-[24px] w-[460px] h-[580px] shadow-md overflow-hidden`}
+	${tw`bg-white border border-gray-200 rounded-[24px] w-[460px] h-[580px] overflow-hidden`}
+	box-shadow: 0px 25px 50px 5px #F6F7FF;
 	&:hover {
 		${tw`[box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)]`}
 		transition: all 0.3s ease;

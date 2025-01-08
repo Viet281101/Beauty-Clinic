@@ -2,12 +2,18 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 
 const PaginationWrapper = styled.div`
-	${tw`flex justify-center mt-8`}
+	${tw`relative flex justify-center gap-[20px] z-20 mt-8`}
+	@media (max-width: 1440px) {
+		${tw``}
+	}
 `;
 
 const PageButton = styled.button`
-	${tw`mx-1 px-3 py-2 rounded-full bg-gray-200 hover:bg-[#FF64AE] text-[#091156]`}
-	${({ isActive }) => isActive && tw`bg-[#FF64AE] text-white`}
+	${tw`w-[50px] h-[50px] rounded-full bg-transparent hover:bg-[#091156] text-[20px] font-semibold text-[#C7C7C7]`}
+	${({ isActive }) => isActive && tw`bg-[#091156] text-white`}
+	@media (max-width: 1440px) {
+		${tw`w-[35px] h-[35px] text-[16px]`}
+	}
 `;
 
 function Pagination({ totalArticles, articlesPerPage, currentPage, paginate }) {
