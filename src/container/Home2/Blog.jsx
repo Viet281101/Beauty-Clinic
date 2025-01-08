@@ -1,8 +1,8 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import blogImage1 from "../../assets/images/blog_box_1.jpeg";
-import blogImage2 from "../../assets/images/blog_box_2.jpeg";
-import blogImage3 from "../../assets/images/blog_box_3.jpeg";
+import blogImage1 from "../../assets/images/blog/article_1.jpeg";
+import blogImage2 from "../../assets/images/blog/article_2.jpeg";
+import blogImage3 from "../../assets/images/blog/article_3.jpeg";
 import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
 import waveLineBlog from "../../assets/background/wave_line/home2_blog.svg";
 

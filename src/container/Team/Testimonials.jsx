@@ -11,29 +11,33 @@ import waveLine1 from "../../assets/background/wave_line/team1.svg";
 import waveLine2 from "../../assets/background/wave_line/team2.svg";
 
 const TestimonialsSection = styled.section`
-	${tw`relative top-[40px] w-full py-16 text-center mb-[160px] overflow-hidden`}
+	${tw`relative top-[40px] w-full py-16 text-center mb-[120px]`}
 	@media (max-width: 1440px) {
-		${tw`-top-[140px] mb-[120px]`}
+		${tw`-top-[140px] mb-[68px]`}
 	}
 `;
 
+const WaveLineContainer = styled.div`
+	${tw`absolute top-0 left-0 w-full h-full pointer-events-none z-10`}
+`;
+
 const WaveLineTop = styled.img`
-	${tw`absolute top-0 left-0 w-[300px] h-auto z-0`}
+	${tw`absolute -top-[40px] -left-[2px] w-[600px] h-auto`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`-top-[50px] -left-[2px] w-[424px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-[200px]`}
+		${tw`w-[300px]`}
 	}
 `;
 
 const WaveLineBottom = styled.img`
-	${tw`absolute bottom-0 right-0 w-[300px] h-auto z-0`}
+	${tw`absolute -bottom-[86px] right-[2px] w-[640px] h-auto`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`-bottom-[55px] right-0 w-[552px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-[200px]`}
+		${tw`w-[300px]`}
 	}
 `;
 
@@ -79,26 +83,24 @@ const TestimonialsWrapper = styled.div`
 `;
 
 const ArrowButton = styled.button`
-	${tw`absolute z-20 p-2 rounded-full bg-transparent cursor-pointer`}
-	&:hover {
-		${tw`bg-gray-100`}
-	}
+	${tw`absolute top-[126px] z-20 p-2 rounded-full bg-transparent cursor-pointer`}
+	&:hover { ${tw`bg-gray-100`} }
 	@media (max-width: 1440px) {
 		${tw``}
 	}
 `;
 
 const ArrowLeft = styled(ArrowButton)`
-	${tw`left-[400px]`}
+	${tw`left-[440px]`}
 	@media (max-width: 1440px) {
-		${tw`left-[300px]`}
+		${tw`left-[324px]`}
 	}
 `;
 
 const ArrowRight = styled(ArrowButton)`
-	${tw`right-[400px]`}
+	${tw`right-[440px]`}
 	@media (max-width: 1440px) {
-		${tw`right-[300px]`}
+		${tw`right-[324px]`}
 	}
 `;
 
@@ -110,24 +112,24 @@ const TestimonialContent = styled.div`
 `;
 
 const AvatarContainer = styled.div`
-	${tw`w-[100px] h-[100px] rounded-full overflow-hidden mb-4`}
+	${tw`w-[100px] h-[100px] rounded-full overflow-hidden mb-[50px]`}
 	img { ${tw`w-full h-full object-cover`} }
 	@media (max-width: 1440px) {
-		${tw`w-[73px] h-[73px]`}
+		${tw`w-[73px] h-[73px] mb-[44px]`}
 	}
 `;
 
 const TestimonialText = styled.p`
-	${tw`text-[#8B8B8B] text-[16px] leading-[1.8] mb-4`}
+	${tw`relative text-[#8B8B8B] text-[18px] tracking-[0.1rem] leading-[25px] mb-[40px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`left-[1px] text-[14px] leading-[21px] tracking-[0.088rem] px-[110px] mb-[36px]`}
 	}
 `;
 
 const StarsContainer = styled.div`
-	${tw`flex justify-center gap-1`}
+	${tw`flex justify-center gap-[14px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`gap-[12px]`}
 	}
 `;
 
@@ -167,8 +169,10 @@ function Testimonials() {
 
 	return (
 		<TestimonialsSection>
-			<WaveLineTop src={waveLine1} alt="Wave Line Top" />
-			<WaveLineBottom src={waveLine2} alt="Wave Line Bottom" />
+			<WaveLineContainer>
+				<WaveLineTop src={waveLine1} alt="Wave Line Top" />
+				<WaveLineBottom src={waveLine2} alt="Wave Line Bottom" />
+			</WaveLineContainer>
 			<TitleContainer>
 				<SectionLabel>Our Testimonials</SectionLabel>
 				<SectionTitle>What our customer says</SectionTitle>
