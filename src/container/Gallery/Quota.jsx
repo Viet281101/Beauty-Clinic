@@ -53,7 +53,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const AppointmentButton = styled.button`
-	${tw`bg-[#FF64AE] text-white text-[20px] tracking-[0.1rem] font-medium py-[24px] px-[80px] rounded-full shadow-lg transition-transform duration-200 ease-in-out`}
+	${tw`bg-[#FF64AE] text-white text-[20px] tracking-[0.1rem] font-medium py-[24px] px-[80px] rounded-full transition-transform duration-200 ease-in-out`}
+	box-shadow: 0px 17px 22px 0px #FFEDF6;
 	&:hover { ${tw`transform scale-105`} }
 	@media (max-width: 1440px) {
 		${tw`text-[16px] py-[17px] px-[52px]`}

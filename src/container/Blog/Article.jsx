@@ -64,7 +64,7 @@ const articles = [
 const ArticleSection = styled.section`
 	${tw`relative z-10`}
 	@media (max-width: 1440px) {
-		${tw`left-[4px]`}
+		${tw`left-[6px]`}
 	}
 `;
 

@@ -19,8 +19,11 @@ const HeaderHeroContainer = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-	${tw`relative -top-[98px] w-4/5 mx-auto grid mt-0 mb-[400px]`}
-	grid-template-columns: 70% 30%;
+	${tw`relative -top-[98px] w-4/5 mx-auto grid mt-0 mb-[180px]`}
+	grid-template-columns: 65% 35%;
+	@media (max-width: 1440px) {
+		${tw`mb-[139px]`}
+	}
 	@media (max-width: 1024px) {
 		grid-template-columns: 1fr;
 	}

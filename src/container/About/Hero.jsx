@@ -46,7 +46,8 @@ const SectionDesc = styled.p`
 `;
 
 const VideoContainer = styled.div`
-	${tw`relative w-full mt-8 overflow-hidden rounded-[48px] shadow-lg`}
+	${tw`relative w-full mt-8 overflow-hidden rounded-[48px]`}
+	box-shadow: 0px 25px 50px 25px #F6F7FF;
 	@media (max-width: 1440px) {
 		${tw`max-w-[1140px] max-h-[542px]`}
 	}

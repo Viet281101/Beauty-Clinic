@@ -56,7 +56,8 @@ const Description = styled.p`
 `;
 
 const Button = styled.button`
-	${tw`rounded-full cursor-pointer border-none w-[260px] h-20 text-white tracking-[0.12rem] bg-[#FF64AE] shadow-md`}
+	${tw`rounded-full cursor-pointer border-none w-[260px] h-20 text-white tracking-[0.12rem] bg-[#FF64AE]`}
+	box-shadow: 0px 17px 22px 0px #FFEDF6;
 	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 	&:hover {
 		${tw`bg-[#E05497] shadow-btn-pink`}

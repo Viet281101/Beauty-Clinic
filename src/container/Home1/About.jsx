@@ -93,7 +93,8 @@ const Actions = styled.div`
 `;
 
 const Button = styled.button`
-	${tw`text-[21px] w-[264px] h-[80px] bg-[#FF64AE] text-white font-semibold rounded-full border-none shadow-md hover:bg-[#E05497]`}
+	${tw`text-[21px] w-[264px] h-[80px] bg-[#FF64AE] text-white font-semibold rounded-full border-none hover:bg-[#E05497]`}
+	box-shadow: 0px 17px 22px 0px #FFEDF6;
 	transition: all 0.3s ease;
 	@media (max-width: 1440px) {
 		${tw`w-[200px] h-[59px] text-[16px] tracking-[0.1rem]`}
@@ -137,7 +138,8 @@ const ImageWrapper = styled.div`
 		${tw`top-[22px] -left-1.5`}
 	}
 	img {
-		${tw`object-cover w-[90%] max-w-[650px] max-h-[470px] rounded-[60px] shadow-lg`}
+		${tw`object-cover w-[90%] max-w-[650px] max-h-[470px] rounded-[60px]`}
+		box-shadow: 0px 0px 50px 25px #FFFFFF;
 		@media (max-width: 1440px) {
 			${tw`max-w-[474px] max-h-[350px] rounded-[48px]`}
 		}
