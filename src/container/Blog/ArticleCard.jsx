@@ -1,30 +1,30 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import folderIC from "../assets/icons/folder.svg";
-import caretRight from "../assets/icons/caret_right.svg";
+import folderIC from "../../assets/icons/folder.svg";
+import caretRight from "../../assets/icons/caret_right.svg";
 
-import article1 from "../assets/images/blog/article_1.jpeg";
-import article2 from "../assets/images/blog/article_2.jpeg";
-import article3 from "../assets/images/blog/article_3.jpeg";
-import article4 from "../assets/images/blog/article_4.jpeg";
-import article5 from "../assets/images/blog/article_5.jpeg";
-import article6 from "../assets/images/blog/article_6.jpeg";
-import article7 from "../assets/images/blog/article_1.jpeg";
-import article8 from "../assets/images/blog/article_2.jpeg";
-import article9 from "../assets/images/blog/article_3.jpeg";
+import article1 from "../../assets/images/blog/article_1.jpeg";
+import article2 from "../../assets/images/blog/article_2.jpeg";
+import article3 from "../../assets/images/blog/article_3.jpeg";
+import article4 from "../../assets/images/blog/article_4.jpeg";
+import article5 from "../../assets/images/blog/article_5.jpeg";
+import article6 from "../../assets/images/blog/article_6.jpeg";
+import article7 from "../../assets/images/blog/article_1.jpeg";
+import article8 from "../../assets/images/blog/article_2.jpeg";
+import article9 from "../../assets/images/blog/article_3.jpeg";
 
 const Card = styled.div`
-	${tw`bg-white shadow-lg rounded-[20px] overflow-hidden`}
+	${tw`bg-white rounded-[50px] overflow-hidden mb-[60px]`}
 	box-shadow: 10px 13px 80px 14px #F2F4FF;
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`w-[730px]`}
 	}
 `;
 
 const CardImage = styled.img`
 	${tw`w-full h-[200px] object-cover`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`h-[453px]`}
 	}
 `;
 

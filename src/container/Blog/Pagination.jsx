@@ -26,13 +26,7 @@ function Pagination({ totalArticles, articlesPerPage, currentPage, paginate }) {
 	return (
 		<PaginationWrapper>
 			{pageNumbers.map((number) => (
-				<PageButton
-					key={number}
-					onClick={() => paginate(number)}
-					isActive={currentPage === number}
-				>
-					{number}
-				</PageButton>
+				<PageButton key={number} onClick={() => paginate(number)} isActive={currentPage === number}>{number}</PageButton>
 			))}
 		</PaginationWrapper>
 	);

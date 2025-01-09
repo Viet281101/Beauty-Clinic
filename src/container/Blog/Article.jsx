@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import tw, { styled } from "twin.macro";
-import ArticleCard from "../../components/ArticleCard";
-import Pagination from "../../components/Pagination";
+import ArticleCard from "./ArticleCard";
+import Pagination from "./Pagination";
 
 const articles = [
 	{
@@ -62,14 +62,14 @@ const articles = [
 ];
 
 const ArticleSection = styled.section`
-	${tw`relative w-4/5 z-10 mb-[430px]`}
+	${tw`relative z-10`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`left-[4px]`}
 	}
 `;
 
 const ArticleGrid = styled.div`
-	${tw`grid grid-cols-1 gap-8`}
+	${tw`grid grid-cols-1 gap-8 pr-[80px]`}
 	@media (max-width: 1440px) {
 		${tw``}
 	}

@@ -19,15 +19,19 @@ const HeaderHeroContainer = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-	${tw`w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 mb-16`}
+	${tw`relative -top-[98px] w-4/5 mx-auto grid mt-0 mb-[400px]`}
+	grid-template-columns: 70% 30%;
+	@media (max-width: 1024px) {
+		grid-template-columns: 1fr;
+	}
 `;
 
 const ArticleColumn = styled.div`
-	${tw`lg:col-span-2`}
+	${tw``}
 `;
 
 const SidebarColumn = styled.div`
-	${tw`lg:col-span-1`}
+	${tw``}
 `;
 
 function BlogPage() {
