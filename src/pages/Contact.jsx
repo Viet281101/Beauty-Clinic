@@ -1,7 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../layouts/Header";
-import Contact from "../components/Contact";
 
 const ContactContainer = styled.div`
 	${tw`relative`}
@@ -19,11 +18,10 @@ const HeaderHeroContainer = styled.div`
 
 function ContactPage() {
 	return (
-		<ContactContainer>
+		<ContactContainer className="contact-page">
 			<HeaderHeroContainer>
 				<Header />
 			</HeaderHeroContainer>
-			<Contact />
 		</ContactContainer>
 	);
 };

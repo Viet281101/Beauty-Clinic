@@ -7,7 +7,7 @@ import SlideButton from "../components/SlideBtn";
 import Services from "../container/Home1/Services";
 import About from "../container/Home1/About";
 import Professional from "../components/Professional";
-import Contact from "../components/Contact";
+import Contact from "../container/Home1/Contact";
 import ToTopBtn from "../components/ToTopBtn";
 import heroBg from "../assets/background/bubbles/home1_hero.svg";
 import bubbleBg from "../assets/background/bubbles/home1_contact.svg";
