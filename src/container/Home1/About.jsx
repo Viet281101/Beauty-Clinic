@@ -5,7 +5,7 @@ import playButtonIcon from "../../assets/icons/play_button.svg";
 import aboutImage from "../../assets/images/about_img.jpeg";
 
 const AboutSection = styled.section`
-	${tw`relative -top-[28px] flex items-center justify-between py-[150px] px-[10%] z-0`}
+	${tw`relative -top-[28px] flex items-center justify-between py-[150px] px-[10%] z-10`}
 	background-image: url(${bubbleBackground});
 	background-repeat: no-repeat;
 	background-position: top right;

@@ -102,7 +102,7 @@ function Professional({ isTeamPage = false }) {
 	}, []);
 
 	return (
-		<section className="professional relative text-center -top-16" id="professional" ref={professionalRef} >
+		<section className="professional relative text-center -top-16 z-10" id="professional" ref={professionalRef} >
 			<div className="professional-title relative">
 				<p className="professional-subtitle text-[22px] tracking-widest font-semibold">
 					{isTeamPage ? "Our Team" : "Professional Teams"}

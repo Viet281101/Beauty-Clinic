@@ -1,14 +1,9 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import bubbleBackground from "../../assets/background/bubbles/home1_contact.svg";
-import contactFrame from "../../assets/background/home1_contact.svg";
+import contactFrame from "../assets/background/home1_contact.svg";
 
 const ContactSection = styled.section`
 	${tw`relative -top-[5px] py-[150px] px-[10%]`}
-	background-image: url(${bubbleBackground});
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-size: 80%;
 	@media (max-width: 1440px) {
 		${tw`py-[120px] px-[5%] -top-[322px]`}
 	}
@@ -22,10 +17,10 @@ const ContactSection = styled.section`
 		${tw`-top-[20px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`py-[80px] px-[5%] top-[100px] bg-cover`}
+		${tw`py-[80px] px-[5%] top-[100px]`}
 	}
 	@media (max-width: 480px) {
-		${tw`py-[50px] px-[2%] top-[200px] bg-cover`}
+		${tw`py-[50px] px-[2%] top-[200px]`}
 	}
 `;
 

@@ -24,7 +24,7 @@ const serviceData = [
 ];
 
 const ServicesSection = styled.section`
-	${tw`relative text-center top-[304px] py-[100px] px-0`}
+	${tw`relative text-center top-[304px] z-20 py-[100px] px-0`}
 	@media (max-width: 1440px) {
 		${tw`top-[142px]`}
 	}

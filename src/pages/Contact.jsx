@@ -1,6 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../layouts/Header";
+import Contact from "../components/Contact";
 
 const ContactContainer = styled.div`
 	${tw`relative`}
@@ -11,6 +12,9 @@ const ContactContainer = styled.div`
 
 const HeaderHeroContainer = styled.div`
 	${tw`relative`}
+	@media (max-width: 1440px) {
+		${tw`mb-[200px]`}
+	}
 `;
 
 function ContactPage() {
@@ -19,6 +23,7 @@ function ContactPage() {
 			<HeaderHeroContainer>
 				<Header />
 			</HeaderHeroContainer>
+			<Contact />
 		</ContactContainer>
 	);
 };
