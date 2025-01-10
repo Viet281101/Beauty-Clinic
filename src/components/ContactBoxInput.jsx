@@ -18,7 +18,7 @@ const ContactInput = styled.form`
 const FormRow = styled.div`
 	${tw`flex gap-4`}
 	.first-name, .last-name {
-		${tw`flex-1 py-[15px] px-5 rounded-[14px] border border-[#E0E3EB] text-[16px] text-[#000]`}
+		${tw`flex-1 py-[15px] px-5 rounded-[14px] border border-[#D9DDFE] text-[16px] text-[#000]`}
 	}
 	@media (max-width: 1440px) {
 		.first-name, .last-name {
@@ -44,7 +44,7 @@ const FormRow = styled.div`
 `;
 
 const Input = styled.input`
-	${tw`relative h-16 w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#000]`}
+	${tw`relative h-16 w-full px-[20px] py-[15px] border border-[#D9DDFE] rounded-[14px] text-[16px] text-[#000]`}
 	&::placeholder {
 		${tw`text-[#C5C5C5] tracking-[0.1rem]`}
 	}
@@ -63,7 +63,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-	${tw`relative w-full px-[20px] py-[15px] border border-[#E0E3EB] rounded-[14px] text-[16px] text-[#000] resize-none h-64`}
+	${tw`relative w-full px-[20px] py-[15px] border border-[#D9DDFE] rounded-[14px] text-[16px] text-[#000] resize-none h-64`}
 	&::placeholder {
 		${tw`text-[#C5C5C5] tracking-[0.1rem]`}
 	}

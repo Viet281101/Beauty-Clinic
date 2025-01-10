@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
-import ContactInputBox from "../../components/ContactInputBox";
-import contactFrame from "../../assets/background/home1_contact.svg";
+import ContactInputBox from "../../components/ContactBoxInput";
+import ContactIMG from "../../components/ContactImg";
 
 const ContactSection = styled.section`
 	${tw`relative -top-[5px] py-[150px] px-[10%]`}
@@ -35,25 +35,6 @@ const Container = styled.div`
 	}
 	@media (max-width: 768px) {
 		${tw`px-[10%] gap-10`}
-	}
-`;
-
-const ContactImage = styled.div`
-	${tw`relative w-[740px] h-auto`}
-	img {
-		${tw`w-full h-auto`}
-	}
-	@media (max-width: 1440px) {
-		${tw`w-[520px] top-[156px] left-[78px]`}
-	}
-	@media (max-width: 1280px) {
-		${tw`w-[600px] left-0`}
-	}
-	@media (max-width: 768px) {
-		${tw`w-[90%] -left-[20px] min-w-[360Px] mx-auto`}
-	}
-	@media (max-width: 480px) {
-		${tw`w-[80%] mx-auto`}
 	}
 `;
 
@@ -124,9 +105,7 @@ function Contact() {
 		<ContactSection id="contact">
 			<Container>
 				{/* Contact Image */}
-				<ContactImage>
-					<img src={contactFrame} alt="Contact Frame" />
-				</ContactImage>
+				<ContactIMG/>
 
 				{/* Contact Form */}
 				<FormContainer>
