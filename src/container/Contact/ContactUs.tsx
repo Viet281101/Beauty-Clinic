@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import ContactImg from "../../components/ContactImg";
 import ContactBoxInput from "../../components/ContactBoxInput";
 
@@ -26,7 +27,7 @@ const TitleAndDescription = styled.div`
 const TitleContainer = styled.div`
 	${tw`relative flex flex-col gap-2`}
 	@media (max-width: 1440px) {
-		${tw`top-[2px] right-[30px]  gap-[9px]`}
+		${tw`top-[2px] right-[30px] gap-[9px]`}
 	}
 `;
 
@@ -76,7 +77,7 @@ const FormContainer = styled.div`
 	}
 `;
 
-function ContactUs() {
+const ContactUs: React.FC = () => {
 	return (
 		<ContactUsSection>
 			{/* Title and Description */}
@@ -94,7 +95,7 @@ function ContactUs() {
 			<ContentContainer>
 				<ContactImg />
 				<FormContainer>
-					<ContactBoxInput/>
+					<ContactBoxInput />
 				</FormContainer>
 			</ContentContainer>
 		</ContactUsSection>

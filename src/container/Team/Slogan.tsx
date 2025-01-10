@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import sloganBg from "../../assets/images/team/slogan.jpeg";
 
 const SloganSection = styled.section`
@@ -35,7 +36,7 @@ const SectionDesc = styled.p`
 	}
 `;
 
-function Slogan() {
+const Slogan: React.FC = () => {
 	return (
 		<SloganSection>
 			<ContentContainer>

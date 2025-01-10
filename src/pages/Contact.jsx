@@ -23,7 +23,7 @@ const HeaderHeroContainer = styled.div`
 `;
 
 const FooterContainer = styled.div`
-	${tw`relative`}
+	${tw`relative top-0`}
 	@media (max-width: 1440px) {
 		${tw`top-[110px]`}
 	}
