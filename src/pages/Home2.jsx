@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 import Header from "../container/Home2/Header";
 import Footer from "../layouts/Footer";
-import Hero2 from "../container/Home2/Hero";
-import About2 from "../container/Home2/About";
-import Services2 from "../container/Home2/Services";
+import Hero from "../container/Home2/Hero";
+import About from "../container/Home2/About";
+import Services from "../container/Home2/Services";
 import Why from "../container/Home2/Why";
 import Blog from "../container/Home2/Blog";
 import RequestCall from "../container/Home2/RequestCall";
@@ -49,10 +49,10 @@ function Home2() {
 		<HomeContainer>
 			<HeaderHeroContainer>
 				<Header />
-				<Hero2 />
+				<Hero />
 			</HeaderHeroContainer>
-			<About2 />
-			<Services2 />
+			<About />
+			<Services />
 			<Why />
 			<Blog />
 			<RequestCall />

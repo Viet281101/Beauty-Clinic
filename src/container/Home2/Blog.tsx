@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import blogImage1 from "../../assets/images/blog/article_1.jpeg";
 import blogImage2 from "../../assets/images/blog/article_2.jpeg";
 import blogImage3 from "../../assets/images/blog/article_3.jpeg";
@@ -114,7 +115,7 @@ const WaveLine = styled.img`
 	}
 `;
 
-function Blog() {
+const Blog: React.FC = () => {
 	return (
 		<BlogSection>
 			{/* Title & Description */}

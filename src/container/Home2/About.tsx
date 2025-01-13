@@ -75,7 +75,7 @@ const LearnMoreButton = styled.button`
 	}
 `;
 
-const About2: React.FC = () => {
+const About: React.FC = () => {
 	return (
 		<AboutSection>
 			{/* Image */}
@@ -94,4 +94,4 @@ const About2: React.FC = () => {
 	);
 };
 
-export default About2;
+export default About;

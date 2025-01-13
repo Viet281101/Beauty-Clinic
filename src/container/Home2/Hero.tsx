@@ -98,7 +98,7 @@ const TourText = styled.span`
 	}
 `;
 
-const Hero2: React.FC = () => {
+const Hero: React.FC = () => {
 	return (
 		<HeroSection>
 			{/* Left Content */}
@@ -119,4 +119,4 @@ const Hero2: React.FC = () => {
 	);
 };
 
-export default Hero2;
+export default Hero;
