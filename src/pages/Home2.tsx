@@ -29,7 +29,7 @@ const Home2: React.FC = () => {
 		const previousBackgroundSize = document.body.style.backgroundSize;
 
 		const updateBackground = () => {
-			document.body.style.backgroundSize = (window.innerWidth) < 1440 ? "1440px auto" : "100% auto";
+			document.body.style.backgroundSize = (window.innerWidth < 1440) ? "1440px auto" : "100% auto";
 			document.body.style.backgroundRepeat = "no-repeat";
 			document.body.style.backgroundPosition = "top center";
 		};

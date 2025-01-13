@@ -8,6 +8,7 @@ import GalleryPage from "./pages/Gallery";
 import TeamPage from "./pages/Team";
 import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
+import ProfilePage from "./pages/Profile";
 
 interface LayoutProps {
 	children: ReactNode;
@@ -29,6 +30,7 @@ function App() {
 				<Route path="/team" element={<Layout><TeamPage /></Layout>} />
 				<Route path="/blog" element={<Layout><BlogPage /></Layout>} />
 				<Route path="/contact" element={<Layout><ContactPage /></Layout>} />
+				<Route path="/contact" element={<Layout><ProfilePage /></Layout>} />
 			</Routes>
 		</Router>
 	);
