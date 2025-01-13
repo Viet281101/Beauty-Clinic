@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import bubbleBackground from "../../assets/background/bubbles/home1_about.svg";
 import playButtonIcon from "../../assets/icons/play_button.svg";
 import aboutImage from "../../assets/images/about_img.jpeg";
@@ -155,7 +156,7 @@ const ImageWrapper = styled.div`
 	}
 `;
 
-function About() {
+const About: React.FC = () => {
 	return (
 		<AboutSection id="about">
 			<ContentWrapper>

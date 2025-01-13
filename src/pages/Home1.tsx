@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import Hero from "../container/Home1/Hero";
@@ -48,7 +49,7 @@ const BubbleBackground = styled.img`
 	@media (max-width: 310px) { ${tw`top-[5240px]`} }
 `;
 
-function Home1() {
+const Home1: React.FC = () => {
 	useEffect(() => {
 		const previousBackground = document.body.style.backgroundImage;
 

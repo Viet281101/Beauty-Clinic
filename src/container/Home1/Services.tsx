@@ -1,25 +1,33 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import art1 from "../../assets/services/art_1.svg";
 import art2 from "../../assets/services/art_2.svg";
 import art3 from "../../assets/services/art_3.svg";
 
-const serviceData = [
+interface Service {
+	id: number;
+	icon: string;
+	title: string;
+	description: string;
+}
+
+const serviceData: Service[] = [
 	{
 		id: 1,
 		icon: art1,
 		title: "Beauty consultation",
-		description:"Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
+		description: "Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
 	}, {
 		id: 2,
 		icon: art2,
 		title: "Skin treatments",
-		description:"Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
+		description: "Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
 	}, {
 		id: 3,
 		icon: art3,
 		title: "Beauty product",
-		description:"Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
+		description: "Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
 	},
 ];
 
@@ -109,7 +117,7 @@ const BoxesWrapper = styled.div`
 	}
 `;
 
-const ServiceBox = styled.div`
+const ServiceBox = styled.div<{ position: "left" | "mid" | "right" }>`
 	${tw`relative text-center p-[60px] max-w-[460px] bg-white rounded-[40px] transition-transform duration-300`}
 	${tw`hover:(-translate-y-4 shadow-lg)`}
 	box-shadow: 0px 25px 50px 25px #F6F7FF;
@@ -190,7 +198,7 @@ const ServiceDescription = styled.p`
 	}
 `;
 
-function Services() {
+const Services: React.FC = () => {
 	return (
 		<ServicesSection id="services">
 			<TitleWrapper>
@@ -207,7 +215,7 @@ function Services() {
 			</TitleWrapper>
 			<BoxesWrapper>
 				{serviceData.map((service) => (
-					<ServiceBox key={service.id} position={ service.id === 1 ? "left" : service.id === 3 ? "right" : "mid" } >
+					<ServiceBox key={service.id} position={service.id === 1 ? "left" : service.id === 3 ? "right" : "mid"}>
 						<ServiceIcon src={service.icon} alt={service.title} />
 						<ServiceTitle>{service.title}</ServiceTitle>
 						<ServiceDescription>{service.description}</ServiceDescription>
@@ -216,6 +224,6 @@ function Services() {
 			</BoxesWrapper>
 		</ServicesSection>
 	);
-}
+};
 
 export default Services;

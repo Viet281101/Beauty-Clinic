@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../container/Home2/Header";
 import Footer from "../layouts/Footer";
 import Hero from "../container/Home2/Hero";
@@ -22,13 +23,13 @@ const HeaderHeroContainer = styled.div`
 	${tw`relative`}
 `;
 
-function Home2() {
+const Home2: React.FC = () => {
 	useEffect(() => {
 		const previousBackground = document.body.style.backgroundImage;
 		const previousBackgroundSize = document.body.style.backgroundSize;
 
 		const updateBackground = () => {
-			document.body.style.backgroundSize = (window.innerWidth < 1440) ? "1440px auto" : "100% auto";
+			document.body.style.backgroundSize = (window.innerWidth) < 1440 ? "1440px auto" : "100% auto";
 			document.body.style.backgroundRepeat = "no-repeat";
 			document.body.style.backgroundPosition = "top center";
 		};

@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import ContactInputBox from "../../components/ContactBoxInput";
 import ContactIMG from "../../components/ContactImg";
 
@@ -100,7 +101,7 @@ const Description = styled.p`
 	}
 `;
 
-function Contact() {
+const Contact: React.FC = () => {
 	return (
 		<ContactSection id="contact">
 			<Container>

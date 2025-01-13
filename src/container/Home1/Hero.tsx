@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import heroImage from "../../assets/background/home1_hero.svg";
 
 const HeroSection = styled.section`
@@ -84,16 +85,12 @@ const ImageWrapper = styled.div`
 	}
 `;
 
-function Hero() {
+const Hero: React.FC = () => {
 	return (
 		<HeroSection id="hero">
 			<ContentWrapper>
-				<Heading>
-					Clinic & beauty <br /> consultant
-				</Heading>
-				<Description>
-					It is a long established fact that a reader will be <br /> by the readable content of a page.
-				</Description>
+				<Heading>Clinic & beauty <br /> consultant</Heading>
+				<Description>It is a long established fact that a reader will be <br /> by the readable content of a page.</Description>
 				<Button>More Details</Button>
 			</ContentWrapper>
 			<ImageWrapper>
