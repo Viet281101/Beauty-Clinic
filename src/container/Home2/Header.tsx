@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import { useAtom } from "jotai"; 
+import React, { useState } from "react";
+import { useAtom } from "jotai";
 import { currentPageAtom } from "../../state/atom";
 import { Link, useLocation } from "react-router-dom";
-import tw, { styled } from "twin.macro";
-import { createGlobalStyle } from "styled-components";
+import tw from "twin.macro";
+import styled, { createGlobalStyle } from "styled-components";
 import logo from "../../assets/images/main_logo_2.png";
 
 const GlobalStyle = createGlobalStyle`
@@ -156,7 +156,7 @@ const ContactButton = styled(Link)`
 	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
-function Header() {
+const Header: React.FC = () => {
 	const location = useLocation();
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
 	const [isMenuOpen, setMenuOpen] = useState(false);
@@ -166,11 +166,7 @@ function Header() {
 	const toggleMenu = () => {
 		setMenuOpen((prev) => {
 			const isOpen = !prev;
-			if (isOpen) {
-				document.body.classList.add("no-scroll");
-			} else {
-				document.body.classList.remove("no-scroll");
-			}
+			document.body.classList.toggle("no-scroll", isOpen);
 			return isOpen;
 		});
 	};
@@ -184,7 +180,11 @@ function Header() {
 			</Logo>
 			<NavMenu>
 				<ul>
-					<li><Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : "home"}>Home<HomePlus> + </HomePlus></Link></li>
+					<li>
+						<Link to={getHomePath()} onClick={toggleHomePage} className={location.pathname === "/" || location.pathname === "/home" ? "active" : "home"}>
+							Home<HomePlus> + </HomePlus>
+						</Link>
+					</li>
 					<li><Link to="/about" className={location.pathname === "/about" ? "active" : "about"}>About</Link></li>
 					<li><Link to="/service" className={location.pathname === "/service" ? "active" : "service"}>Service</Link></li>
 					<li><Link to="/gallery" className={location.pathname === "/gallery" ? "active" : "gallery"}>Gallery</Link></li>
