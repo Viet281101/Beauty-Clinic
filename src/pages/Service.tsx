@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import ServiceHero from "../container/Service/Hero";
 import ServiceConsultation from "../container/Service/Consultation";
@@ -32,7 +33,7 @@ const BubbleBackground = styled.img`
 	}
 `;
 
-function ServicePage() {
+const ServicePage: React.FC = () => {
 	return (
 		<ServiceContainer>
 			<BubbleBackground src={bubbleBg} alt="Service Background Bubble" />

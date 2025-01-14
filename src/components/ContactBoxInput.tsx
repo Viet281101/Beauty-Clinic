@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 
 const ContactInput = styled.form`
 	${tw`flex flex-col gap-6`}
@@ -98,7 +99,7 @@ const SubmitButton = styled.button`
 	}
 `;
 
-function ContactInputBox() {
+const ContactInputBox: React.FC = () => {
 	return (
 		<ContactInput>
 			{/* Contact Input Boxes */}
@@ -108,7 +109,7 @@ function ContactInputBox() {
 			</FormRow>
 			<Input className="email" type="email" placeholder="Email address" name="email" required />
 			<Input className="subject" type="text" placeholder="Subject message" name="subject" required />
-			<TextArea placeholder="Your inquiry here" name="message" rows="4" required />
+			<TextArea placeholder="Your inquiry here" name="message" rows={4} required />
 			<SubmitButton type="submit">Send Message</SubmitButton>
 		</ContactInput>
 	);

@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import serviceHeroImg1 from "../../assets/images/service/hero_img_1.jpeg";
 import serviceHeroImg2 from "../../assets/images/service/hero_img_2.jpeg";
 import serviceHeroImg3 from "../../assets/images/service/hero_img_3.jpeg";
@@ -95,7 +96,7 @@ const ImageItemFullWidth = styled(ImageItem)`
 	}
 `;
 
-function ServiceHero() {
+const ServiceHero: React.FC = () => {
 	return (
 		<HeroSection>
 			{/* Title & Description */}

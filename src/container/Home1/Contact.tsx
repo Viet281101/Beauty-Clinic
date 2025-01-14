@@ -7,10 +7,10 @@ import ContactIMG from "../../components/ContactImg";
 const ContactSection = styled.section`
 	${tw`relative -top-[5px] py-[150px] px-[10%]`}
 	@media (max-width: 1440px) {
-		${tw`py-[120px] px-[5%] -top-[322px]`}
+		${tw`py-[120px] px-[5%] -top-[318px] mb-[4px]`}
 	}
 	@media (max-width: 1280px) {
-		${tw`py-[100px] px-[5%] -top-[200px]`}
+		${tw`py-[100px] px-[5%] -top-[200px] mb-0`}
 	}
 	@media (max-width: 1130px) {
 		${tw`-top-[40px]`}
@@ -60,15 +60,18 @@ const FormContainer = styled.div`
 
 const TitleWrapper = styled.div`
 	${tw`text-left mb-5`}
+	@media (max-width: 1440px) {
+		${tw`mb-[19px]`}
+	}
 	@media (max-width: 768px) {
 		${tw`flex-1 text-center mb-4`}
 	}
 `;
 
 const Subtitle = styled.p`
-	${tw`font-semibold mb-3 text-[22px] text-[#FF64AE]`}
+	${tw`relative font-semibold mb-3 text-[22px] text-[#FF64AE]`}
 	@media (max-width: 1440px) {
-		${tw`text-[17px] mb-[10px] -tracking-[0.03rem]`}
+		${tw`left-[1px] text-[16px] leading-[20px] mb-[11px] tracking-[0.002em]`}
 	}
 	@media (max-width: 768px) {
 		${tw`text-[16px] mb-2`}
@@ -78,7 +81,7 @@ const Subtitle = styled.p`
 const Heading = styled.h2`
 	${tw`font-semibold mb-6 tracking-normal leading-[60px] text-[50px] text-[#091156]`}
 	@media (max-width: 1440px) {
-		${tw`text-[36px] leading-[45px] mb-[19px] -tracking-[0.005rem]`}
+		${tw`text-[36px] leading-[45px] mb-[20px] -tracking-[0.005rem]`}
 	}
 	@media (max-width: 1280px) {
 		${tw`text-[32px]`}

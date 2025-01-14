@@ -12,8 +12,23 @@ const ClientSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`top-[6px] mb-[269px]`}
 	}
+	@media (max-width: 1280px) {
+		${tw`-mb-[200px]`}
+	}
+	@media (max-width: 1200px) {
+		${tw`-mb-[300px]`}
+	}
+	@media (max-width: 1130px) {
+		${tw`top-[100px] -mb-[100px]`}
+	}
 	@media (max-width: 1024px) {
-		${tw`py-16`}
+		${tw`top-[140px] py-16 mb-0`}
+	}
+	@media (max-width: 820px) {
+		${tw`top-[160px] -mb-[80px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`top-[300px] -mb-[100px]`}
 	}
 `;
 
@@ -22,19 +37,22 @@ const TitleContainer = styled.div`
 	@media (max-width: 1440px) {
 		${tw`right-[13px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`right-0`}
+	}
 `;
 
 const SectionLabel = styled.h4`
 	${tw`text-[#FF64AE] text-[20px] font-semibold tracking-[0.01rem] mb-4`}
 	@media (max-width: 1440px) {
-		${tw`text-[16px] -tracking-[0.002rem] mb-[11px]`}
+		${tw`text-[16px] -tracking-[0.002rem] mb-[10px]`}
 	}
 `;
 
 const SectionTitle = styled.h2`
-	${tw`text-[#091156] text-[44px] font-semibold leading-[1.2] mb-6`}
+	${tw`text-[#091156] text-[44px] font-semibold leading-[60px] mb-6`}
 	@media (max-width: 1440px) {
-		${tw`text-[36px] tracking-[0.002rem] mb-[21px]`}
+		${tw`text-[36px] leading-[45px] tracking-[0.002rem] mb-[20px]`}
 	}
 `;
 
@@ -43,18 +61,21 @@ const SectionDesc = styled.p`
 	@media (max-width: 1440px) {
 		${tw`text-[16px] left-[1px] tracking-[0.1rem]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`left-0`}
+	}
 `;
 
 const LogoContainer = styled.div`
-	${tw`relative top-[60px] grid grid-cols-5 gap-[20px] items-center justify-items-center`}
+	${tw`relative top-[60px] flex flex-wrap justify-center gap-[20px] items-center`}
 	@media (max-width: 1440px) {
-		${tw`top-[53px] left-[70px] gap-2 max-w-[1010px]`}
+		${tw`top-[54px] left-[0px] gap-[53px]`}
 	}
-	@media (max-width: 1024px) {
-		${tw`grid-cols-3 gap-6`}
+	@media (max-width: 1430px) {
+		${tw`top-0 left-0`}
 	}
-	@media (max-width: 640px) {
-		${tw`grid-cols-2 gap-4`}
+	@media (max-width: 440px) {
+		${tw`gap-5`}
 	}
 `;
 
@@ -62,12 +83,6 @@ const ClientLogo = styled.img`
 	${tw`w-[220px] h-auto hover:scale-105 cursor-pointer transition-opacity duration-300`}
 	@media (max-width: 1440px) {
 		${tw`w-[150px]`}
-	}
-	@media (max-width: 1024px) {
-		${tw`w-[100px]`}
-	}
-	@media (max-width: 640px) {
-		${tw`w-[80px]`}
 	}
 `;
 

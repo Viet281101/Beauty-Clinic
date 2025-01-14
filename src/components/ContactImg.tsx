@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import contactFrame from "../assets/background/home1_contact.svg";
 
 const ContactImage = styled.div`
@@ -21,7 +22,7 @@ const ContactImage = styled.div`
 	}
 `;
 
-function ContactIMG() {
+const ContactIMG: React.FC = () => {
 	return (
 		<ContactImage className="contact-image">
 			<img src={contactFrame} alt="Contact Frame" />

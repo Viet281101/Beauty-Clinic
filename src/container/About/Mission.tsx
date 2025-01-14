@@ -8,8 +8,14 @@ const MissionSection = styled.section`
     @media (max-width: 1440px) {
 		${tw`top-[20px]`}
 	}
-	@media (max-width: 1024px) {
+	@media (max-width: 1130px) {
+		${tw`top-[140px]`}
+	}
+	@media (max-width: 820px) {
 		${tw`flex-col-reverse text-center`}
+	}
+	@media (max-width: 768px) {
+		${tw`top-[280px]`}
 	}
 `;
 
@@ -22,7 +28,12 @@ const ImageContainer = styled.div`
 		${tw`max-w-[431px] top-[40px] right-[30px]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`w-full`}
+		${tw`w-full right-0`}
+		img { ${tw`max-w-[400px]`} }
+	}
+	@media (max-width: 820px) {
+		${tw`top-[60px]`}
+		img { ${tw`max-w-[480px]`} }
 	}
 `;
 
@@ -32,7 +43,7 @@ const ContentContainer = styled.div`
 		${tw`top-[33px] left-[7px]`}
 	}
 	@media (max-width: 1024px) {
-		${tw`w-full mt-8`}
+		${tw`w-full top-[50px] left-0`}
 	}
 `;
 
@@ -44,9 +55,12 @@ const SectionLabel = styled.h4`
 `;
 
 const SectionTitle = styled.h2`
-	${tw`text-[#091156] text-[44px] font-semibold leading-[45px] mb-5`}
+	${tw`text-[#091156] text-[44px] font-semibold leading-[60px] mb-5`}
     @media (max-width: 1440px) {
 		${tw`text-[36px] leading-[45px] -tracking-[0.004rem] max-w-[520px] mb-[13px]`}
+	}
+	@media (max-width: 820px) {
+		${tw`text-center mx-auto`}
 	}
 `;
 
@@ -57,6 +71,9 @@ const SectionDesc = styled.p`
 	}
     @media (max-width: 1440px) {
 		${tw`text-[16px] leading-[24px] tracking-[0.098rem] max-w-[460px]`}
+	}
+	@media (max-width: 820px) {
+		${tw`text-center mx-auto`}
 	}
 `;
 

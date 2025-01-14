@@ -40,10 +40,16 @@ const BubbleBg2 = styled.img`
 		${tw`w-[1222px] top-[2846px]`}
 	}
 	@media (max-width: 1130px) {
-		${tw`top-[3600px]`}
+		${tw`top-[2800px]`}
+	}
+	@media (max-width: 1000px) {
+		${tw`top-[3800px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-[200px]`}
+		${tw`w-full top-[3600px] h-[1000px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`top-[4600px] h-[800px]`}
 	}
 `;
 

@@ -117,19 +117,17 @@ const BoxesWrapper = styled.div`
 	}
 `;
 
-const ServiceBox = styled.div<{ position: "left" | "mid" | "right" }>`
+const ServiceBox = styled.div<{ $position: "left" | "mid" | "right" }>`
 	${tw`relative flex-1 text-center p-[60px] max-w-[460px] bg-white rounded-[40px] transition-transform duration-300`}
 	box-shadow: 0px 25px 50px 25px #F6F7FF;
 	&:hover {
 		transform: translateY(-16px);
 		box-shadow: 0px 60px 180px rgba(246, 247, 255, 1);
 	}
-	${({ position }) => position === "left" && tw`relative right-[2px]`}
-	${({ position }) => position === "right" && tw`relative left-[2px]`}
+	${({ $position }) => $position === "left" && tw`relative right-[2px]`}
+	${({ $position }) => $position === "right" && tw`relative left-[1px]`}
 	@media (max-width: 1440px) {
 		${tw`p-[30px]`}
-		&.left { right: 2px; }
-		&.right { left: 2px; }
 	}
 	@media (max-width: 860px) {
 		${tw`p-[25px]`}
@@ -216,7 +214,7 @@ const Services: React.FC = () => {
 			</TitleWrapper>
 			<BoxesWrapper>
 				{serviceData.map((service) => (
-					<ServiceBox key={service.id} position={service.id === 1 ? "left" : service.id === 3 ? "right" : "mid"}>
+					<ServiceBox key={service.id} $position={service.id === 1 ? "left" : service.id === 3 ? "right" : "mid"}>
 						<ServiceIcon src={service.icon} alt={service.title} />
 						<ServiceTitle>{service.title}</ServiceTitle>
 						<ServiceDescription>{service.description}</ServiceDescription>

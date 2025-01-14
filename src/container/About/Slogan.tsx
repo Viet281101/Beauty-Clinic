@@ -19,15 +19,15 @@ const SloganSection = styled.section`
 
 const Overlay = styled.div`
 	${tw`absolute inset-0 bg-[#091156] opacity-60`}
-	@media (max-width: 1440px) {
-		${tw``}
-	}
 `;
 
 const ContentWrapper = styled.div`
-	${tw`relative z-10 px-8`}
+	${tw`relative -top-[80px] z-10 px-[280px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`top-0 px-8`}
+	}
+	@media (max-width: 768px) {
+		${tw`px-5`}
 	}
 `;
 
@@ -39,9 +39,12 @@ const SectionLabel = styled.h4`
 `;
 
 const SectionTitle = styled.h2`
-	${tw`relative text-white text-[36px] font-semibold leading-[45px]`}
+	${tw`relative top-[40px] text-white text-[44px] font-semibold leading-[60px]`}
 	@media (max-width: 1440px) {
-		${tw`-top-[11px] left-[40px] text-[35px] tracking-[0.032rem] max-w-[580px]`}
+		${tw`-top-[11px] left-[40px] text-[36px] leading-[45px] tracking-[0.002em] max-w-[580px]`}
+	}
+	@media (max-width: 1180px) {
+		${tw`text-[30px] left-0 mx-auto`}
 	}
 	@media (max-width: 768px) {
 		${tw`text-[20px]`}
@@ -49,7 +52,7 @@ const SectionTitle = styled.h2`
 `;
 
 const SectionDesc = styled.p`
-	${tw`relative text-[#CACACA] text-[16px] tracking-[0.1rem] leading-[1.5]`}
+	${tw`relative top-[80px] text-[#CACACA] text-[16px] tracking-[0.1rem] leading-[1.5]`}
 	@media (max-width: 1440px) {
 		${tw`top-[8px] max-w-[660px]`}
 	}

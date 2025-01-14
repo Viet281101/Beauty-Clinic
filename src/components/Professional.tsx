@@ -135,7 +135,7 @@ const Professional: React.FC<ProfessionalProps> = ({ isTeamPage = false }) => {
 						} ${index === 0 ? "left" : index === 2 ? "right" : "mid"} z-10 relative w-[510px] h-[820px] rounded-[40px] shadow-none`} key={team.id} >
 						<img src={team.image} alt={team.name} className="pro-avatar object-cover rounded-full w-[190px] h-[190px]" />
 						<p className="pro-role font-semibold mt-24 text-[22px]">{team.role}</p>
-						<p className="pro-name font-bold mt-5 text-[24px]">{team.name}</p>
+						<p className="pro-name font-semibold mt-[22px] text-[24px]">{team.name}</p>
 						<p className="pro-desc font-medium leading-7 text-[18px]">{team.desc}</p>
 						<div className="pro-social flex justify-center gap-6 mt-20">
 							{team.socials.map((social, idx) => (

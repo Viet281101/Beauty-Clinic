@@ -50,10 +50,10 @@
 				width: 505px; height: 614px;
 				&.active { width: 564px; }
 				.pro-avatar { margin: 88px auto -10px; width: 144px; height: 144px; }
-				.pro-role { margin-top: 60px;; font-size: 16px; }
-				.pro-name { margin-top: 10px; font-size: 18px; letter-spacing: -0.02rem; }
+				.pro-role { margin-top: 60px; font-size: 16px; }
+				.pro-name { margin-top: 11px; font-size: 18px; letter-spacing: -0.02rem; line-height: 22.5px; }
 				.pro-desc {
-					margin-top: 16px;
+					margin-top: 20px;
 					min-width: 260px;
 					padding: 0 24px;
 					font-size: 14px;
