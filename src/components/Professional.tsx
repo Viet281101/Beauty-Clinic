@@ -7,9 +7,23 @@ import briyanImage from "../assets/images/briyan_nevalli.jpeg";
 import bellaImage from "../assets/images/bella_sebastian.jpeg";
 import lillyImage from "../assets/images/lilly_adams.jpeg";
 
-function Professional({ isTeamPage = false }) {
-	const professionalRef = useRef(null);
-	const teamData = [
+interface TeamMember {
+	id: number;
+	name: string;
+	role: string;
+	desc: string;
+	image: string;
+	socials: string[];
+};
+
+interface ProfessionalProps {
+	isTeamPage?: boolean;
+};
+
+const Professional: React.FC<ProfessionalProps> = ({ isTeamPage = false }) => {
+	const professionalRef = useRef<HTMLDivElement | null>(null);
+
+	const teamData: TeamMember[] = [
 		{
 			id: 1,
 			name: "Briyan Nevalli",
@@ -35,18 +49,18 @@ function Professional({ isTeamPage = false }) {
 	];
 
 	useEffect(() => {
-		let boxes = professionalRef.current.querySelectorAll(".pro-box");
+		let boxes = professionalRef.current?.querySelectorAll<HTMLDivElement>(".pro-box");
 
-		const handleHover = (event) => {
-			boxes.forEach((box) => box.classList.remove("active"));
-			event.currentTarget.classList.add("active");
+		const handleHover = (event: MouseEvent) => {
+			boxes?.forEach((box) => box.classList.remove("active"));
+			(event.currentTarget as HTMLDivElement).classList.add("active");
 		};
 
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						boxes.forEach((box) => box.classList.remove("active"));
+						boxes?.forEach((box) => box.classList.remove("active"));
 						entry.target.classList.add("active");
 					} else {
 						entry.target.classList.remove("active");
@@ -57,37 +71,37 @@ function Professional({ isTeamPage = false }) {
 
 		const applyHoverOrScroll = () => {
 			if (window.innerWidth > 1000) {
-				boxes.forEach((box) => {
+				boxes?.forEach((box) => {
 					box.addEventListener("mouseenter", handleHover);
 					box.addEventListener("mouseleave", () => {
-						boxes.forEach((box) => box.classList.remove("active"));
-						const midIndex = Math.floor(boxes.length / 2);
-						boxes[midIndex].classList.add("active");
+						boxes?.forEach((box) => box.classList.remove("active"));
+						const midIndex = Math.floor((boxes?.length || 0) / 2);
+						boxes?.[midIndex]?.classList.add("active");
 					});
 				});
 				observer.disconnect();
 			} else {
-				boxes.forEach((box) => observer.observe(box));
+				boxes?.forEach((box) => observer.observe(box));
 			}
 		};
 
 		const handleResize = () => {
 			const isLargeScreen = window.innerWidth > 1000;
-			boxes.forEach((box) => box.classList.remove("active"));
+			boxes?.forEach((box) => box.classList.remove("active"));
 
 			if (isLargeScreen) {
-				const midIndex = Math.floor(boxes.length / 2);
-				boxes[midIndex].classList.add("active");
+				const midIndex = Math.floor((boxes?.length || 0) / 2);
+				boxes?.[midIndex]?.classList.add("active");
 			}
 
-			const updatedBoxes = [];
-			boxes.forEach((box) => {
-				const newBox = box.cloneNode(true);
+			const updatedBoxes: HTMLDivElement[] = [];
+			boxes?.forEach((box) => {
+				const newBox = box.cloneNode(true) as HTMLDivElement;
 				box.replaceWith(newBox);
 				updatedBoxes.push(newBox);
 			});
 
-			boxes = professionalRef.current.querySelectorAll(".pro-box");
+			boxes = professionalRef.current?.querySelectorAll<HTMLDivElement>(".pro-box");
 			applyHoverOrScroll();
 		};
 
@@ -96,7 +110,7 @@ function Professional({ isTeamPage = false }) {
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
-			boxes.forEach((box) => box.removeEventListener("mouseenter", handleHover));
+			boxes?.forEach((box) => box.removeEventListener("mouseenter", handleHover));
 			observer.disconnect();
 		};
 	}, []);

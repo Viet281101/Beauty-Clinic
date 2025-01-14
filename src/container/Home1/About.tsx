@@ -94,9 +94,14 @@ const Actions = styled.div`
 `;
 
 const Button = styled.button`
-	${tw`text-[21px] w-[264px] h-[80px] bg-[#FF64AE] text-white font-semibold rounded-full border-none hover:bg-[#E05497]`}
+	${tw`text-[21px] w-[264px] h-[80px] bg-[#FF64AE] text-white font-semibold rounded-full border-none`}
 	box-shadow: 0px 17px 22px 0px #FFEDF6;
 	transition: all 0.3s ease;
+	&:hover {
+		${tw`bg-[#E05497]`}
+		box-shadow: 0px 25px 30px rgba(255, 228, 242, 0.8);
+		transform: scale(1.05);
+	}
 	@media (max-width: 1440px) {
 		${tw`w-[200px] h-[59px] text-[16px] tracking-[0.1rem]`}
 	}
@@ -110,11 +115,10 @@ const Button = styled.button`
 
 const Video = styled.div`
 	${tw`flex items-center cursor-pointer gap-[10px] font-semibold`}
-	@media (max-width: 1024px) {
-		${tw`justify-center`}
-	}
+	@media (max-width: 1024px) { ${tw`justify-center`} }
+	&:hover { img { ${tw`scale-110`} transition: transform 0.3s ease; } }
 	img {
-		${tw`w-[70px] h-[70px] hover:scale-125 transition-transform duration-300`}
+		${tw`w-[70px] h-[70px]`}
 		@media (max-width: 1440px) {
 			${tw`w-[50px] h-[50px] ml-[18px]`}
 		}

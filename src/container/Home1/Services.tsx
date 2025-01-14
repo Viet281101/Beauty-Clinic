@@ -118,11 +118,12 @@ const BoxesWrapper = styled.div`
 `;
 
 const ServiceBox = styled.div<{ position: "left" | "mid" | "right" }>`
-	${tw`relative text-center p-[60px] max-w-[460px] bg-white rounded-[40px] transition-transform duration-300`}
-	${tw`hover:(-translate-y-4 shadow-lg)`}
+	${tw`relative flex-1 text-center p-[60px] max-w-[460px] bg-white rounded-[40px] transition-transform duration-300`}
 	box-shadow: 0px 25px 50px 25px #F6F7FF;
-	flex: 1;
-	&:hover { box-shadow: 0px 60px 180px rgba(246, 247, 255, 1); }
+	&:hover {
+		transform: translateY(-16px);
+		box-shadow: 0px 60px 180px rgba(246, 247, 255, 1);
+	}
 	${({ position }) => position === "left" && tw`relative right-[2px]`}
 	${({ position }) => position === "right" && tw`relative left-[2px]`}
 	@media (max-width: 1440px) {

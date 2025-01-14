@@ -10,10 +10,14 @@ import youtubeIcon from "../assets/icons/footer_social/youtube.svg";
 import instagramIcon from "../assets/icons/footer_social/instagram.svg";
 import footerLogo from "../assets/footer_logo.svg";
 
-function Footer() {
+const Footer: React.FC = () => {
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
-	const getHomePath = () => (currentPage === "Home1" ? "/home" : "/");
-	const toggleHomePage = () => {
+
+	// Determine the path to home based on the current page
+	const getHomePath = (): string => (currentPage === "Home1" ? "/home" : "/");
+
+	// Toggle between Home1 and Home2 pages
+	const toggleHomePage = (): void => {
 		setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
 	};
 
@@ -34,11 +38,14 @@ function Footer() {
 							<i>+521 569 8966.</i>
 						</p>
 						<p className="ft-mail ml-6">
-							<a className="underline hover:no-underline" href="mailto:mail@company.com"><i>mail@company.com</i></a>
+							<a className="underline hover:no-underline" href="mailto:mail@company.com">
+								<i>mail@company.com</i>
+							</a>
 						</p>
 					</div>
 				</div>
 
+				{/* Links Container */}
 				<div className="links-container relative inline-flex top-[200px] right-[50px] w-[610px]">
 					{/* Footer Pages Section */}
 					<div className="footer-pages relative text-left flex-1">
@@ -58,10 +65,26 @@ function Footer() {
 					<div className="footer-info relative text-left flex-1">
 						<h3 className="footer-title font-semibold text-white">Informations</h3>
 						<ul className="footer-links">
-							<li className="relative pl-5 pb-3"><Link to="/terms" className="no-underline hover:underline">Terms & conditions</Link></li>
-							<li className="relative pl-5 pb-3"><Link to="/privacy" className="no-underline hover:underline">Privacy policy</Link></li>
-							<li className="relative pl-5 pb-3"><Link to="/blog" className="no-underline hover:underline">Blog</Link></li>
-							<li className="relative pl-5 pb-3"><Link to="/contact" className="no-underline hover:underline">Contact</Link></li>
+							<li className="relative pl-5 pb-3">
+								<Link to="/terms" className="no-underline hover:underline">
+									Terms & conditions
+								</Link>
+							</li>
+							<li className="relative pl-5 pb-3">
+								<Link to="/privacy" className="no-underline hover:underline">
+									Privacy policy
+								</Link>
+							</li>
+							<li className="relative pl-5 pb-3">
+								<Link to="/blog" className="no-underline hover:underline">
+									Blog
+								</Link>
+							</li>
+							<li className="relative pl-5 pb-3">
+								<Link to="/contact" className="no-underline hover:underline">
+									Contact
+								</Link>
+							</li>
 						</ul>
 					</div>
 				</div>

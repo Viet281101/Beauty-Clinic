@@ -108,6 +108,7 @@ const Input = styled.input`
 
 const CallButton = styled.button`
 	${tw`bg-[#FF64AE] flex items-center justify-center w-[140px] h-[90px]`}
+	&:hover { ${tw`bg-[#E05497]`} transition: all 0.3s ease; }
 	@media (max-width: 1440px) {
 		${tw`w-[140px] h-[74px]`}
 	}
