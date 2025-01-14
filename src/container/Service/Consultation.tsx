@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import consultationImg from "../../assets/services/consultation.svg";
 import vectorAngleIcon from "../../assets/icons/vector_angle_double_right.svg";
 
@@ -54,7 +55,7 @@ const CTAButton = styled.a`
 	}
 `;
 
-function ServiceConsultation() {
+const ServiceConsultation: React.FC = () => {
 	return (
 		<ServiceContainer>
 			<Image src={consultationImg} alt="Beauty Consultation" />

@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import serviceSloganBg from "../../assets/images/service/slogan_full_img.jpeg";
 import TourPlayButton from "../../components/TourPlayBtn";
 
@@ -61,7 +62,7 @@ const PlayText = styled.p`
 	}
 `;
 
-function Slogan() {
+const Slogan: React.FC = () => {
 	return (
 		<SloganSection>
 			<SloganOverlay />

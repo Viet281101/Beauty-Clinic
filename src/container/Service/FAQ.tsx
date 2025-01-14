@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import angleDownIcon from "../../assets/icons/angle_down.svg";
 import angleUpIcon from "../../assets/icons/angle_up.svg";
 
@@ -58,47 +59,52 @@ const Separator = styled.div`
 `;
 
 const Answer = styled.div`
-	${tw`bg-[#F6F7FF] text-[#8B8B8B] italic text-[18px] tracking-[0.1rem] py-[50px] pl-[100px] pr-[160px] leading-[22px] rounded-b-[20px] mb-[8px]`}
-	p { ${tw`mb-[25px]`} }
+	${tw`bg-[#F6F7FF] h-[300px] text-[#8B8B8B] italic font-[400] text-[18px] tracking-[0.1rem] pl-[100px] pr-[160px] leading-[24px] rounded-b-[20px] mb-[8px]`}
+	p { ${tw`relative top-[36px] mb-[25px]`} }
 	p:last-child { ${tw`mb-[8px]`} }
 	@media (max-width: 1440px) {
-		${tw`text-[14px] tracking-[0.09rem] py-[50px] pl-[76px] pr-[124px] leading-[22px] mb-[12px]`}
-		p { ${tw`mb-[20px]`} }
+		${tw`h-[216px] text-[14px] tracking-[0.104em] pl-[76px] pr-[124px] leading-[21px] mb-[12px]`}
+		p { ${tw`top-[52px] mb-[20px]`} }
 	}
 `;
 
-function FAQ() {
-	const [activeIndex, setActiveIndex] = useState(0);
+interface FAQData {
+	question: string;
+	answer: string[];
+};
 
-	const faqData = [
+const FAQ: React.FC = () => {
+	const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
+	const faqData: FAQData[] = [
 		{
 			question: "Is beauty consultation handled thoroughly?",
 			answer: [
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna",
-				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla."
+				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla.",
 			],
 		}, {
 			question: "Can I be beautiful in an instant time?",
 			answer: [
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna",
-				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla."
+				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla.",
 			],
 		}, {
 			question: "Are there any side effects to the treatment methods or treatments at this clinic?",
 			answer: [
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna",
-				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla."
+				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla.",
 			],
 		}, {
 			question: "Do professionals have accreditation in their respective fields?",
 			answer: [
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna",
-				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla."
+				"porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla.",
 			],
 		},
 	];
 
-	const toggleFAQ = (index) => {
+	const toggleFAQ = (index: number) => {
 		setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
 	};
 
@@ -118,7 +124,7 @@ function FAQ() {
 					{activeIndex === index && (
 						<>
 							<Separator />
-							<Answer>
+							<Answer className="py-[50px]">
 								{faq.answer.map((paragraph, i) => (
 									<p key={i}>{paragraph}</p>
 								))}
