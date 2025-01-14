@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import clientLogo1 from "../../assets/icons/client_logo/1.svg";
 import clientLogo2 from "../../assets/icons/client_logo/2.svg";
 import clientLogo3 from "../../assets/icons/client_logo/3.svg";
@@ -70,7 +71,7 @@ const ClientLogo = styled.img`
 	}
 `;
 
-function Clients() {
+const Clients: React.FC = () => {
 	return (
 		<ClientSection>
 			{/* Tittle & Description */}

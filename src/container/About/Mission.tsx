@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import missionImage from "../../assets/mission_img.svg";
 
 const MissionSection = styled.section`
@@ -59,7 +60,7 @@ const SectionDesc = styled.p`
 	}
 `;
 
-function Mission() {
+const Mission: React.FC = () => {
 	return (
 		<MissionSection>
 			{/* Content */}

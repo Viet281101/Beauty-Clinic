@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import aboutVideoThumbnail from "../../assets/images/about_vid.jpeg";
 import playButtonIcon from "../../assets/icons/play_btn_sd.svg";
 
@@ -8,19 +9,31 @@ const AboutHeroSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`top-[14px] left-[6px] py-[68px] mb-[236px]`}
 	}
+	@media (max-width: 1130px) {
+		${tw`mb-0`}
+	}
+	@media (max-width: 768px) {
+		${tw`-mb-[80px]`}
+	}
+	@media (max-width: 600px) {
+		${tw`w-full left-0 px-[20px] -mb-[100px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`-mb-[140px]`}
+	}
+	@media (max-width: 400px) {
+		${tw`px-0 -mb-[160px]`}
+	}
 `;
 
 const ContentWrapper = styled.div`
 	${tw`flex flex-col items-start text-left gap-8`}
-	@media (max-width: 1440px) {
-		${tw``}
-	}
 `;
 
 const TitleContainer = styled.div`
 	${tw`max-w-3xl`}
-	@media (max-width: 1440px) {
-		${tw``}
+	@media (max-width: 400px) {
+		${tw`px-[24px]`}
 	}
 `;
 
@@ -49,7 +62,13 @@ const VideoContainer = styled.div`
 	${tw`relative w-full mt-8 overflow-hidden rounded-[48px]`}
 	box-shadow: 0px 25px 50px 25px #F6F7FF;
 	@media (max-width: 1440px) {
-		${tw`max-w-[1140px] max-h-[542px]`}
+		${tw`max-w-[1140px] min-w-[360px] min-h-[170px] max-h-[542px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`rounded-[30px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`rounded-[16px]`}
 	}
 `;
 
@@ -70,6 +89,12 @@ const PlayButton = styled.button`
 	@media (max-width: 1440px) {
 		${tw`mt-[4px] w-[174px] h-[174px]`}
 	}
+	@media (max-width: 768px) {
+		${tw`w-[100px] h-[100px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`w-[86px] h-[86px]`}
+	}
 `;
 
 const PlayIcon = styled.img`
@@ -79,8 +104,8 @@ const PlayIcon = styled.img`
 	}
 `;
 
-function AboutHero() {
-	const handlePlayVideo = () => {
+const AboutHero: React.FC = () => {
+	const handlePlayVideo = (): void => {
 		alert("Play Video Clicked!");
 	};
 
@@ -104,6 +129,6 @@ function AboutHero() {
 			</ContentWrapper>
 		</AboutHeroSection>
 	);
-}
+};
 
 export default AboutHero;

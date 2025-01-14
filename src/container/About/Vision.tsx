@@ -1,11 +1,15 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import visionImage from "../../assets/about_img.svg";
 
 const VisionSection = styled.section`
 	${tw`relative top-[260px] w-4/5 mx-auto flex items-center justify-between gap-12 z-10`}
 	@media (max-width: 1440px) {
 		${tw`top-0`}
+	}
+	@media (max-width: 1130px) {
+		${tw`top-[180px]`}
 	}
 	@media (max-width: 1024px) {
 		${tw`flex-col text-center`}
@@ -65,7 +69,7 @@ const SectionDesc = styled.p`
 	}
 `;
 
-function Vision() {
+const Vision: React.FC = () => {
 	return (
 		<VisionSection>
 			{/* Image */}

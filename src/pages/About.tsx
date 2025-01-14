@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import AboutHero from "../container/About/Hero";
 import Professional from "../components/Professional";
@@ -9,8 +10,8 @@ import Mission from "../container/About/Mission";
 import Clients from "../container/About/Clients";
 import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
-import bubbleBg1 from "../assets/background/bubbles/about_1.svg"
-import bubbleBg2 from "../assets/background/bubbles/about_2.svg"
+import bubbleBg1 from "../assets/background/bubbles/about_1.svg";
+import bubbleBg2 from "../assets/background/bubbles/about_2.svg";
 
 const AboutContainer = styled.div`
 	${tw`relative`}
@@ -29,7 +30,7 @@ const BubbleBg1 = styled.img`
 		${tw`w-[1150px] top-[596px]`}
 	}
 	@media (max-width: 768px) {
-		${tw`w-[200px]`}
+		${tw`w-full top-[780px]`}
 	}
 `;
 
@@ -38,12 +39,15 @@ const BubbleBg2 = styled.img`
 	@media (max-width: 1440px) {
 		${tw`w-[1222px] top-[2846px]`}
 	}
+	@media (max-width: 1130px) {
+		${tw`top-[3600px]`}
+	}
 	@media (max-width: 768px) {
 		${tw`w-[200px]`}
 	}
 `;
 
-function AboutPage() {
+const AboutPage: React.FC = () => {
 	return (
 		<AboutContainer>
 			<BubbleBg1 src={bubbleBg1} alt="Bubble Background 1" />

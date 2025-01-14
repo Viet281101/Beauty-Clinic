@@ -37,7 +37,7 @@ const TextContainer = styled.div`
 		${tw`left-[7px] top-[1px]`}
 	}
 	@media (max-width: 1150px) {
-		${tw`w-full`}
+		${tw`w-full text-center mx-auto`}
 	}
 	@media (max-width: 880px) {
 		${tw`top-[60px]`}
@@ -55,6 +55,9 @@ const Description = styled.p`
 	${tw`text-[#8B8B8B] text-[20px] leading-[28px]`}
 	@media (max-width: 1440px) {
 		${tw`text-[16px] leading-[24px] tracking-[0.1rem] max-w-[360px]`}
+	}
+	@media (max-width: 1150px) {
+		${tw`max-w-full mx-auto text-center`}
 	}
 `;
 
