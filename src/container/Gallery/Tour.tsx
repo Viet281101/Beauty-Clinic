@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import TourPlayButton from "../../components/TourPlayBtn";
 import tourBg from "../../assets/images/gallery/tour.jpeg";
 
@@ -36,7 +37,7 @@ const SectionDesc = styled.p`
 	}
 `;
 
-function Tour() {
+const Tour: React.FC = () => {
 	return (
 		<TourSection>
 			<ContentWrapper>

@@ -14,9 +14,9 @@ const HeroSection = styled.section`
 `;
 
 const TitleContainer = styled.div`
-	${tw`mb-12`}
+	${tw`mb-[60px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`mb-12`}
 	}
 `;
 
@@ -45,54 +45,104 @@ const ImageGrid = styled.div`
 	${tw`grid grid-cols-3 gap-y-[70px] w-4/5 mx-auto`}
 	grid-template-rows: 254px 255px;
 	@media (max-width: 1440px) {
-		${tw`gap-y-[66px] max-w-[1100px]`}
+		${tw`gap-y-[67px] max-w-[1100px]`}
 	}
-	@media (max-width: 1024px) {
-		${tw`grid-cols-2`}
+	@media (max-width: 1020px) {
+		${tw`gap-y-[50px] max-w-full grid-cols-1`}
 		grid-template-rows: auto;
-	}
-	@media (max-width: 768px) {
-		${tw`grid-cols-1`}
-		grid-template-rows: auto;
+		justify-items: center;
 	}
 `;
 
 const ImageItem = styled.div`
 	${tw`relative overflow-hidden rounded-[25px]`}
-	img {
-		${tw`w-full h-full object-cover`}
-	}
-	@media (max-width: 1440px) {
-		${tw``}
-	}
+	img { ${tw`w-full h-full object-cover`} }
 `;
 
 // Styling specific images
 const ImageItemLarge = styled(ImageItem)`
-	${tw`h-[270px] w-[900px] left-[10px] col-span-2`}
+	${tw`h-[270px] w-[900px] left-[60px] col-span-2`}
+	margin: auto;
+	@media (max-width: 1730px) {
+		${tw`left-[40px]`}
+	}
+	@media (max-width: 1660px) {
+		${tw`left-[20px]`}
+	}
+	@media (max-width: 1580px) {
+		${tw`left-0`}
+	}
+	@media (max-width: 1550px) {
+		${tw`w-[780px] left-[100px]`}
+	}
 	@media (max-width: 1440px) {
-		${tw`h-[254px] w-[725px] left-[8px]`}
+		${tw`h-[254px] w-[725px] left-[4px]`}
+	}
+	@media (max-width: 1290px) {
+		${tw`w-[680px] left-[20px]`}
+	}
+	@media (max-width: 1260px) {
+		${tw`left-0`}
+	}
+	@media (max-width: 1100px) {
+		${tw`w-[640px]`}
+	}
+	@media (max-width: 1020px) {
+		${tw`h-auto w-full left-0`}
+		margin: 0 auto;
 	}
 `;
 
 const ImageItemSmallTop = styled(ImageItem)`
-	${tw`h-[270px] w-[400px]`}
+	${tw`h-[270px] w-[400px] m-auto`}
 	@media (max-width: 1440px) {
-		${tw`h-[254px] w-[291px]`}
+		${tw`h-[254px] w-[291px] right-[38px]`}
+	}
+	@media (max-width: 1020px) {
+		${tw`h-auto w-[80%] right-0`}
+		margin: 0 auto;
 	}
 `;
 
 const ImageItemSmallBottom = styled(ImageItem)`
-	${tw`h-[270px] w-[400px] left-0`}
+	${tw`h-[270px] w-[400px] left-[70px]`}
+	margin: auto;
+	@media (max-width: 1550px) {
+		${tw`w-[350px] left-[120px]`}
+	}
 	@media (max-width: 1440px) {
-		${tw`h-[255px] w-[291px] left-[76px]`}
+		${tw`h-[255px] w-[291px] left-[38px]`}
+	}
+	@media (max-width: 1260px) {
+		${tw`left-[50px]`}
+	}
+	@media (max-width: 1190px) {
+		${tw`left-[90px]`}
+	}
+	@media (max-width: 1100px) {
+		${tw`left-[70px]`}
+	}
+	@media (max-width: 1020px) {
+		${tw`h-auto w-[80%] left-0`}
+		margin: 0 auto;
 	}
 `;
 
 const ImageItemFullWidth = styled(ImageItem)`
 	${tw`h-[270px] w-[900px] col-span-2`}
+	margin: auto;
 	@media (max-width: 1440px) {
-		${tw`h-[255px] w-[725px]`}
+		${tw`h-[255px] w-[725px] right-[4px]`}
+	}
+	@media (max-width: 1290px) {
+		${tw`w-[680px]`}
+	}
+	@media (max-width: 1100px) {
+		${tw`w-[640px] right-[30px]`}
+	}
+	@media (max-width: 1020px) {
+		${tw`h-auto w-full right-0`}
+		margin: 0 auto;
 	}
 `;
 

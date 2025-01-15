@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import Hero from "../container/Gallery/Hero";
 import Tour from "../container/Gallery/Tour";
@@ -29,7 +30,7 @@ const BubbleBackground = styled.img`
 	}
 `;
 
-function GalleryPage() {
+const GalleryPage: React.FC = () => {
 	return (
 		<GalleryContainer>
 			<HeaderHeroContainer>

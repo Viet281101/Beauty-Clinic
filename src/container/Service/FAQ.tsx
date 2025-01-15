@@ -9,6 +9,24 @@ const FAQSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`w-[972px] mb-[268px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`w-[840px] mb-[200px]`}
+	}
+	@media (max-width: 940px) {
+		${tw`w-[640px] mb-[80px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`w-[520px] -mb-[200px]`}
+	}
+	@media (max-width: 680px) {
+		${tw`w-[400px] -mb-[300px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`w-[340px]`}
+	}
+	@media (max-width: 420px) {
+		${tw`w-[300px] -mb-[200px]`}
+	}
 `;
 
 const FAQTitle = styled.h2`
@@ -65,6 +83,19 @@ const Answer = styled.div`
 	@media (max-width: 1440px) {
 		${tw`h-[216px] text-[14px] tracking-[0.104em] pl-[76px] pr-[124px] leading-[21px] mb-[12px]`}
 		p { ${tw`top-[52px] mb-[20px]`} }
+	}
+	@media (max-width: 768px) {
+		${tw`h-[260px] pr-[60px]`}
+		p { ${tw`top-[40px]`} }
+	}
+	@media (max-width: 680px) {
+		${tw`h-[300px] px-[40px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`h-[340px]`}
+	}
+	@media (max-width: 420px) {
+		${tw`h-[360px]`}
 	}
 `;
 

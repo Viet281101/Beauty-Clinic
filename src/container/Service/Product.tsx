@@ -9,6 +9,18 @@ const ServiceContainer = styled.div`
 	@media (max-width: 1440px) {
 		${tw`px-[150px] mb-[122px]`}
 	}
+	@media (max-width: 1080px) {
+		${tw`px-[100px]`}
+	}
+	@media (max-width: 920px) {
+		${tw`px-[20px]`}
+	}
+	@media (max-width: 680px) {
+		${tw`flex-col py-[60px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`px-0`}
+	}
 `;
 
 const Content = styled.div`
@@ -16,12 +28,26 @@ const Content = styled.div`
 	@media (max-width: 1440px) {
 		${tw`left-[92px] top-[38px]`}
 	}
+	@media (max-width: 1080px) {
+		${tw`left-[80px]`}
+	}
+	@media (max-width: 980px) {
+		${tw`left-[40px]`}
+	}
+	@media (max-width: 920px) {
+		${tw`left-0`}
+	}
+	@media (max-width: 680px) {
+		${tw`top-[80px] text-center mx-auto w-3/4`}
 `;
 
 const Image = styled.img`
 	${tw`relative w-1/2`}
 	@media (max-width: 1440px) {
 		${tw`top-[40px] max-w-[475px]`}
+	}
+	@media (max-width: 680px) {
+		${tw`top-[60px] max-w-full min-w-[340px]`}
 	}
 `;
 
@@ -37,12 +63,21 @@ const Title = styled.h2`
 	@media (max-width: 1440px) {
 		${tw`top-[1px] text-[36px] leading-[45px] mb-[14px] max-w-[430px]`}
 	}
+	@media (max-width: 680px) {
+		${tw`text-[30px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[26px]`}
+	}
 `;
 
 const Description = styled.p`
 	${tw`text-[#8B8B8B] text-[20px] mb-4`}
 	@media (max-width: 1440px) {
 		${tw`text-[16px] tracking-[0.1rem] max-w-[450px] mb-[22px]`}
+	}
+	@media (max-width: 680px) {
+		${tw`text-[14px]`}
 	}
 `;
 

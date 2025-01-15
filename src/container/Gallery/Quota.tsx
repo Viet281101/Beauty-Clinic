@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 
 const QuotaSection = styled.section`
 	${tw`relative top-[140px] flex items-center justify-between py-16 px-[10%] z-10 overflow-hidden mb-[390px]`}
@@ -61,7 +62,7 @@ const AppointmentButton = styled.button`
 	}
 `;
 
-function Quota() {
+const Quota: React.FC = () => {
 	return (
 		<QuotaSection>
 			<ContentWrapper>

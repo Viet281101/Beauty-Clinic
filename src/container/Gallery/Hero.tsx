@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import row1_img1 from "../../assets/images/gallery/row1_img1.jpeg";
@@ -72,9 +73,7 @@ const GalleryGrid = styled.div`
 
 const GalleryImage = styled.div`
 	${tw`overflow-hidden rounded-[20px]`}
-	img {
-		${tw`w-full h-full object-cover`}
-	}
+	img { ${tw`w-full h-full object-cover`} }
 	@media (max-width: 1440px) {
 		${tw``}
 	}
@@ -89,12 +88,10 @@ const FooterText = styled.p`
 
 const HighlightText = styled(Link)`
 	${tw`text-[#091156] font-semibold cursor-pointer`}
-	&:hover {
-		${tw`underline`}
-	}
+	&:hover { ${tw`underline`} }
 `;
 
-function Hero() {
+const Hero: React.FC = () => {
 	return (
 		<HeroSection>
 			{/* Title & Description */}

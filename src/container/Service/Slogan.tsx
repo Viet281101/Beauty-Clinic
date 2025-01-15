@@ -10,23 +10,29 @@ const SloganSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`h-[529px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`h-[540px] flex-col`}
+	}
 `;
 
 // Background Mask
 const SloganOverlay = styled.div`
 	${tw`absolute top-0 left-0 w-full h-full bg-[#091156] opacity-60 z-20`}
-    @media (max-width: 1440px) {
-		${tw``}
-	}
 `;
 
 const Content = styled.div`
 	${tw`relative left-[160px] text-left text-white w-1/2 z-30`}
-    @media (max-width: 1440px) {
+	@media (max-width: 1440px) {
 		${tw`-top-[3px] left-[102px]`}
 	}
+	@media (max-width: 1350px) {
+		${tw`left-[80px]`}
+	}
 	@media (max-width: 1024px) {
-		${tw`w-full text-center`}
+		${tw`w-3/4 mx-auto left-0 -top-[20px] text-center`}
+	}
+	@media (max-width: 500px) {
+		${tw`-top-[60px]`}
 	}
 `;
 
@@ -35,6 +41,15 @@ const Title = styled.h2`
 	@media (max-width: 1440px) {
 		${tw`text-[36px] max-w-[580px] leading-[45px] tracking-[0.001rem] mb-[19px]`}
 	}
+	@media (max-width: 1350px) {
+		${tw`text-[30px] mb-[20px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-[26px] leading-[30px] max-w-full`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[18px]`}
+	}
 `;
 
 const Description = styled.p`
@@ -42,16 +57,34 @@ const Description = styled.p`
 	@media (max-width: 1440px) {
 		${tw`text-[16px] tracking-[0.1rem] max-w-[600px]`}
 	}
+	@media (max-width: 1350px) {
+		${tw`text-[14px] max-w-full`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[12px]`}
+	}
 `;
 
 // Play Button Container
 const PlayContainer = styled.div`
 	${tw`relative right-[260px] z-30 inline-flex items-center text-center`}
-    @media (max-width: 1440px) {
+	@media (max-width: 1780px) {
+		${tw`right-[100px]`}
+	}
+	@media (max-width: 1440px) {
 		${tw`right-[190px]`}
 	}
+	@media (max-width: 1350px) {
+		${tw`right-[100px]`}
+	}
+	@media (max-width: 1150px) {
+		${tw`right-[10px]`}
+	}
 	@media (max-width: 1024px) {
-		${tw`mt-8`}
+		${tw`top-0 right-0`}
+	}
+	@media (max-width: 480px) {
+		${tw`flex-col`}
 	}
 `;
 
@@ -59,6 +92,9 @@ const PlayText = styled.p`
 	${tw`relative -top-[10px] left-[30px] text-white text-[20px] tracking-[0.1rem] font-semibold mt-4`}
 	@media (max-width: 1440px) {
 		${tw`text-[16px] left-[28px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`left-0 top-[10px]`}
 	}
 `;
 
