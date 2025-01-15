@@ -7,16 +7,25 @@ const QuotaSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`top-[167px] px-[150px] mb-[389px]`}
 	}
-	@media (max-width: 1024px) {
-		${tw`flex-col text-center`}
+	@media (max-width: 1290px) {
+		${tw`flex-col text-center mb-[320px]`}
+	}
+	@media (max-width: 1280px) {
+		${tw`mb-[200px]`}
+	}
+	@media (max-width: 1160px) {
+		${tw`mb-[280px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`-mb-[100px]`}
+	}
+	@media (max-width: 630px) {
+		${tw`px-0`}
 	}
 `;
 
 const ContentWrapper = styled.div`
 	${tw`flex-1`}
-	@media (max-width: 1440px) {
-		${tw``}
-	}
 	@media (max-width: 1024px) {
 		${tw`mb-8`}
 	}
@@ -34,6 +43,9 @@ const SectionTitle = styled.h2`
 	@media (max-width: 1440px) {
 		${tw`text-[36px] w-[660px] mb-[22px]`}
 	}
+	@media (max-width: 630px) {
+		${tw`text-[30px] w-4/5 mx-auto mb-[30px]`}
+	}
 `;
 
 const SectionDesc = styled.p`
@@ -41,12 +53,21 @@ const SectionDesc = styled.p`
 	@media (max-width: 1440px) {
 		${tw`text-[16px] leading-[24px] max-w-[600px]`}
 	}
+	@media (max-width: 630px) {
+		${tw`text-[14px] max-w-[80%] text-center mx-auto`}
+	}
 `;
 
 const ButtonWrapper = styled.div`
 	${tw`relative right-[140px] flex-1 flex justify-end`}
+	@media (max-width: 1730px) {
+		${tw`right-[60px] top-[2px]`}
+	}
 	@media (max-width: 1440px) {
-		${tw`right-[58px] top-[2px]`}
+		${tw`right-[58px]`}
+	}
+	@media (max-width: 1290px) {
+		${tw`right-0 top-[60px]`}
 	}
 	@media (max-width: 1024px) {
 		${tw`justify-center`}

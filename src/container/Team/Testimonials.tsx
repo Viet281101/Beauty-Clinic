@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 
 import arrowLeftIcon from "../../assets/icons/arrow_left.svg";
 import arrowRightIcon from "../../assets/icons/arrow_right.svg";
@@ -140,10 +141,16 @@ const Star = styled.img`
 	}
 `;
 
-function Testimonials() {
-	const [currentIndex, setCurrentIndex] = useState(0);
+interface Testimonial {
+	avatar: string;
+	text: string;
+	rate: number;
+};
 
-	const testimonials = [
+const Testimonials: React.FC = () => {
+	const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+	const testimonials: Testimonial[] = [
 		{
 			avatar: customer1,
 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus metus tincidunt laoreet ultricies condimentum ac integer aliquam. Lorem diam dignissim amet fermentum elementum dui dui. Aliquam sem elementum morbi imperdiet suscipit erat ut. Purus volutpat in turpis gravida blandit.",

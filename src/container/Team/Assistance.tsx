@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import profile1 from "../../assets/images/team/1.jpeg";
 import profile2 from "../../assets/images/team/2.jpeg";
 import profile3 from "../../assets/images/team/3.jpeg";
@@ -105,7 +106,7 @@ const ProfileDesc = styled.p`
 	}
 `;
 
-function Assistance() {
+const Assistance: React.FC = () => {
 	const teamData = [
 		{
 			image: profile1,

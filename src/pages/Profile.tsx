@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
@@ -15,7 +16,7 @@ const HeaderHeroContainer = styled.div`
 	${tw`relative`}
 `;
 
-function Profile() {
+const Profile: React.FC = () => {
 	return (
 		<ProfileContainer>
 			<HeaderHeroContainer>

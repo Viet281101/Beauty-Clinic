@@ -14,12 +14,18 @@ const TourSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`top-[115px] h-[628px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`h-[630px]`}
+	}
 `;
 
 const ContentWrapper = styled.div`
 	${tw`relative z-20 flex flex-col items-center justify-center text-center`}
 	@media (max-width: 1440px) {
 		${tw`-top-[2px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`-top-[40px]`}
 	}
 `;
 
@@ -28,12 +34,18 @@ const SectionTitle = styled.h2`
 	@media (max-width: 1440px) {
 		${tw`text-[36px] mb-[14px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`text-[30px] mb-[20px]`}
+	}
 `;
 
 const SectionDesc = styled.p`
 	${tw`text-[#CACACA] text-[20px] tracking-[0.1rem] leading-[28px] mb-[60px]`}
 	@media (max-width: 1440px) {
 		${tw`text-[16px] leading-[24px] max-w-[600px] mb-[49px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-[14px] mb-[60px]`}
 	}
 `;
 

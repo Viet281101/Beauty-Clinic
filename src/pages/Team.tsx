@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import Professional from "../components/Professional";
 import Assistance from "../container/Team/Assistance";
@@ -33,7 +34,7 @@ const BubbleBackground = styled.img`
 	}
 `;
 
-function TeamPage() {
+const TeamPage: React.FC = () => {
 	return (
 		<TeamContainer className="team-page">
 			<HeaderHeroContainer>

@@ -23,10 +23,25 @@ const HeaderHeroContainer = styled.div`
 const BubbleBackground = styled.img`
 	${tw`absolute top-[2552px] right-0 w-[1000px] h-auto z-0`}
 	@media (max-width: 1440px) {
-		${tw`top-[1998px] w-[694px]`}
+		${tw`top-[1998px] min-w-[694px]`}
 	}
-	@media (max-width: 768px) {
-		${tw``}
+	@media (max-width: 1180px) {
+		${tw`top-[2680px]`}
+	}
+	@media (max-width: 1058px) {
+		${tw`top-[2704px]`}
+	}
+	@media (max-width: 960px) {
+		${tw`top-[2730px]`}
+	}
+	@media (max-width: 940px) {
+		${tw`top-[2726px]`}
+	}
+	@media (max-width: 820px) {
+		${tw`top-[4124px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`top-[4036px]`}
 	}
 `;
 

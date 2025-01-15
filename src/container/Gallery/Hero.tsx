@@ -25,6 +25,9 @@ const TitleContainer = styled.div`
 	@media (max-width: 1440px) {
 		${tw`w-[1140px] mb-[40px]`}
 	}
+	@media (max-width: 1180px) {
+		${tw`text-center w-full`}
+	}
 `;
 
 const SectionLabel = styled.h4`
@@ -36,11 +39,11 @@ const SectionLabel = styled.h4`
 
 const SectionContent = styled.div`
 	${tw`grid grid-cols-2 gap-8 items-start mb-12`}
-	@media (max-width: 1440px) {
-		${tw``}
+	@media (max-width: 1220px) {
+		${tw`gap-[20px]`}
 	}
-	@media (max-width: 768px) {
-		${tw`grid-cols-1`}
+	@media (max-width: 1180px) {
+		${tw`grid-cols-1 items-center`}
 	}
 `;
 
@@ -49,12 +52,21 @@ const SectionTitle = styled.h2`
 	@media (max-width: 1440px) {
 		${tw`text-[36px] leading-[44.6px]`}
 	}
+	@media (max-width: 1180px) {
+		${tw`mx-auto w-[60%] text-[30px] leading-[36px]`}
+	}
+	@media (max-width: 680px) {
+		${tw`mx-auto w-[80%]`}
+	}
 `;
 
 const SectionDesc = styled.p`
 	${tw`relative left-[150px] text-[#8B8B8B] text-[22px] w-[80%] leading-[28px]`}
 	@media (max-width: 1440px) {
 		${tw`text-[16px] left-[127px] -top-[1px] leading-[24px] tracking-[0.1rem]`}
+	}
+	@media (max-width: 1180px) {
+		${tw`left-0 top-0 text-center text-[14px] mx-auto`}
 	}
 `;
 
@@ -63,26 +75,32 @@ const GalleryGrid = styled.div`
 	@media (max-width: 1440px) {
 		${tw`w-[1140px] h-[706px] gap-x-[36px] gap-y-[38px]`}
 	}
-	@media (max-width: 1024px) {
-		${tw`grid-cols-2`}
+	@media (max-width: 1220px) {
+		${tw`gap-[26px]`}
 	}
-	@media (max-width: 768px) {
-		${tw`grid-cols-1`}
+	@media (max-width: 1180px) {
+		${tw`grid-cols-2 w-[800px] h-[1400px]`}
+	}
+	@media (max-width: 820px) {
+		${tw`grid-cols-1 w-3/4 h-[2800px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`w-4/5 h-[2600px]`}
 	}
 `;
 
 const GalleryImage = styled.div`
 	${tw`overflow-hidden rounded-[20px]`}
 	img { ${tw`w-full h-full object-cover`} }
-	@media (max-width: 1440px) {
-		${tw``}
-	}
 `;
 
 const FooterText = styled.p`
 	${tw`relative top-[40px] text-[#8B8B8B] text-[22px] leading-[34px] text-left w-[80%] pr-[620px]`}
 	@media (max-width: 1440px) {
 		${tw`top-[35px] text-[16px] tracking-[0.1rem] leading-[24px] w-[79%] pr-[460px]`}
+	}
+	@media (max-width: 1180px) {
+		${tw`text-center text-[14px] mx-auto w-4/5 pr-0`}
 	}
 `;
 
