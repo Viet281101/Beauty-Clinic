@@ -80,9 +80,6 @@ const TourVideoContainer = styled.div`
 	@media (max-width: 1010px) {
 		${tw`flex-col`}
 	}
-	@media (max-width: 880px) {
-		${tw`flex-row`}
-	}
 `;
 
 const TourText = styled.span`
@@ -91,10 +88,7 @@ const TourText = styled.span`
 		${tw`text-[16px] tracking-[0.1rem]`}
 	}
 	@media (max-width: 1010px) {
-		${tw`top-[20px] left-0`}
-	}
-	@media (max-width: 880px) {
-		${tw`top-0 left-[40px]`}
+		${tw`top-[20px] left-0 text-center mx-auto`}
 	}
 `;
 

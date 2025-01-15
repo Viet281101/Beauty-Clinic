@@ -75,12 +75,21 @@ const ArticleSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`left-[6px]`}
 	}
+	@media (max-width: 1340px) {
+		${tw`left-0`}
+	}
 `;
 
 const ArticleGrid = styled.div`
 	${tw`grid grid-cols-1 gap-8 pr-[80px]`}
 	@media (max-width: 1440px) {
 		${tw``}
+	}
+	@media (max-width: 1340px) {
+		${tw`pr-[20px]`}
+	}
+	@media (max-width: 1160px) {
+		${tw`pr-0`}
 	}
 `;
 

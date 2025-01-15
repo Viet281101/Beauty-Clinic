@@ -10,7 +10,7 @@ interface PaginationProps {
 };
 
 interface PageButtonProps {
-	isActive: boolean;
+	$isActive: boolean;
 };
 
 const PaginationWrapper = styled.div`
@@ -22,7 +22,7 @@ const PaginationWrapper = styled.div`
 
 const PageButton = styled.button<PageButtonProps>`
 	${tw`relative w-[50px] h-[50px] rounded-full bg-transparent hover:bg-[#091156] text-[20px] font-semibold text-[#C7C7C7]`}
-	${({ isActive }) => isActive && tw`bg-[#091156] text-white`}
+	${({ $isActive }) => $isActive && tw`bg-[#091156] text-white`}
 	:last-child { ${tw`left-[2px]`} }
 	@media (max-width: 1440px) {
 		${tw`w-[35px] h-[35px] text-[16px]`}
@@ -44,7 +44,7 @@ const Pagination: React.FC<PaginationProps> = ({
 	return (
 		<PaginationWrapper>
 			{pageNumbers.map((number) => (
-				<PageButton key={number} onClick={() => paginate(number)} isActive={currentPage === number}>{number}</PageButton>
+				<PageButton key={number} onClick={() => paginate(number)} $isActive={currentPage === number}>{number}</PageButton>
 			))}
 		</PaginationWrapper>
 	);

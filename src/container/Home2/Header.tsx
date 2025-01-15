@@ -58,7 +58,7 @@ const NavMenu = styled.nav`
 		}
 		li a.service { ${tw`-left-0.5`} }
 	}
-	@media (max-width: 1690px) {
+	@media (max-width: 1720px) {
 		${tw`left-[46px] min-w-[682px]`}
 		ul li a { ${tw`tracking-[0.12rem] text-[18px]`} }
 	}

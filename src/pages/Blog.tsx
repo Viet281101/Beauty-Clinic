@@ -25,6 +25,9 @@ const ContentWrapper = styled.div`
 	@media (max-width: 1440px) {
 		${tw`mb-[139px]`}
 	}
+	@media (max-width: 1340px) {
+		${tw`w-[90%]`}
+	}
 	@media (max-width: 1024px) {
 		grid-template-columns: 1fr;
 	}

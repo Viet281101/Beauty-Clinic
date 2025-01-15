@@ -19,6 +19,9 @@ const SidebarContainer = styled.div`
 		.tag-box { ${tw`h-[274px]`} }
 		.social-box { ${tw`h-[213px]`} }
 	}
+	@media (max-width: 1160px) {
+		${tw`left-0 w-[360px]`}
+	}
 `;
 
 const SearchBarContainer = styled.div`
@@ -56,6 +59,7 @@ const SectionBox = styled.div`
 	@media (max-width: 1440px) {
 		${tw`p-[48px] mb-[38px]`}
 		.categories-tittle { ${tw`pb-[17px]`} }
+		.recent-tittle { ${tw`top-[8px]`} }
 	}
 `;
 
@@ -70,16 +74,16 @@ const RecentPost = styled.div`
 	${tw`flex items-start gap-[30px] pb-[32px]`}
 	:last-child { ${tw`pb-[24px]`} }
 	@media (max-width: 1440px) {
-		${tw`gap-[25px] pb-[26px]`}
+		${tw`gap-[25px] pb-0 -mb-[7px]`}
 		:last-child { ${tw`pb-[18px]`} }
 	}
 `;
 
 const RecentImage = styled.div`
-	${tw`min-w-[100px] h-[100px] overflow-hidden rounded-[10px] flex items-center justify-center`}
-	img { ${tw`w-full h-full object-cover`} }
+	${tw`w-[100px] h-[100px] shrink-0 overflow-hidden rounded-[10px] flex items-center justify-center`}
+	img { ${tw`w-full h-full block m-auto box-content object-cover`} }
 	@media (max-width: 1440px) {
-		${tw`min-w-[82px] h-[82px]`}
+		${tw`w-[82px] h-[82px]`}
 	}
 `;
 
@@ -152,63 +156,63 @@ const SocialIcon = styled.div`
 const Sidebar: React.FC = () => {
 	return (
 		<SidebarContainer>
-		{/* Search Bar */}
-		<SearchBarContainer>
-			<SearchInput type="text" placeholder="Search here ..." />
-			<SearchButton>
-				<img src={searchIcon} alt="Search Icon" />
-			</SearchButton>
-		</SearchBarContainer>
+			{/* Search Bar */}
+			<SearchBarContainer>
+				<SearchInput type="text" placeholder="Search here ..." />
+				<SearchButton>
+					<img src={searchIcon} alt="Search Icon" />
+				</SearchButton>
+			</SearchBarContainer>
 
-		{/* Recent Posts */}
-		<SectionBox className="recent-box">
-			<SectionTitle>Recent Posts</SectionTitle>
-			{[recent1, recent2, recent3].map((image, index) => (
-			<RecentPost key={index}>
-				<RecentImage>
-					<img src={image} alt={`Recent Post ${index + 1}`} />
-				</RecentImage>
-				<RecentContent>
-				<PostDate>01 jan 2021</PostDate>
-				<PostDescription>
-					Lorem ipsum dolor sit amet, consectetur adipiscing.
-				</PostDescription>
-				</RecentContent>
-			</RecentPost>
-			))}
-		</SectionBox>
+			{/* Recent Posts */}
+			<SectionBox className="recent-box">
+				<SectionTitle className="recent-tittle">Recent Posts</SectionTitle>
+				{[recent1, recent2, recent3].map((image, index) => (
+				<RecentPost key={index}>
+					<RecentImage>
+						<img src={image} alt={`Recent Post ${index + 1}`} />
+					</RecentImage>
+					<RecentContent>
+					<PostDate>01 jan 2021</PostDate>
+					<PostDescription>
+						Lorem ipsum dolor sit amet, consectetur adipiscing.
+					</PostDescription>
+					</RecentContent>
+				</RecentPost>
+				))}
+			</SectionBox>
 
-		{/* Categories */}
-		<SectionBox className="categories-box">
-			<SectionTitle className="categories-tittle">Categories</SectionTitle>
-			<CategoryList>
-			{["Consultation", "Beauty", "Treatments", "News"].map((category, index) => (
-				<CategoryItem key={index}>{category}</CategoryItem>
-			))}
-			</CategoryList>
-		</SectionBox>
+			{/* Categories */}
+			<SectionBox className="categories-box">
+				<SectionTitle className="categories-tittle">Categories</SectionTitle>
+				<CategoryList>
+				{["Consultation", "Beauty", "Treatments", "News"].map((category, index) => (
+					<CategoryItem key={index}>{category}</CategoryItem>
+				))}
+				</CategoryList>
+			</SectionBox>
 
-		{/* Cloud Tags */}
-		<SectionBox className="tag-box">
-			<SectionTitle>Cloud Tags</SectionTitle>
-			<TagCloud>
-			{["beauty", "cute", "skin", "glow", "style", "clinic", "style", "great", "cute"].map((tag, index) => (
-				<Tag key={index}>{tag}</Tag>
-			))}
-			</TagCloud>
-		</SectionBox>
+			{/* Cloud Tags */}
+			<SectionBox className="tag-box">
+				<SectionTitle>Cloud Tags</SectionTitle>
+				<TagCloud>
+				{["beauty", "cute", "skin", "glow", "style", "clinic", "style", "great", "cute"].map((tag, index) => (
+					<Tag key={index}>{tag}</Tag>
+				))}
+				</TagCloud>
+			</SectionBox>
 
-		{/* Social Connect */}
-		<SectionBox className="social-box">
-			<SectionTitle>Social Connect</SectionTitle>
-			<SocialIcons>
-			{[facebookIcon, twitterIcon, instagramIcon, linkedinIcon].map((icon, index) => (
-				<SocialIcon key={index}>
-				<img src={icon} alt={`Social Icon ${index + 1}`} />
-				</SocialIcon>
-			))}
-			</SocialIcons>
-		</SectionBox>
+			{/* Social Connect */}
+			<SectionBox className="social-box">
+				<SectionTitle>Social Connect</SectionTitle>
+				<SocialIcons>
+				{[facebookIcon, twitterIcon, instagramIcon, linkedinIcon].map((icon, index) => (
+					<SocialIcon key={index}>
+					<img src={icon} alt={`Social Icon ${index + 1}`} />
+					</SocialIcon>
+				))}
+				</SocialIcons>
+			</SectionBox>
 		</SidebarContainer>
 	);
 };
