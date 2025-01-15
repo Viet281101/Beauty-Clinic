@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import ArticleCard from "./ArticleCard";
 import Pagination from "./Pagination";
 
-const articles = [
+type ArticleType = {
+	id: number;
+	image: number;
+	category: string;
+	subtitle: string;
+	description: string;
+};
+
+const articles: ArticleType[] = [
 	{
 		id: 1,
 		image: 1,
@@ -75,15 +84,15 @@ const ArticleGrid = styled.div`
 	}
 `;
 
-function Article() {
-	const [currentPage, setCurrentPage] = useState(1);
+const Article: React.FC = () => {
+	const [currentPage, setCurrentPage] = useState<number>(1);
 	const articlesPerPage = 3;
 
 	const indexOfLastArticle = currentPage * articlesPerPage;
 	const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
 	const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
 
-	const paginate = (pageNumber) => setCurrentPage(pageNumber);
+	const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
 	return (
 		<ArticleSection>

@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import tittleBg from "../../assets/images/blog/tittle.jpeg";
 
@@ -34,7 +35,7 @@ const BreadcrumbLink = styled(Link)`
 	${tw`hover:underline`}
 `;
 
-function Tittle() {
+const Tittle: React.FC = () => {
 	return (
 		<TittleSection>
 			{/* Tittle */}

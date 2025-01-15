@@ -22,6 +22,12 @@ const HeaderHeroContainer = styled.div`
 	@media (max-width: 1440px) {
 		${tw`mb-[279px]`}
 	}
+	@media (max-width: 1130px) {
+		${tw`-mb-[20px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`-mb-[180px]`}
+	}
 `;
 
 const BubbleBackground = styled.img`

@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import ContactUs from "../container/Contact/ContactUs";
 import Map from "../container/Contact/Map";
@@ -39,7 +40,7 @@ const BubbleBackground = styled.img`
 	}
 `;
 
-function ContactPage() {
+const ContactPage: React.FC = () => {
 	return (
 		<ContactContainer className="contact-page">
 			<HeaderHeroContainer>

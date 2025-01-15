@@ -6,6 +6,7 @@
 		.professional-subtitle { margin-bottom: 4px; }
 		.professional-heading { margin-bottom: 22px; }
 	}
+	@media (max-width: 1130px) { .professional-title { right: 0; } }
 }
 .professional {
 	padding: 100px 10%;

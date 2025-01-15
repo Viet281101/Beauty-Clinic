@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import folderIC from "../../assets/icons/folder.svg";
 import caretRight from "../../assets/icons/caret_right.svg";
 
@@ -13,9 +14,16 @@ import article7 from "../../assets/images/blog/article_1.jpeg";
 import article8 from "../../assets/images/blog/article_2.jpeg";
 import article9 from "../../assets/images/blog/article_3.jpeg";
 
+type ArticleCardProps = {
+	id: number;
+	category: string;
+	subtitle: string;
+	description: string;
+};
+
 const Card = styled.div`
 	${tw`bg-white rounded-[50px] overflow-hidden mb-[105px]`}
-	box-shadow: 10px 13px 80px 14px #F2F4FF;
+	box-shadow: 10px 13px 80px 14px #f2f4ff;
 	@media (max-width: 1440px) {
 		${tw`w-[730px] mb-[101px]`}
 	}
@@ -82,7 +90,7 @@ const ReadMoreIcon = styled.img`
 	}
 `;
 
-function ArticleCard({ id, category, subtitle, description }) {
+const ArticleCard: React.FC<ArticleCardProps> = ({ id, category, subtitle, description }) => {
 	const images = [
 		article1, article2, article3,
 		article4, article5, article6,

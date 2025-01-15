@@ -8,14 +8,29 @@ import profile3 from "../../assets/images/team/3.jpeg";
 const AssistanceSection = styled.section`
 	${tw`relative w-4/5 mx-auto py-16 text-center`}
 	@media (max-width: 1440px) {
-		${tw`-top-[174px]`}
+		${tw`-top-[173px]`}
+	}
+	@media (max-width: 1130px) {
+		${tw`top-[150px]`}
+	}
+	@media (max-width: 500px) {
+		${tw`top-[200px] w-[90%]`}
+	}
+	@media (max-width: 480px) {
+		${tw`top-[280px]`}
 	}
 `;
 
 const TitleContainer = styled.div`
 	${tw`mb-[120px]`}
 	@media (max-width: 1440px) {
-		${tw`mb-[114px]`}
+		${tw`mb-[113px]`}
+	}
+	@media (max-width: 1130px) {
+		${tw`mb-[80px]`}
+	}
+	@media (max-width: 500px) {
+		${tw`mb-[60px]`}
 	}
 `;
 
@@ -56,8 +71,14 @@ const ProfileImage = styled.div`
 	@media (max-width: 1440px) {
 		${tw`w-[914px] h-[253px]`}
 	}
+	@media (max-width: 1180px) {
+		${tw`w-[1200px] mb-4 mr-0`}
+	}
 	@media (max-width: 768px) {
-		${tw`w-full mb-4 mr-0`}
+		${tw`w-[400px] mx-auto`}
+	}
+	@media (max-width: 500px) {
+		${tw`w-full`}
 	}
 `;
 
@@ -66,12 +87,24 @@ const ProfileContent = styled.div`
 	@media (max-width: 1440px) {
 		${tw`-top-[1px] left-[26px] px-[146px]`}
 	}
+	@media (max-width: 1180px) {
+		${tw`left-0 px-[40px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`top-[20px] mx-auto text-center`}
+	}
+	@media (max-width: 500px) {
+		${tw`px-[20px]`}
+	}
 `;
 
 const ProfileHeader = styled.div`
 	${tw`relative -top-[8px] flex items-center text-[24px] pb-4`}
 		@media (max-width: 1440px) {
 		${tw`text-[20px] pb-[12px]`}
+	}
+	@media (max-width: 768px) {
+		${tw`mx-auto text-center`}
 	}
 `;
 

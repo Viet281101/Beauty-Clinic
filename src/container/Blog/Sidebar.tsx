@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import searchIcon from "../../assets/icons/search.svg";
 import recent1 from "../../assets/images/blog/recent_1.jpeg";
 import recent2 from "../../assets/images/blog/recent_2.jpeg";
@@ -148,7 +149,7 @@ const SocialIcon = styled.div`
 	}
 `;
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
 	return (
 		<SidebarContainer>
 		{/* Search Bar */}

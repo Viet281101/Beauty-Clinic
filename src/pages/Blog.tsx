@@ -1,5 +1,6 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import Header from "../layouts/Header";
 import Tittle from "../container/Blog/Tittle";
 import Article from "../container/Blog/Article";
@@ -37,7 +38,7 @@ const SidebarColumn = styled.div`
 	${tw``}
 `;
 
-function BlogPage() {
+const BlogPage: React.FC = () => {
 	return (
 		<BlogContainer>
 			<HeaderHeroContainer>
