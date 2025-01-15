@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BeautyClinic/static/css/main.13b50040.css",
-    "main.js": "/BeautyClinic/static/js/main.3e186a0f.js",
+    "main.css": "/BeautyClinic/static/css/main.6bff819c.css",
+    "main.js": "/BeautyClinic/static/js/main.ef759c32.js",
     "static/media/slogan_full_img.jpeg": "/BeautyClinic/static/media/slogan_full_img.2379220656bd6c3fccf2.jpeg",
     "static/media/slogan.jpeg": "/BeautyClinic/static/media/slogan.bdd8b82eed415b6db76d.jpeg",
     "static/media/why_bg.svg": "/BeautyClinic/static/media/why_bg.df6769407f14bee950289999101c2af7.svg",
@@ -63,12 +63,15 @@
     "static/media/product.svg": "/BeautyClinic/static/media/product.75223c07fda7451513d7824360915381.svg",
     "static/media/instagram.svg": "/BeautyClinic/static/media/instagram.3188a9ff6199bf1dfb7db6f94fd5da5d.svg",
     "static/media/phone_vector.svg": "/BeautyClinic/static/media/phone_vector.e4e461f7c10282f9776c7259a45a1df1.svg",
+    "static/media/mail_bulk.svg": "/BeautyClinic/static/media/mail_bulk.059a80cdc00d794f53d55681017a8b41.svg",
+    "static/media/contact.svg": "/BeautyClinic/static/media/contact.42bd950dde28da938f7b4a64d56dec7d.svg",
     "static/media/gallery.svg": "/BeautyClinic/static/media/gallery.97e09fbb10f20d512180ad3b4fa4d57f.svg",
     "static/media/play_btn_sd.svg": "/BeautyClinic/static/media/play_btn_sd.0f1eaf3512e02f8417a24b8b7b789af9.svg",
     "static/media/home1_about.svg": "/BeautyClinic/static/media/home1_about.2446796fb6d1a15b6682f810ec4638eb.svg",
     "static/media/twitter.svg": "/BeautyClinic/static/media/twitter.35f751757635bcd7226286ed907dedb2.svg",
     "static/media/about_2.svg": "/BeautyClinic/static/media/about_2.da664eb058d3088c293dec4e9ba4edff.svg",
     "static/media/team.svg": "/BeautyClinic/static/media/team.50475997434730a26b8a7e9c3b660c8c.svg",
+    "static/media/phone_alt.svg": "/BeautyClinic/static/media/phone_alt.4ff70ee4a90bda9446aaec9bdfa1ea51.svg",
     "static/media/team1.svg": "/BeautyClinic/static/media/team1.8a5acd542f54a04d489a32c3f40dd2b1.svg",
     "static/media/team2.svg": "/BeautyClinic/static/media/team2.4d48c96e30bba81aca7646de0120b8a4.svg",
     "static/media/search.svg": "/BeautyClinic/static/media/search.03f107c6afa20a5c0673ed756b221805.svg",
@@ -82,6 +85,7 @@
     "static/media/linkedin.svg": "/BeautyClinic/static/media/linkedin.fc7afecfd144920d9b4c3055ae5b4128.svg",
     "static/media/youtube.svg": "/BeautyClinic/static/media/youtube.17f8f6f28b6292c9a4480a32617a5424.svg",
     "index.html": "/BeautyClinic/index.html",
+    "static/media/map_marker_alt.svg": "/BeautyClinic/static/media/map_marker_alt.a71ca53de936368c6d95b09659a6c09e.svg",
     "static/media/arrow_right.svg": "/BeautyClinic/static/media/arrow_right.846d1dc5748b29fb9d692d73b4956cf1.svg",
     "static/media/arrow_left.svg": "/BeautyClinic/static/media/arrow_left.905e9fe9652a7054bf05ba6d564ff5a0.svg",
     "static/media/arrow_up.svg": "/BeautyClinic/static/media/arrow_up.de3d8513d077d8afc5b42877673dd99d.svg",
@@ -93,11 +97,11 @@
     "static/media/folder.svg": "/BeautyClinic/static/media/folder.e7f77439c15688d05ab8a9067e6649ad.svg",
     "static/media/tour_play.svg": "/BeautyClinic/static/media/tour_play.2b60cae09d983fc4ecac8cd3e69bb2d8.svg",
     "static/media/caret_right.svg": "/BeautyClinic/static/media/caret_right.7c9d82715065b1c6e9d010f41866b2c6.svg",
-    "main.13b50040.css.map": "/BeautyClinic/static/css/main.13b50040.css.map",
-    "main.3e186a0f.js.map": "/BeautyClinic/static/js/main.3e186a0f.js.map"
+    "main.6bff819c.css.map": "/BeautyClinic/static/css/main.6bff819c.css.map",
+    "main.ef759c32.js.map": "/BeautyClinic/static/js/main.ef759c32.js.map"
   },
   "entrypoints": [
-    "static/css/main.13b50040.css",
-    "static/js/main.3e186a0f.js"
+    "static/css/main.6bff819c.css",
+    "static/js/main.ef759c32.js"
   ]
 }
