@@ -3,7 +3,6 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import folderIC from "../../assets/icons/folder.svg";
 import caretRight from "../../assets/icons/caret_right.svg";
-
 import article1 from "../../assets/images/blog/article_1.jpeg";
 import article2 from "../../assets/images/blog/article_2.jpeg";
 import article3 from "../../assets/images/blog/article_3.jpeg";
