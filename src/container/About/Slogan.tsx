@@ -15,6 +15,9 @@ const SloganSection = styled.section`
 	@media (max-width: 768px) {
 		${tw`top-[200px]`}
 	}
+	@media (max-width: 480px) {
+		${tw`top-[300px] mb-[100px]`}
+	}
 `;
 
 const Overlay = styled.div`

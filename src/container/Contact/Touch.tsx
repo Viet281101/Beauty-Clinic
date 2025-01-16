@@ -1,8 +1,17 @@
 import React, { useEffect, useRef } from "react";
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 import mapIcon from "../../assets/icons/contact/map_marker_alt.svg";
 import phoneIcon from "../../assets/icons/contact/phone_alt.svg";
 import mailIcon from "../../assets/icons/contact/mail_bulk.svg";
+
+type ContactData = {
+	id: number;
+	icon: string;
+	subtittle: string;
+	title: string;
+	desc: string;
+};
 
 const TouchSection = styled.section`
 	${tw`relative py-[80px] px-[10%] z-10 mb-[100px]`}
@@ -84,9 +93,9 @@ const ContactBox = styled.div`
 	}
 `;
 
-function Touch() {
-	const touchRef = useRef(null);
-	const data = [
+const Touch: React.FC = () => {
+	const touchRef = useRef<HTMLDivElement>(null);
+	const data: ContactData[] = [
 		{
 			id: 1,
 			icon: mapIcon,
@@ -109,11 +118,14 @@ function Touch() {
 	];
 
 	useEffect(() => {
-		let boxes = touchRef.current.querySelectorAll(".contact-box");
+		if (!touchRef.current) return;
+		let boxes: HTMLDivElement[] = Array.from(
+			touchRef.current.querySelectorAll<HTMLDivElement>(".contact-box")
+		);
 
-		const handleHover = (event) => {
+		const handleHover = (event: MouseEvent) => {
 			boxes.forEach((box) => box.classList.remove("active"));
-			event.currentTarget.classList.add("active");
+			(event.currentTarget as HTMLDivElement).classList.add("active");
 		};
 
 		const observer = new IntersectionObserver(
@@ -147,6 +159,7 @@ function Touch() {
 
 		const handleResize = () => {
 			const isLargeScreen = window.innerWidth > 1000;
+
 			boxes.forEach((box) => box.classList.remove("active"));
 
 			if (isLargeScreen) {
@@ -154,14 +167,16 @@ function Touch() {
 				boxes[midIndex].classList.add("active");
 			}
 
-			const updatedBoxes = [];
-			boxes.forEach((box) => {
-				const newBox = box.cloneNode(true);
+			const updatedBoxes = boxes.map((box) => {
+				const newBox = box.cloneNode(true) as HTMLDivElement;
 				box.replaceWith(newBox);
-				updatedBoxes.push(newBox);
+				return newBox;
 			});
 
-			boxes = touchRef.current.querySelectorAll(".contact-box");
+			boxes = Array.from(
+				touchRef.current?.querySelectorAll<HTMLDivElement>(".contact-box") || updatedBoxes
+			);
+
 			applyHoverOrScroll();
 		};
 
@@ -173,7 +188,7 @@ function Touch() {
 			boxes.forEach((box) => box.removeEventListener("mouseenter", handleHover));
 			observer.disconnect();
 		};
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<TouchSection ref={touchRef}>
@@ -184,11 +199,13 @@ function Touch() {
 			</TitleWrapper>
 			<BoxContainer>
 				{data.map((item, index) => (
-					<ContactBox className={`contact-box ${index === 0 ? "left" : index === 1 ? "mid" : "right"} ${index === 1 ? "active" : ""}`} key={item.id} >
-						<img src={item.icon} alt={item.title} />
-						<p className="box-tittle">{item.subtittle}</p>
-						<h3>{item.title}</h3>
-						<p className="box-desc">{item.desc}</p>
+					<ContactBox className={`contact-box ${index === 0 ? "left" : index === 1 ? "mid" : "right"} ${
+							index === 1 ? "active" : ""
+						}`} key={item.id} >
+							<img src={item.icon} alt={item.title} />
+							<p className="box-tittle">{item.subtittle}</p>
+							<h3>{item.title}</h3>
+							<p className="box-desc">{item.desc}</p>
 					</ContactBox>
 				))}
 			</BoxContainer>

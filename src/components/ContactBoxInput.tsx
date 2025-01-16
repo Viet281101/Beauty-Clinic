@@ -14,6 +14,9 @@ const ContactInput = styled.form`
 	@media (max-width: 768px) {
 		${tw`gap-4`}
 	}
+	@media (max-width: 480px) {
+		${tw`px-[4px]`}
+	}
 `;
 
 const FormRow = styled.div`
@@ -27,6 +30,9 @@ const FormRow = styled.div`
 		}
 		.first-name { ${tw`left-0 py-0 px-[23px] pb-0.5`} }
 		.last-name { ${tw`left-[21px] py-0 px-[26px] pb-0.5`} }
+	}
+	@media (max-width: 1280px) {
+		.last-name { ${tw`left-[2px]`} }
 	}
 	@media (max-width: 1000px) {
 		.first-name, .last-name {

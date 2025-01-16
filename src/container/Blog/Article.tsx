@@ -81,15 +81,18 @@ const ArticleSection = styled.section`
 `;
 
 const ArticleGrid = styled.div`
-	${tw`grid grid-cols-1 gap-8 pr-[80px]`}
+	${tw`grid grid-cols-1 gap-[40px] pr-[80px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`gap-8`}
 	}
 	@media (max-width: 1340px) {
 		${tw`pr-[20px]`}
 	}
 	@media (max-width: 1160px) {
 		${tw`pr-0`}
+	}
+	@media (max-width: 1024px) {
+		${tw`gap-0`}
 	}
 `;
 

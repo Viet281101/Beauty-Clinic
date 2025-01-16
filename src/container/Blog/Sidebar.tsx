@@ -21,13 +21,27 @@ const SidebarContainer = styled.div`
 	}
 	@media (max-width: 1160px) {
 		${tw`left-0 w-[360px]`}
+		.categories-box { ${tw`h-auto`} }
+		.recent-box { ${tw`h-auto`} }
+		.tag-box { ${tw`h-auto`} }
+		.social-box { ${tw`h-auto`} }
+	}
+	@media (max-width: 1024px) {
+		${tw`w-full top-[40px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`px-0`}
+		.categories-box { ${tw`p-[30px]`} }
+		.recent-box { ${tw`p-[20px]`} }
+		.tag-box { ${tw`p-[30px]`} }
+		.social-box { ${tw`p-[30px]`} }
 	}
 `;
 
 const SearchBarContainer = styled.div`
-	${tw`flex items-center w-full mb-8`}
+	${tw`flex items-center w-full mb-[40px]`}
 	@media (max-width: 1440px) {
-		${tw``}
+		${tw`mb-8`}
 	}
 `;
 
@@ -77,6 +91,9 @@ const RecentPost = styled.div`
 		${tw`gap-[25px] pb-0 -mb-[7px]`}
 		:last-child { ${tw`pb-[18px]`} }
 	}
+	@media (max-width: 1024px) {
+		${tw`mb-[20px]`}
+	}
 `;
 
 const RecentImage = styled.div`
@@ -85,19 +102,28 @@ const RecentImage = styled.div`
 	@media (max-width: 1440px) {
 		${tw`w-[82px] h-[82px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`w-[100px] h-[100px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`w-[80px] h-[80px]`}
+	}
 `;
 
 const RecentContent = styled.div`
 	${tw`flex flex-col`}
-	@media (max-width: 1440px) {
-		${tw``}
-	}
 `;
 
 const PostDate = styled.p`
 	${tw`relative text-[#FF64AE] text-[16px] tracking-[0.09rem] font-medium mb-1`}
 	@media (max-width: 1440px) {
 		${tw`-top-[2px] left-[1px] text-[14px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-[18px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[14px]`}
 	}
 `;
 
@@ -106,12 +132,21 @@ const PostDescription = styled.p`
 	@media (max-width: 1440px) {
 		${tw`top-[3px] left-[1px] text-[13px] min-w-[165px] leading-[18px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`text-[16px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[12px]`}
+	}
 `;
 
 const CategoryList = styled.ul`
 	${tw`relative flex flex-col`}
 	@media (max-width: 1440px) {
 		${tw`-top-[6px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`top-0 flex-wrap flex-row gap-[30px]`}
 	}
 `;
 
@@ -168,17 +203,17 @@ const Sidebar: React.FC = () => {
 			<SectionBox className="recent-box">
 				<SectionTitle className="recent-tittle">Recent Posts</SectionTitle>
 				{[recent1, recent2, recent3].map((image, index) => (
-				<RecentPost key={index}>
-					<RecentImage>
-						<img src={image} alt={`Recent Post ${index + 1}`} />
-					</RecentImage>
-					<RecentContent>
-					<PostDate>01 jan 2021</PostDate>
-					<PostDescription>
-						Lorem ipsum dolor sit amet, consectetur adipiscing.
-					</PostDescription>
-					</RecentContent>
-				</RecentPost>
+					<RecentPost key={index}>
+						<RecentImage>
+							<img src={image} alt={`Recent Post ${index + 1}`} />
+						</RecentImage>
+						<RecentContent>
+							<PostDate>01 jan 2021</PostDate>
+							<PostDescription>
+								Lorem ipsum dolor sit amet, consectetur adipiscing.
+							</PostDescription>
+						</RecentContent>
+					</RecentPost>
 				))}
 			</SectionBox>
 
@@ -186,9 +221,9 @@ const Sidebar: React.FC = () => {
 			<SectionBox className="categories-box">
 				<SectionTitle className="categories-tittle">Categories</SectionTitle>
 				<CategoryList>
-				{["Consultation", "Beauty", "Treatments", "News"].map((category, index) => (
-					<CategoryItem key={index}>{category}</CategoryItem>
-				))}
+					{["Consultation", "Beauty", "Treatments", "News"].map((category, index) => (
+						<CategoryItem key={index}>{category}</CategoryItem>
+					))}
 				</CategoryList>
 			</SectionBox>
 
@@ -196,9 +231,9 @@ const Sidebar: React.FC = () => {
 			<SectionBox className="tag-box">
 				<SectionTitle>Cloud Tags</SectionTitle>
 				<TagCloud>
-				{["beauty", "cute", "skin", "glow", "style", "clinic", "style", "great", "cute"].map((tag, index) => (
-					<Tag key={index}>{tag}</Tag>
-				))}
+					{["beauty", "cute", "skin", "glow", "style", "clinic", "style", "great", "cute"].map((tag, index) => (
+						<Tag key={index}>{tag}</Tag>
+					))}
 				</TagCloud>
 			</SectionBox>
 
@@ -206,11 +241,11 @@ const Sidebar: React.FC = () => {
 			<SectionBox className="social-box">
 				<SectionTitle>Social Connect</SectionTitle>
 				<SocialIcons>
-				{[facebookIcon, twitterIcon, instagramIcon, linkedinIcon].map((icon, index) => (
-					<SocialIcon key={index}>
-					<img src={icon} alt={`Social Icon ${index + 1}`} />
-					</SocialIcon>
-				))}
+					{[facebookIcon, twitterIcon, instagramIcon, linkedinIcon].map((icon, index) => (
+						<SocialIcon key={index}>
+						<img src={icon} alt={`Social Icon ${index + 1}`} />
+						</SocialIcon>
+					))}
 				</SocialIcons>
 			</SectionBox>
 		</SidebarContainer>

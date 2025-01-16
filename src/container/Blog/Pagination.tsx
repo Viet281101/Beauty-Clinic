@@ -18,6 +18,9 @@ const PaginationWrapper = styled.div`
 	@media (max-width: 1440px) {
 		${tw`right-[106px] -top-[4px] gap-[15px]`}
 	}
+	@media (max-width: 1024px) {
+		${tw`right-0 -top-[20px] gap-4 justify-center mx-auto`}
+	}
 `;
 
 const PageButton = styled.button<PageButtonProps>`

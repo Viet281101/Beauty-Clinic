@@ -9,8 +9,8 @@ const ContactUsSection = styled.section`
 	@media (max-width: 1440px) {
 		${tw`py-[80px] left-[44px] mb-[130px]`}
 	}
-	@media (max-width: 768px) {
-		${tw`py-[50px] gap-8`}
+	@media (max-width: 1024px) {
+		${tw`py-[50px] gap-0 w-full left-0`}
 	}
 `;
 
@@ -19,8 +19,8 @@ const TitleAndDescription = styled.div`
 	@media (max-width: 1440px) {
 		${tw`mb-0`}
 	}
-	@media (max-width: 768px) {
-		${tw`flex-col items-start gap-4`}
+	@media (max-width: 1024px) {
+		${tw`flex-col items-center gap-4 mb-8`}
 	}
 `;
 
@@ -28,6 +28,12 @@ const TitleContainer = styled.div`
 	${tw`relative flex flex-col gap-2`}
 	@media (max-width: 1440px) {
 		${tw`top-[2px] right-[30px] gap-[9px]`}
+	}
+	@media (max-width: 1320px) {
+		${tw`right-0`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-center`}
 	}
 `;
 
@@ -53,6 +59,15 @@ const Description = styled.p`
 	@media (max-width: 1440px) {
 		${tw`left-[243px] top-[9px] text-[16px] max-w-[440px]`}
 	}
+	@media (max-width: 1320px) {
+		${tw`left-[80px]`}
+	}
+	@media (max-width: 1110px) {
+		${tw`left-[70px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`left-0 text-center`}
+	}
 	@media (max-width: 768px) {
 		${tw`text-[16px]`}
 	}
@@ -65,8 +80,11 @@ const ContentContainer = styled.div`
 		${tw``}
 		.contact-image { ${tw`top-[20px] left-[84px] w-[580px] h-[421px]`} }
 	}
-	@media (max-width: 768px) {
-		${tw`flex-col gap-0`}
+	@media (max-width: 1320px) {
+		.contact-image { ${tw`left-0 w-full gap-[10px]`} }
+	}
+	@media (max-width: 1024px) {
+		${tw`flex-col gap-[30px] mx-auto`}
 	}
 `;
 
@@ -74,6 +92,18 @@ const FormContainer = styled.div`
 	${tw`relative -top-[60px] left-[200px] w-full max-w-2xl`}
 	@media (max-width: 1440px) {
 		${tw`-top-[8px] left-[141px] max-w-[540px]`}
+	}
+	@media (max-width: 1320px) {
+		${tw`left-[80px]`}
+	}
+	@media (max-width: 1110px) {
+		${tw`left-[40px]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`left-0`}
+	}
+	@media (max-width: 440px) {
+		${tw`-top-[80px]`}
 	}
 `;
 

@@ -25,7 +25,7 @@ const TitleText = styled.h1`
 `;
 
 const Breadcrumb = styled.nav`
-	${tw`relative text-[#D9D9D9] text-[18px] tracking-[0.1rem] font-medium`}
+	${tw`relative text-[#D9D9D9] text-[18px] tracking-[0.1rem] font-medium hover:text-[#FF64AE]`}
 	@media (max-width: 1440px) {
 		${tw`right-[3px] text-[16px]`}
 	}
