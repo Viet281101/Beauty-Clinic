@@ -17,13 +17,15 @@ export const login = async (email: string, password: string) => {
 export const register = async (
 	name: string,
 	email: string,
-	password: string
+	password: string,
+	phoneNumber?: string
 ) => {
 	try {
 		const response = await axios.post(`${BASE_URL}/register`, {
 			name,
 			email,
 			password,
+			phoneNumber
 		});
 		return response.data;
 	} catch (error: any) {

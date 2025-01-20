@@ -47,8 +47,8 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
 						<h2>Register</h2>
 						<RegisterForm />
 						<p>
-						Already have an account?{" "}
-						<ToggleLink onClick={toggleForm}>Login</ToggleLink>
+							Already have an account?{" "}
+							<ToggleLink onClick={toggleForm}>Login</ToggleLink>
 						</p>
 					</>
 				)}

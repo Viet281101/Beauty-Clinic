@@ -9,6 +9,7 @@ import TeamPage from "./pages/Team";
 import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
 import ProfilePage from "./pages/Profile";
+import ForgotPasswordPage from "./pages/ForgotPassword";
 
 interface LayoutProps {
 	children: ReactNode;
@@ -30,7 +31,8 @@ function App() {
 				<Route path="/team" element={<Layout><TeamPage /></Layout>} />
 				<Route path="/blog" element={<Layout><BlogPage /></Layout>} />
 				<Route path="/contact" element={<Layout><ContactPage /></Layout>} />
-				<Route path="/contact" element={<Layout><ProfilePage /></Layout>} />
+				<Route path="/profile" element={<Layout><ProfilePage /></Layout>} />
+				<Route path="/forgot-password" element={<Layout><ForgotPasswordPage /></Layout>} />
 			</Routes>
 		</Router>
 	);
