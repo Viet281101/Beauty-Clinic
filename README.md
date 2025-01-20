@@ -6,7 +6,7 @@
 
 Using the **ReactJS library**.
 
-[![alt text](frontend/public/react.svg)](https://react.dev/) **&** [![alt text](frontend/public/typescript.svg)](https://www.typescriptlang.org/) **&** [![alt text](frontend/public/javascript.svg)](https://en.wikipedia.org/wiki/JavaScript) **&** [![alt text](frontend/public/tailwind.svg)](https://tailwindcss.com/) **&** [![alt text](frontend/public/sass.svg)](https://sass-lang.com/) **&** [![alt text](frontend/public/jotai.png)](https://jotai.org/) **&** [![alt text](frontend/public/leaflet.png)](https://leafletjs.com/)
+[![alt text](frontend/public/react.svg)](https://react.dev/) **&** [![alt text](frontend/public/typescript.svg)](https://www.typescriptlang.org/) **&** [![alt text](frontend/public/javascript.svg)](https://en.wikipedia.org/wiki/JavaScript) **&** [![alt text](frontend/public/tailwind.svg)](https://tailwindcss.com/) **&** [![alt text](frontend/public/sass.svg)](https://sass-lang.com/) **&** [![alt text](frontend/public/jotai.png)](https://jotai.org/) **&** [![alt text](frontend/public/leaflet.png)](https://leafletjs.com/) **&** [![alt text](backend/sqlite3.png)](https://www.sqlite.org/)
 
 **Figma Link:** [Beauty and Clinic](https://www.figma.com/design/Ry2YV1BCuUR3m0xPZdqrGP/Beautice---Clinic-%26-Beauty-Consultation-Website-Design?node-id=513-2&node-type=canvas&t=vKCDwo3FlkNBcL8j-0)
 
@@ -27,8 +27,7 @@ Using the **ReactJS library**.
 Request :
    - Create a registration login page
    - Create a profile page, put the profile page in the navigation bar above the header so that it will only display the profile page when logged in, add a logout button to log out. 
-
-**Note**: In the login and registration form, react-query will be used to handle async/await and react-hook-form to manage the data and state of the form.
+   - **Note**: In the login and registration form, react-query will be used to handle async/await and react-hook-form to manage the data and state of the form.
 
 
 3. **Deployment:**

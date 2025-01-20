@@ -1,6 +1,51 @@
 import React, { useEffect, useState } from "react";
+import tw from "twin.macro";
+import styled from "styled-components";
 import { useAuth } from "./hooks/useAuth";
 import { LoginRequest } from "./types/authTypes";
+
+const FormContainer = styled.div`
+	${tw`max-w-[400px] my-0 mx-auto p-[20px] border-[1px] border-solid border-[#CCC] rounded-[10px]`}
+`;
+
+const Form = styled.form`
+	${tw`flex flex-col`}
+`;
+
+const InputGroup = styled.div`
+	${tw`mb-[10px]`}
+`;
+
+const Label = styled.label`
+	${tw`block mb-[5px] text-[14px]`}
+`;
+
+const Input = styled.input`
+	${tw`w-full p-[8px] rounded-[5px] border-[1px] border-solid border-[#DDD] text-[14px]`}
+`;
+
+const CheckboxContainer = styled.div`
+	${tw`flex items-center mb-[10px]`}
+`;
+
+const Checkbox = styled.input`
+	${tw`mr-[10px]`}
+`;
+
+const ErrorMessage = styled.p`
+	${tw`text-[red] text-[12px] mb-[10px]`}
+`;
+
+const SubmitButton = styled.button`
+	${tw`w-full p-[10px] bg-[#FF64AE] text-[#FFF] border-none rounded-[5px] cursor-pointer text-[16px]`}
+	&:disabled {
+		${tw`bg-[#CCC] cursor-not-allowed`}
+	}
+`;
+
+const ForgotPasswordLink = styled.a`
+	${tw`text-[#FF64AE] text-[14px] no-underline text-right block mt-[10px]`}
+`;
 
 const LoginForm: React.FC = () => {
 	const { login } = useAuth();
@@ -46,46 +91,36 @@ const LoginForm: React.FC = () => {
 	};
 
 	return (
-		<div style={{ maxWidth: "400px", margin: "0 auto", padding: "20px", border: "1px solid #ccc", borderRadius: "10px" }}>
-			<form onSubmit={handleLogin}>
+		<FormContainer>
+			<Form onSubmit={handleLogin}>
 				{/* Email Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="email">Email</label>
-					<input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} required/>
-				</div>
+				<InputGroup>
+					<Label htmlFor="email">Email</Label>
+					<Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+				</InputGroup>
 
 				{/* Password Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="password">Password</label>
-					<input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} required />
-				</div>
+				<InputGroup>
+					<Label htmlFor="password">Password</Label>
+					<Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+				</InputGroup>
 
 				{/* Remember Me */}
-				<div style={{ marginBottom: "10px", display: "flex", alignItems: "center" }}>
-					<input id="rememberMe" type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} style={{ marginRight: "10px" }} />
-					<label htmlFor="rememberMe">Remember Me</label>
-				</div>
+				<CheckboxContainer>
+					<Checkbox id="rememberMe" type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)}/>
+					<Label htmlFor="rememberMe">Remember Me</Label>
+				</CheckboxContainer>
 
 				{/* Error Message */}
-				{error && (
-					<p style={{ color: "red", fontSize: "12px", marginBottom: "10px" }}>
-						{error}
-					</p>
-				)}
+				{error && <ErrorMessage>{error}</ErrorMessage>}
 
 				{/* Submit Button */}
-				<button type="submit" style={{ width: "100%", padding: "10px", backgroundColor: "#FF64AE", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer", }} disabled={loading}>
-					{loading ? "Logging in..." : "Login"}
-				</button>
+				<SubmitButton type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</SubmitButton>
 
 				{/* Forgot Password */}
-				<div style={{ marginBottom: "10px", textAlign: "right" }}>
-					<a href="/BeautyClinic/forgot-password" style={{ color: "#FF64AE", textDecoration: "none", fontSize: "14px" }} >
-						Forgot Password?
-					</a>
-				</div>
-			</form>
-		</div>
+				<ForgotPasswordLink href="/BeautyClinic/forgot-password">Forgot Password?</ForgotPasswordLink>
+			</Form>
+		</FormContainer>
 	);
 };
 

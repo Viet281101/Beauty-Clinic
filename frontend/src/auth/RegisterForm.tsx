@@ -1,7 +1,41 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
 import { useAuth } from "./hooks/useAuth";
 import { RegisterRequest } from "./types/authTypes";
 import ReCAPTCHA from "react-google-recaptcha";
+
+const FormContainer = styled.div`
+	${tw`max-w-[400px] my-0 mx-auto p-[20px] border-[1px] border-solid border-[#CCC] rounded-[10px]`}
+`;
+
+const Form = styled.form`
+	${tw`flex flex-col`}
+`;
+
+const InputGroup = styled.div`
+	${tw`mb-[10px]`}
+`;
+
+const Label = styled.label`
+	${tw`block mb-[5px] text-[14px]`}
+	span { ${tw`text-[red]`} }
+`;
+
+const Input = styled.input`
+	${tw`w-full p-[8px] rounded-[5px] border-[1px] border-solid border-[#DDD] text-[14px]`}
+`;
+
+const ErrorMessage = styled.p`
+	${tw`text-[red] text-[12px] mb-[10px]`}
+`;
+
+const SubmitButton = styled.button`
+	${tw`w-full p-[10px] bg-[#FF64AE] text-[#FFF] border-none rounded-[5px] cursor-pointer text-[16px]`}
+	&:disabled {
+		${tw`bg-[#CCC] cursor-not-allowed`}
+	}
+`;
 
 const RegisterForm: React.FC = () => {
 	const { register } = useAuth();
@@ -53,60 +87,54 @@ const RegisterForm: React.FC = () => {
 	};
 
 	return (
-		<div style={{ maxWidth: "400px", margin: "0 auto", padding: "20px", border: "1px solid #ccc", borderRadius: "10px" }}>
-			<form onSubmit={handleRegister}>
+		<FormContainer>
+			<Form onSubmit={handleRegister}>
 				{/* Name Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="name">Name <span style={{ color: "red" }}>*</span></label>
-					<input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} required />
-				</div>
+				<InputGroup>
+					<Label htmlFor="name">Name <span>*</span></Label>
+					<Input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
+				</InputGroup>
 
 				{/* Email Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="email">Email <span style={{ color: "red" }}>*</span></label>
-					<input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} required />
-				</div>
+				<InputGroup>
+					<Label htmlFor="email">Email <span>*</span></Label>
+					<Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+				</InputGroup>
 
 				{/* Phone Number Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="phone">Phone Number (optional)</label>
-					<input id="phone" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} />
-				</div>
+				<InputGroup>
+					<Label htmlFor="phone">Phone Number (optional)</Label>
+					<Input id="phone" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
+				</InputGroup>
 
 				{/* Password Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="password">Password <span style={{ color: "red" }}>*</span></label>
-					<input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} required />
-				</div>
+				<InputGroup>
+					<Label htmlFor="password">Password <span>*</span></Label>
+					<Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+				</InputGroup>
 
 				{/* Confirm Password Field */}
-				<div style={{ marginBottom: "10px" }}>
-					<label htmlFor="confirmPassword">Confirm Password <span style={{ color: "red" }}>*</span></label>
-					<input id="confirmPassword" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ddd" }} required />
-				</div>
+				<InputGroup>
+					<Label htmlFor="confirmPassword">Confirm Password <span>*</span></Label>
+					<Input id="confirmPassword" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
+				</InputGroup>
 
 				{/* CAPTCHA */}
-				<div style={{ marginBottom: "10px" }}>
-					<label>Verify CAPTCHA</label>
+				<InputGroup>
+					<Label>Verify CAPTCHA</Label>
 					<ReCAPTCHA
 						sitekey="6LdkTr0qAAAAAOEl896kZGfSp9d3ben9QIOAABem"
 						onChange={handleCaptchaChange}
 					/>
-				</div>
+				</InputGroup>
 
 				{/* Error Message */}
-				{error && (
-					<p style={{ color: "red", fontSize: "12px", marginBottom: "10px" }}>
-						{error}
-					</p>
-				)}
+				{error && <ErrorMessage>{error}</ErrorMessage>}
 
 				{/* Submit Button */}
-				<button type="submit" style={{width: "100%", padding: "10px", backgroundColor: "#FF64AE", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }} disabled={loading || !captchaToken}>
-					{loading ? "Registering..." : "Register"}
-				</button>
-			</form>
-		</div>
+				<SubmitButton type="submit" disabled={loading || !captchaToken}>{loading ? "Registering..." : "Register"}</SubmitButton>
+			</Form>
+		</FormContainer>
 	);
 };
 
