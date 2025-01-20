@@ -3,7 +3,6 @@ module.exports = {
 	style: {
 		sass: {
 			loaderOptions: {
-				compact: true,
 				implementation: require('sass'),
 			},
 		},

@@ -164,7 +164,13 @@ function Header(): JSX.Element {
 
 	const getHomePath = (): string => (currentPage === "Home1" ? "/home" : "/");
 	const toggleHomePage = (): void => setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
-	const toggleMenu = (): void => setMenuOpen(!isMenuOpen);
+	const toggleMenu = () => {
+		setMenuOpen((prev) => {
+			const isOpen = !prev;
+			document.body.classList.toggle("no-scroll", isOpen);
+			return isOpen;
+		});
+	};
 
 	return (
 		<HeaderContainer>
