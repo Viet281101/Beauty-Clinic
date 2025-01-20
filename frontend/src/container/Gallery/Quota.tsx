@@ -20,7 +20,7 @@ const QuotaSection = styled.section`
 		${tw`-mb-[100px]`}
 	}
 	@media (max-width: 630px) {
-		${tw`px-0`}
+		${tw`px-0 -mb-[160px]`}
 	}
 `;
 

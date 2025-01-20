@@ -16,6 +16,12 @@ const RequestCallSection = styled.section`
 	@media (max-width: 880px) {
 		${tw`mb-0`}
 	}
+	@media (max-width: 768px) {
+		${tw`-mb-[200px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`-mb-[300px]`}
+	}
 `;
 
 const RequestContainer = styled.div`

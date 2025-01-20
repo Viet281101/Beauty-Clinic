@@ -23,7 +23,15 @@ Using the **ReactJS library**.
       - The navbar requires creativity to achieve a good UI/UX.
       - Pay attention to the consistency of newly added components (not included in the current design) with the overall design.
 
-2. **Deployment:**
+2. **Create a simple server using nodeJS to have authentication api (Can be found online).**
+Request :
+   - Create a registration login page
+   - Create a profile page, put the profile page in the navigation bar above the header so that it will only display the profile page when logged in, add a logout button to log out. 
+
+**Note**: In the login and registration form, react-query will be used to handle async/await and react-hook-form to manage the data and state of the form.
+
+
+3. **Deployment:**
    - After completing the project, deploy the website using one of the following platforms:
      - [Vercel Deployment](https://vercel.com/docs/deployments/overview)
      - [Netlify Deployment](https://www.netlify.com/)

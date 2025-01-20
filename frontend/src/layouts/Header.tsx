@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { currentPageAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
 import tw from "twin.macro";
-import styled from "styled-components";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import AuthModal from "../auth/AuthModal";
+
 import logo from "../assets/images/main_logo.png";
+import profileIcon from "../assets/icons/profile.png";
+import profileIcon2 from "../assets/icons/profile2.png";
 
 const GlobalStyle = createGlobalStyle`
 	body.no-scroll {
@@ -16,12 +19,8 @@ const GlobalStyle = createGlobalStyle`
 
 const HeaderContainer = styled.header`
 	${tw`w-4/5 flex p-0 justify-between items-center my-[41px] mx-auto`}
-	@media (max-width: 900px) {
-		${tw`w-[90%] my-[40px]`}
-	}
-	@media (max-width: 768px) {
-		${tw`w-4/5`}
-	}
+	@media (max-width: 900px) { ${tw`w-[90%] my-[40px]`} }
+	@media (max-width: 768px) { ${tw`w-4/5`} }
 `;
 
 const Logo = styled(Link)`
@@ -104,12 +103,15 @@ const Overlay = styled.div`
 
 const OverlayContent = styled.div`
 	${tw`relative top-1/4 text-center`}
-	a {
-		${tw`block py-3 text-2xl font-semibold text-[#8B8B8B] hover:text-[#FF64AE] transition-all`}
-	}
+	a { ${tw`block py-3 text-2xl font-semibold text-[#8B8B8B] hover:text-[#FF64AE] transition-all`} }
 	.home-btn { ${tw`text-[#091156]`} }
 	.contact-btn {
 		${tw`bg-[#FF64AE] hover:bg-[#E05497] w-[210px] my-5 mx-auto flex items-center justify-center rounded-full text-white`}
+	}
+	.profile-link {
+		${tw`flex items-center justify-center text-[#8B8B8B] py-3`}
+		img { ${tw`w-[40px] h-[40px] mr-2`} }
+		span { ${tw`text-[#8B8B8B] text-2xl font-semibold`} }
 	}
 `;
 
@@ -157,10 +159,40 @@ const ContactButton = styled(Link)`
 	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
-function Header(): JSX.Element {
+const ProfileIconContainer = styled.div`
+	${tw`relative top-[10px] flex items-center cursor-pointer`}
+	img { ${tw`w-[68px] h-[68px]`} }
+	&.paused img { animation-play-state: paused; }
+	@media (max-width: 1440px) {
+		${tw`top-0`}
+		img { ${tw`w-[52px] h-[52px]`} }
+	}
+	@media (max-width: 1180px) {
+		img { ${tw`w-[50px] h-[50px]`} }
+	}
+	@media (max-width: 940px) {
+		img { ${tw`w-[40px] h-[40px]`} }
+	}
+	@media (max-width: 768px) { ${tw`hidden`} }
+`;
+
+const Header: React.FC = () => {
 	const location = useLocation();
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
 	const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+	const [isModalOpen, setModalOpen] = useState<boolean>(false);
+	const [isFlipping, setIsFlipping] = useState<boolean>(true);
+	const [currentIcon, setCurrentIcon] = useState<string>(profileIcon);
+
+	useEffect(() => {
+		if (!isFlipping) return;	
+		const interval = setInterval(() => {
+			setCurrentIcon((prev) => (prev === profileIcon ? profileIcon2 : profileIcon));
+		}, 1000);
+		return () => clearInterval(interval);
+	}, [isFlipping]);
+	const handleMouseEnter = (): void => setIsFlipping(false);
+	const handleMouseLeave = (): void => setIsFlipping(true);
 
 	const getHomePath = (): string => (currentPage === "Home1" ? "/home" : "/");
 	const toggleHomePage = (): void => setCurrentPage((prev) => (prev === "Home1" ? "Home2" : "Home1"));
@@ -187,6 +219,11 @@ function Header(): JSX.Element {
 			</NavMenu>
 			<ContactButton to="/contact">Contact</ContactButton>
 
+			{/* Profile Icon */}
+			<ProfileIconContainer className={!isFlipping ? "paused" : ""} onClick={() => setModalOpen(true)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+				<img src={currentIcon} alt="Profile Icon" />
+			</ProfileIconContainer>
+
 			{/* Hamburger Button */}
 			<HamburgerButton className={isMenuOpen ? "opened" : ""} onClick={toggleMenu} aria-label="Main Menu">
 				<svg viewBox="0 0 100 100">
@@ -204,8 +241,15 @@ function Header(): JSX.Element {
 					<Link to="/gallery" onClick={toggleMenu}>Gallery</Link>
 					<Link to="/blog" onClick={toggleMenu}>Blog</Link>
 					<Link className="contact-btn" to="/contact" onClick={toggleMenu}>Contact</Link>
+					<div className="profile-link" onClick={() => { toggleMenu(); setModalOpen(true); }}>
+						<img src={profileIcon} alt="Profile Icon" />
+						<span>Login/Register</span>
+					</div>
 				</OverlayContent>
 			</Overlay>
+
+			{/* Test Modal */}
+			{isModalOpen && <AuthModal onClose={() => setModalOpen(false)} />}
 		</HeaderContainer>
 	);
 };
