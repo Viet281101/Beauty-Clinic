@@ -62,11 +62,11 @@ const NavMenu = styled.nav`
 		${tw`left-[46px] min-w-[682px]`}
 		ul li a { ${tw`tracking-[0.12rem] text-[18px]`} }
 	}
-	@media (max-width: 1550px) {
+	@media (max-width: 1610px) {
 		${tw`left-[26px] min-w-[602px]`}
 		ul li a { ${tw`tracking-[0.11rem]`} }
 	}
-	@media (max-width: 1440px) {
+	@media (max-width: 1500px) {
 		${tw`-top-[1px] left-[80px] min-w-[526px]`}
 		ul li a { ${tw`text-[1rem] tracking-[0.1rem]`} }
 		ul li a.about { ${tw`-top-[1px] left-0`} }
@@ -145,14 +145,21 @@ const HamburgerButton = styled.button`
 `;
 
 const ContactButton = styled(Link)`
-	${tw`relative top-[10px] font-semibold cursor-pointer rounded-full tracking-[0.12rem] w-[210px] h-[68px] text-white bg-[#FF64AE] text-[1.3rem] flex items-center justify-center`}
+	${tw`relative top-[10px] left-[60px] font-semibold cursor-pointer rounded-full tracking-[0.12rem] w-[210px] h-[68px] text-white bg-[#FF64AE] text-[1.3rem] flex items-center justify-center`}
 	&:hover { ${tw`bg-[#E05497]`} }
-	@media (max-width: 1440px) {
-		${tw`-top-[1px] right-1 w-[160px] h-[52px] text-[1rem]`}
+	@media (max-width: 1860px) { ${tw`left-[40px]`} }
+	@media (max-width: 1770px) { ${tw`w-[180px]`} }
+	@media (max-width: 1720px) { ${tw`left-0`} }
+	@media (max-width: 1650px) { ${tw`left-[10px]`} }
+	@media (max-width: 1500px) {
+		${tw`-top-[1px] left-[30px] w-[160px] h-[52px] text-[1rem]`}
 	}
+	@media (max-width: 1270px) { ${tw`left-[10px]`} }
+	@media (max-width: 1200px) { ${tw`w-[140px]`} }
 	@media (max-width: 1180px) {
 		${tw`static top-0 w-[160px] h-[50px] text-[14px] tracking-[0.1rem]`}
 	}
+	@media (max-width: 960px) { ${tw`w-[140px]`} }
 	@media (max-width: 940px) {
 		${tw`w-[120px] h-[40px] text-[12px] tracking-[0.06rem]`}
 	}
@@ -163,7 +170,7 @@ const ProfileIconContainer = styled.div`
 	${tw`relative top-[10px] flex items-center cursor-pointer`}
 	img { ${tw`w-[68px] h-[68px]`} }
 	&.paused img { animation-play-state: paused; }
-	@media (max-width: 1440px) {
+	@media (max-width: 1500px) {
 		${tw`top-0`}
 		img { ${tw`w-[52px] h-[52px]`} }
 	}

@@ -6,7 +6,7 @@
 
 Using the **ReactJS library**.
 
-[![alt text](frontend/public/react.svg)](https://react.dev/) **&** [![alt text](frontend/public/typescript.svg)](https://www.typescriptlang.org/) **&** [![alt text](frontend/public/javascript.svg)](https://en.wikipedia.org/wiki/JavaScript) **&** [![alt text](frontend/public/tailwind.svg)](https://tailwindcss.com/) **&** [![alt text](frontend/public/sass.svg)](https://sass-lang.com/) **&** [![alt text](frontend/public/jotai.png)](https://jotai.org/) **&** [![alt text](frontend/public/leaflet.png)](https://leafletjs.com/) **&** [![alt text](backend/sqlite3.png)](https://www.sqlite.org/)
+[![alt text](frontend/public/react.svg)](https://react.dev/) **&** [![alt text](frontend/public/typescript.svg)](https://www.typescriptlang.org/) **&** [![alt text](frontend/public/javascript.svg)](https://en.wikipedia.org/wiki/JavaScript) **&** [![alt text](frontend/public/tailwind.svg)](https://tailwindcss.com/) **&** [![alt text](frontend/public/sass.svg)](https://sass-lang.com/) **&** [![alt text](frontend/public/jotai.png)](https://jotai.org/) **&** [![alt text](frontend/public/leaflet.png)](https://leafletjs.com/) **&** [![alt text](backend/mongodb.png)](https://www.mongodb.com/) **&** [![alt text](backend/nodejs.png)](https://nodejs.org/en)
 
 **Figma Link:** [Beauty and Clinic](https://www.figma.com/design/Ry2YV1BCuUR3m0xPZdqrGP/Beautice---Clinic-%26-Beauty-Consultation-Website-Design?node-id=513-2&node-type=canvas&t=vKCDwo3FlkNBcL8j-0)
 
