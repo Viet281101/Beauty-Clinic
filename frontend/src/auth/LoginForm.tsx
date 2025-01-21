@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "./hooks/useAuth";
 import { LoginRequest } from "./types/authTypes";
 
@@ -44,11 +45,12 @@ const SubmitButton = styled.button`
 `;
 
 const ForgotPasswordLink = styled.a`
-	${tw`text-[#FF64AE] text-[14px] no-underline text-right block mt-[10px]`}
+	${tw`text-[#FF64AE] text-[14px] no-underline text-right cursor-pointer block mt-[10px]`}
 `;
 
 const LoginForm: React.FC = () => {
 	const { login } = useAuth();
+	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [rememberMe, setRememberMe] = useState(false);
@@ -82,12 +84,17 @@ const LoginForm: React.FC = () => {
 				localStorage.removeItem("rememberedPassword");
 			}
 
-			alert("Login successful!");
+			// alert("Login successful!");
+			navigate("/profile");
 		} catch (err: any) {
 			setError(err.message || "Login failed!");
 		} finally {
 			setLoading(false);
 		}
+	};
+
+	const navigateToForgotPassword = () => {
+		navigate("/forgot-password");
 	};
 
 	return (
@@ -118,7 +125,7 @@ const LoginForm: React.FC = () => {
 				<SubmitButton type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</SubmitButton>
 
 				{/* Forgot Password */}
-				<ForgotPasswordLink href="/BeautyClinic/forgot-password">Forgot Password?</ForgotPasswordLink>
+				<ForgotPasswordLink onClick={navigateToForgotPassword}>Forgot Password?</ForgotPasswordLink>
 			</Form>
 		</FormContainer>
 	);

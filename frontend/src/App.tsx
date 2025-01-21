@@ -10,6 +10,7 @@ import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
 import ProfilePage from "./pages/Profile";
 import ForgotPasswordPage from "./pages/ForgotPassword";
+import "./auth/api/interceptor";
 
 interface LayoutProps {
 	children: ReactNode;

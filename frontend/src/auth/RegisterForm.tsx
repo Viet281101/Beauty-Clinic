@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "./hooks/useAuth";
 import { RegisterRequest } from "./types/authTypes";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -39,6 +40,7 @@ const SubmitButton = styled.button`
 
 const RegisterForm: React.FC = () => {
 	const { register } = useAuth();
+	const navigate = useNavigate();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -65,6 +67,12 @@ const RegisterForm: React.FC = () => {
 			return;
 		}
 
+		if (!email.includes("@")) {
+			setError("Invalid email format");
+			setLoading(false);
+			return;
+		}
+
 		try {
 			const registerRequest: RegisterRequest = {
 				name,
@@ -73,7 +81,8 @@ const RegisterForm: React.FC = () => {
 				phoneNumber: phoneNumber || undefined,
 			};
 			await register(registerRequest);
-			alert("Registration successful!");
+			// alert("Registration successful!");
+			navigate("/profile");
 		} catch (err: any) {
 			setError(err.message || "Registration failed!");
 		} finally {
@@ -123,7 +132,7 @@ const RegisterForm: React.FC = () => {
 				<InputGroup>
 					<Label>Verify CAPTCHA</Label>
 					<ReCAPTCHA
-						sitekey="6LdkTr0qAAAAAOEl896kZGfSp9d3ben9QIOAABem"
+						sitekey="6LcYXL4qAAAAAKpkjy38kPe771gJW1cnZ5BhndUT"
 						onChange={handleCaptchaChange}
 					/>
 				</InputGroup>
@@ -133,6 +142,7 @@ const RegisterForm: React.FC = () => {
 
 				{/* Submit Button */}
 				<SubmitButton type="submit" disabled={loading || !captchaToken}>{loading ? "Registering..." : "Register"}</SubmitButton>
+				{/* <SubmitButton type="submit" disabled={loading}>{loading ? "Registering..." : "Register"}</SubmitButton> */}
 			</Form>
 		</FormContainer>
 	);

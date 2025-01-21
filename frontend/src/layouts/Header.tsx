@@ -30,7 +30,7 @@ const Logo = styled(Link)`
 	span {
 		${tw`font-bold tracking-[0.2rem] py-0 px-2.5 text-[32px] text-[#091156]`}
 	}
-	@media (max-width: 1440px) {
+	@media (max-width: 1500px) {
 		${tw`gap-2.5 top-0 left-1`}
 		img { ${tw`min-w-[80px]`} }
 		span { ${tw`tracking-[0.15rem] text-[24px]`} }

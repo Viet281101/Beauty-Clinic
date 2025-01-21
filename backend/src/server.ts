@@ -2,7 +2,9 @@ import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
+import helmet from "helmet";
 import connectDB from "./config/db";
+import authRoutes from "./routes/auth";
 
 // Load environment variables
 dotenv.config();
@@ -27,6 +29,25 @@ connectDB();
 app.get("/", (req: Request, res: Response) => {
 	res.send("API is running...");
 });
+
+app.use("/api/auth", authRoutes);
+
+// Configure CSP
+app.use(
+	helmet.contentSecurityPolicy({
+		directives: {
+			defaultSrc: ["'self'"],
+			scriptSrc: [
+				"'self'",
+				"'unsafe-inline'",
+				"https://www.google.com",
+				"https://www.gstatic.com",
+			],
+			frameSrc: ["'self'", "https://www.google.com"],
+			imgSrc: ["'self'", "data:", "https://www.gstatic.com"],
+		},
+	})
+);
 
 // Start server
 const PORT = process.env.PORT || 5000;
