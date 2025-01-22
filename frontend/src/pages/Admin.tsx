@@ -2,10 +2,10 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import Header from "../layouts/Header";
-import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
+import AdminPanel from "../container/Admin/Panel";
 
-const ForgotPasswordContainer = styled.div`
+const AdminPageContainer = styled.div`
 	${tw`relative`}
 	@media (max-width: 768px) {
 		${tw`overflow-x-hidden`}
@@ -16,16 +16,21 @@ const HeaderHeroContainer = styled.div`
 	${tw`relative`}
 `;
 
-const ForgotPassword: React.FC = () => {
+const GapLine = styled.div`
+	${tw`mb-[300px]`}
+`;
+
+const AdminPage: React.FC = () => {
 	return (
-		<ForgotPasswordContainer>
+		<AdminPageContainer>
 			<HeaderHeroContainer>
 				<Header />
 			</HeaderHeroContainer>
-			<Footer />
+			<AdminPanel />
+			<GapLine />
 			<ToTopBtn />
-		</ForgotPasswordContainer>
+		</AdminPageContainer>
 	);
 };
 
-export default ForgotPassword;
+export default AdminPage;

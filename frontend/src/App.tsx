@@ -8,8 +8,9 @@ import GalleryPage from "./pages/Gallery";
 import TeamPage from "./pages/Team";
 import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
+import AdminPage from "./pages/Admin";
 import ProfilePage from "./pages/Profile";
-import ForgotPasswordPage from "./pages/ForgotPassword";
+import RecoverPassword from "./pages/RecoveryPassword";
 import "./auth/api/interceptor";
 
 interface LayoutProps {
@@ -32,8 +33,10 @@ function App() {
 				<Route path="/team" element={<Layout><TeamPage /></Layout>} />
 				<Route path="/blog" element={<Layout><BlogPage /></Layout>} />
 				<Route path="/contact" element={<Layout><ContactPage /></Layout>} />
+				<Route path="/admin" element={<Layout><AdminPage /></Layout>} />
 				<Route path="/profile" element={<Layout><ProfilePage /></Layout>} />
-				<Route path="/forgot-password" element={<Layout><ForgotPasswordPage /></Layout>} />
+				<Route path="/recovery-password" element={<Layout><RecoverPassword /></Layout>} />
+				<Route path="/:username" element={<Layout><ProfilePage /></Layout>} />
 			</Routes>
 		</Router>
 	);

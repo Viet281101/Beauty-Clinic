@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User";
 
@@ -11,7 +11,23 @@ const register = async (req: Request, res: Response): Promise<void> => {
 		const existingUser = await User.findOne({ email });
 		if (existingUser) {
 			res.status(400).json({ message: "User already exists" });
+			console.log("Existing User Found:", existingUser);
 			return;
+		}
+
+		// Generate unique username
+		if (!name || name.trim() === "") {
+			res.status(400).json({ message: "Name is required" });
+			return;
+		}
+		let username = name.replace(/\s+/g, "").toLowerCase();
+		let duplicateUsername = await User.findOne({ username });
+		let counter = 1;
+
+		while (duplicateUsername) {
+			username = `${name.replace(/\s+/g, "").toLowerCase()}${counter}`;
+			duplicateUsername = await User.findOne({ username });
+			counter++;
 		}
 
 		// Hash the password
@@ -20,6 +36,7 @@ const register = async (req: Request, res: Response): Promise<void> => {
 		// Create a new user
 		const newUser = new User({
 			name,
+			username,
 			email,
 			password: hashedPassword,
 		});
@@ -29,14 +46,14 @@ const register = async (req: Request, res: Response): Promise<void> => {
 		// Generate JWT token
 		const token = jwt.sign(
 			{ id: newUser._id },
-			process.env.JWT_SECRET || "defaultsecret", // Use default for local development
+			process.env.JWT_SECRET || "defaultsecret",
 			{ expiresIn: "1h" }
 		);
 
 		res.status(201).json({
 			message: "User registered successfully",
 			token,
-			user: { id: newUser._id, name: newUser.name, email: newUser.email },
+			user: { id: newUser._id, name: newUser.name, username: newUser.username, email: newUser.email },
 		});
 	} catch (error) {
 		console.error("Error during registration:", error);
@@ -68,7 +85,7 @@ const login = async (req: Request, res: Response): Promise<void> => {
 
 		// Generate JWT token
 		const token = jwt.sign(
-			{ id: user._id },
+			{ id: user._id, role: user.role },
 			process.env.JWT_SECRET || "defaultsecret",
 			{ expiresIn: "1h" }
 		);
@@ -76,7 +93,7 @@ const login = async (req: Request, res: Response): Promise<void> => {
 		res.status(200).json({
 			message: "Login successful",
 			token,
-			user: { id: user._id, name: user.name, email: user.email },
+			user: { id: user._id, name: user.name, email: user.email, role: user.role, },
 		});
 	} catch (error) {
 		console.error("Error during login:", error);

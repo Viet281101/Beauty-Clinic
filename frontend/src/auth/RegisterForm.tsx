@@ -80,11 +80,14 @@ const RegisterForm: React.FC = () => {
 				password,
 				phoneNumber: phoneNumber || undefined,
 			};
-			await register(registerRequest);
+			// await register(registerRequest);
+			const response = await register(registerRequest);
 			// alert("Registration successful!");
-			navigate("/profile");
+			// navigate("/profile");
+			const username = response.user.name.replace(/\s+/g, "").toLowerCase();
+			navigate(`/${username}`);
 		} catch (err: any) {
-			setError(err.message || "Registration failed!");
+			setError(err.response?.data?.message || "Registration failed!");
 		} finally {
 			setLoading(false);
 		}

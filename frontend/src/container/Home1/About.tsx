@@ -1,6 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import bubbleBackground from "../../assets/background/bubbles/home1_about.svg";
 import playButtonIcon from "../../assets/icons/play_button.svg";
 import aboutImage from "../../assets/images/about_img.jpeg";
@@ -161,6 +162,9 @@ const ImageWrapper = styled.div`
 `;
 
 const About: React.FC = () => {
+	const navigate = useNavigate();
+	const navigateToAboutPage = () => { navigate("/about"); };
+
 	return (
 		<AboutSection id="about">
 			<ContentWrapper>
@@ -177,7 +181,7 @@ const About: React.FC = () => {
 					cras tellus enim.
 				</Description>
 				<Actions>
-					<Button>Learn More</Button>
+					<Button onClick={navigateToAboutPage}>Learn More</Button>
 					<Video>
 						<img src={playButtonIcon} alt="Play Button" />
 						<p>Watch Video</p>

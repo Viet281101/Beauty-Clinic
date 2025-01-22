@@ -6,14 +6,26 @@ import ContactIMG from "../../components/ContactImg";
 
 const ContactSection = styled.section`
 	${tw`relative -top-[5px] py-[150px] px-[10%]`}
+	@media (max-width: 1770px) {
+		${tw`-mb-[100px]`}
+	}
+	@media (max-width: 1660px) {
+		${tw`-mb-[200px]`}
+	}
+	@media (max-width: 1550px) {
+		${tw`-mb-[300px]`}
+	}
 	@media (max-width: 1440px) {
 		${tw`py-[120px] px-[5%] -top-[318px] mb-[4px]`}
 	}
 	@media (max-width: 1280px) {
-		${tw`py-[100px] px-[5%] -top-[200px] mb-0`}
+		${tw`py-[100px] px-[5%] -top-[200px] -mb-[300px]`}
+	}
+	@media (max-width: 1160px) {
+		${tw`-mb-[200px]`}
 	}
 	@media (max-width: 1130px) {
-		${tw`-top-[40px]`}
+		${tw`-top-[40px] mb-0`}
 	}
 	@media (max-width: 1024px) {
 		${tw`-top-[20px]`}

@@ -30,6 +30,7 @@ app.get("/", (req: Request, res: Response) => {
 	res.send("API is running...");
 });
 
+// Mount the routes
 app.use("/api/auth", authRoutes);
 
 // Configure CSP

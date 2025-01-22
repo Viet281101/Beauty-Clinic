@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BeautyClinic/static/css/main.fcf2c8ff.css",
-    "main.js": "/BeautyClinic/static/js/main.4893bac5.js",
+    "main.css": "/BeautyClinic/static/css/main.61ca0cf0.css",
+    "main.js": "/BeautyClinic/static/js/main.3572f98c.js",
     "static/media/slogan_full_img.jpeg": "/BeautyClinic/static/media/slogan_full_img.2379220656bd6c3fccf2.jpeg",
     "static/media/slogan.jpeg": "/BeautyClinic/static/media/slogan.bdd8b82eed415b6db76d.jpeg",
     "static/media/why_bg.svg": "/BeautyClinic/static/media/why_bg.df6769407f14bee950289999101c2af7.svg",
@@ -40,7 +40,9 @@
     "static/media/treatment.svg": "/BeautyClinic/static/media/treatment.f0d0930a5035b3767babc338dede624d.svg",
     "static/media/customer_1.jpeg": "/BeautyClinic/static/media/customer_1.b980c4d812e9582313d5.jpeg",
     "static/media/row3_img1.jpeg": "/BeautyClinic/static/media/row3_img1.28c2867d2206aa40c82d.jpeg",
+    "static/media/profile2.png": "/BeautyClinic/static/media/profile2.5faf09a7795d28bf5a2b.png",
     "static/media/recent_1.jpeg": "/BeautyClinic/static/media/recent_1.08fb70837af56d40498c.jpeg",
+    "static/media/profile.png": "/BeautyClinic/static/media/profile.03961758fc894ce1fd2d.png",
     "static/media/art_1.svg": "/BeautyClinic/static/media/art_1.7ab66d8703134c7933980b94af1f8746.svg",
     "static/media/briyan_nevalli.jpeg": "/BeautyClinic/static/media/briyan_nevalli.4e7984483726cb8108ce.jpeg",
     "static/media/lilly_adams.jpeg": "/BeautyClinic/static/media/lilly_adams.59221af5aea5be392578.jpeg",
@@ -97,11 +99,11 @@
     "static/media/folder.svg": "/BeautyClinic/static/media/folder.e7f77439c15688d05ab8a9067e6649ad.svg",
     "static/media/tour_play.svg": "/BeautyClinic/static/media/tour_play.2b60cae09d983fc4ecac8cd3e69bb2d8.svg",
     "static/media/caret_right.svg": "/BeautyClinic/static/media/caret_right.7c9d82715065b1c6e9d010f41866b2c6.svg",
-    "main.fcf2c8ff.css.map": "/BeautyClinic/static/css/main.fcf2c8ff.css.map",
-    "main.4893bac5.js.map": "/BeautyClinic/static/js/main.4893bac5.js.map"
+    "main.61ca0cf0.css.map": "/BeautyClinic/static/css/main.61ca0cf0.css.map",
+    "main.3572f98c.js.map": "/BeautyClinic/static/js/main.3572f98c.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcf2c8ff.css",
-    "static/js/main.4893bac5.js"
+    "static/css/main.61ca0cf0.css",
+    "static/js/main.3572f98c.js"
   ]
 }

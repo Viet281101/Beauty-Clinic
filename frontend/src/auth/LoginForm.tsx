@@ -75,7 +75,9 @@ const LoginForm: React.FC = () => {
 		try {
 			const loginRequest: LoginRequest = { email, password };
 			await login(loginRequest);
+			const response = await login(loginRequest);
 
+			localStorage.setItem("token", response.token);
 			if (rememberMe) {
 				localStorage.setItem("rememberedEmail", email);
 				localStorage.setItem("rememberedPassword", password);
@@ -85,7 +87,13 @@ const LoginForm: React.FC = () => {
 			}
 
 			// alert("Login successful!");
-			navigate("/profile");
+			// navigate("/profile");
+			if (response.user.role === "admin") {
+				navigate("/admin");
+			} else {
+				const username = response.user.name.replace(/\s+/g, "").toLowerCase();
+				navigate(`/${username}`);
+			}
 		} catch (err: any) {
 			setError(err.message || "Login failed!");
 		} finally {
@@ -94,7 +102,7 @@ const LoginForm: React.FC = () => {
 	};
 
 	const navigateToForgotPassword = () => {
-		navigate("/forgot-password");
+		navigate("/recovery-password");
 	};
 
 	return (

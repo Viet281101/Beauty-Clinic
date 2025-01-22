@@ -11,6 +11,7 @@ export const useAuth = () => {
 			setUser(response.user);
 			localStorage.setItem("user", JSON.stringify(response.user));
 			localStorage.setItem("token", response.token);
+			return response;
 		} catch (error: any) {
 			throw error;
 		}
@@ -22,6 +23,7 @@ export const useAuth = () => {
 			setUser(response.user);
 			localStorage.setItem("user", JSON.stringify(response.user));
 			localStorage.setItem("token", response.token);
+			return response;
 		} catch (error: any) {
 			throw error;
 		}

@@ -26,10 +26,15 @@ mongosh
 ```bash
 mongosh -u admin -p adminpassword --authenticationDatabase admin
 ```
+or with beauty_clinic user:
+```bash
+mongosh -u beauty_user -p securepassword --authenticationDatabase beauty_clinic
+```
 
 - Switch to beauty_clinic:
 ```bash
 use beauty_clinic
+db.grantRolesToUser("beauty_user", [{ role: "readWrite", db: "beauty_clinic" }])
 ```
 
 - Create a user for backend:
