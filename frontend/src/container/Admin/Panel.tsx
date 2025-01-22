@@ -2,8 +2,36 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
+const Container = styled.div`
+	${tw`container mx-auto p-5`}
+`;
+
+const Heading = styled.h1`
+	${tw`text-2xl font-bold mb-4`}
+`;
+
+const SectionHeading = styled.h2`
+	${tw`text-xl font-semibold mb-2`}
+`;
+
+const Form = styled.form`
+	${tw`flex flex-col gap-4 p-4 border border-gray-300 rounded-lg bg-gray-50`}
+`;
+
+const Input = styled.input`
+	${tw`p-2 border border-gray-300 rounded-md`}
+`;
+
+const Select = styled.select`
+	${tw`p-2 border border-gray-300 rounded-md`}
+`;
+
+const SubmitButton = styled.button`
+	${tw`bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700`}
+`;
+
 const UsersTable = styled.table`
-	${tw`w-full table-auto border-collapse`}
+	${tw`w-full table-auto border-collapse mt-6`}
 	border: 1px solid #ccc;
 `;
 
@@ -20,7 +48,7 @@ const TableCell = styled.td`
 `;
 
 const Button = styled.button`
-	${tw`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700`}
+	${tw`bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700`}
 `;
 
 const AdminPanel: React.FC = () => {
@@ -104,24 +132,23 @@ const AdminPanel: React.FC = () => {
 	if (error) return <div>{error}</div>;
 
 	return (
-		<div className="container mx-auto p-5">
-			<h1>Admin Panel</h1>
+		<Container>
+			<Heading>Admin Panel</Heading>
 
 			{/* Add User Form */}
-			<div>
-				<h2>Create New User</h2>
-				<form onSubmit={(e) => { e.preventDefault(); handleCreateUser(); }} className="create-user-form" >
-					<input type="text" placeholder="Name" value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} required />
-					<input type="text" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value })} required />
-					<input type="email" placeholder="Email" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} required />
-					<input type="password" placeholder="Password" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value })} required />
-					<select value={newUser.role} onChange={(e) => setNewUser({ ...newUser, role: e.target.value })} >
-						<option value="user">User</option>
-						<option value="admin">Admin</option>
-					</select>
-					<button className="submit-btn bg-slate-500 p-2 rounded-xl" type="submit">Create User</button>
-				</form>
-			</div>
+			<SectionHeading>Create New User</SectionHeading>
+			<Form
+				onSubmit={(e) => { e.preventDefault(); handleCreateUser(); }} >
+				<Input type="text" placeholder="Name" value={newUser.name} onChange={(e) => setNewUser({ ...newUser, name: e.target.value })} required />
+				<Input type="text" placeholder="Username" value={newUser.username} onChange={(e) => setNewUser({ ...newUser, username: e.target.value })} required />
+				<Input type="email" placeholder="Email" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} required />
+				<Input type="password" placeholder="Password" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value })} required />
+				<Select value={newUser.role} onChange={(e) => setNewUser({ ...newUser, role: e.target.value })} >
+					<option value="user">User</option>
+					<option value="admin">Admin</option>
+				</Select>
+				<SubmitButton type="submit">Create User</SubmitButton>
+			</Form>
 
 			{/* Users Table */}
 			<UsersTable>
@@ -148,7 +175,7 @@ const AdminPanel: React.FC = () => {
 					))}
 				</tbody>
 			</UsersTable>
-		</div>
+		</Container>
 	);
 };
 
