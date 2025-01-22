@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const cors_1 = __importDefault(require("cors"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const helmet_1 = __importDefault(require("helmet"));
 const db_1 = __importDefault(require("./config/db"));
 const auth_1 = __importDefault(require("./routes/auth"));
 // Load environment variables
@@ -27,7 +28,22 @@ app.use((err, req, res, next) => {
 app.get("/", (req, res) => {
     res.send("API is running...");
 });
+// Mount the routes
 app.use("/api/auth", auth_1.default);
+// Configure CSP
+app.use(helmet_1.default.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+            "'self'",
+            "'unsafe-inline'",
+            "https://www.google.com",
+            "https://www.gstatic.com",
+        ],
+        frameSrc: ["'self'", "https://www.google.com"],
+        imgSrc: ["'self'", "data:", "https://www.gstatic.com"],
+    },
+}));
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
