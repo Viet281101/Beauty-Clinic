@@ -111,8 +111,9 @@ const Description = styled.p`
 `;
 
 const ReadMoreButton = styled.button`
-	${tw`relative top-[80px] mb-[60px] pl-[68px] pr-[48px] py-[20px] bg-[#FF64AE] text-white font-semibold text-[18px] tracking-[0.1rem] rounded-full flex items-center cursor-pointer hover:bg-[#e5539f]`}
+	${tw`relative top-[80px] mb-[60px] pl-[68px] pr-[48px] py-[20px] bg-[#FF64AE] text-white font-semibold text-[18px] tracking-[0.1rem] rounded-full flex items-center cursor-pointer`}
 	box-shadow: 0px 17px 22px 0px #FFEDF6;
+	&:hover { ${tw`bg-[#e5539f]`} }
 	@media (max-width: 1440px) {
 		${tw`top-[68px] py-[17px] pl-[60px] pr-[40px] text-[16px] mb-0`}
 	}

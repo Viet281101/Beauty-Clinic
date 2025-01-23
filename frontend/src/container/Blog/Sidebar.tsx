@@ -183,6 +183,7 @@ const SocialIcons = styled.div`
 const SocialIcon = styled.div`
 	${tw`w-[50px] h-[50px] bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer`}
 	box-shadow: 0px 4px 19px 11px #f6f7ff;
+	&:hover { ${tw`scale-110`} }
 	@media (max-width: 1440px) {
 		${tw`w-[43px] h-[43px]`}
 	}
