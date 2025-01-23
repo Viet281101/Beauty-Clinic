@@ -7,7 +7,19 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h1`
-	${tw`text-2xl font-bold mb-4`}
+	${tw`text-[48px] text-[#091156] font-semibold mb-[20px]`}
+	@media (max-width: 1440px) {
+		${tw`text-[36px] leading-[45px] ml-1.5 -mb-[8px] -tracking-[0.002rem]`}
+	}
+	@media (max-width: 1024px) {
+		${tw`text-center leading-[1.3rem] mb-0`}
+	}
+	@media (max-width: 768px) {
+		${tw`text-[28px]`}
+	}
+	@media (max-width: 480px) {
+		${tw`text-[24px]`}
+	}
 `;
 
 const SectionHeading = styled.h2`

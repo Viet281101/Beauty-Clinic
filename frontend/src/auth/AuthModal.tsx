@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
 const ModalOverlay = styled.div`
-	${tw`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center`}
+	${tw`fixed top-0 left-0 w-full h-full bg-white bg-opacity-[0.9] z-50 flex items-center justify-center`}
+`;
+
+const ModalTittle = styled.div`
+	${tw`text-[#091156] text-[28px] font-semibold`}
 `;
 
 const ModalContent = styled.div`
-	${tw`bg-white rounded-lg shadow-lg w-full max-w-[400px] p-6 relative`}
+	${tw`bg-white rounded-[20px] w-full max-w-[400px] p-6 relative`}
+	box-shadow: 0px 25px 50px 25px #E4E7FF;
+`;
+
+const ModalFooter = styled.div`
+	${tw`font-semibold text-[20px] p-[10px]`}
 `;
 
 const CloseButton = styled.button`
-	${tw`absolute top-3 right-3 text-gray-500 hover:text-gray-700`}
+	${tw`absolute top-[8px] right-[20px] text-[40px] text-gray-500 cursor-pointer`}
 `;
 
 const ToggleLink = styled.span`
@@ -22,10 +31,17 @@ const ToggleLink = styled.span`
 
 interface AuthModalProps {
 	onClose: () => void;
-}
+};
 
 const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
 	const [isLogin, setIsLogin] = useState(true);
+
+	useEffect(() => {
+		document.body.classList.add("no-scroll");
+		return () => {
+			document.body.classList.remove("no-scroll");
+		};
+	}, []);
 
 	const toggleForm = () => {
 		setIsLogin((prev) => !prev);
@@ -37,19 +53,19 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
 				<CloseButton onClick={onClose}>×</CloseButton>
 				{isLogin ? (
 					<>
-						<h2>Login</h2>
+						<ModalTittle>Login</ModalTittle>
 						<LoginForm />
-						<p>
+						<ModalFooter>
 							Don't have an account?{" "}
 							<ToggleLink onClick={toggleForm}>Register</ToggleLink>
-						</p>
+						</ModalFooter>
 					</>) : (<>
-						<h2>Register</h2>
+						<ModalTittle>Register</ModalTittle>
 						<RegisterForm />
-						<p>
+						<ModalFooter>
 							Already have an account?{" "}
 							<ToggleLink onClick={toggleForm}>Login</ToggleLink>
-						</p>
+						</ModalFooter>
 					</>
 				)}
 			</ModalContent>

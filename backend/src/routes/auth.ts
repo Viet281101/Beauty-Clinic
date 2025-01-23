@@ -20,7 +20,10 @@ router.get(
 	authenticateToken,
 	asyncHandlerWrapper(async (req: express.Request, res: express.Response) => {
 		const { username } = req.params;
-		console.log("Fetching user:", username);
+
+		if (!req.user || req.user.username !== username) {
+			return res.status(403).json({ message: "Access denied" });
+		}
 
 		try {
 			const user = await User.findOne({ username }).select("-password");
@@ -30,8 +33,12 @@ router.get(
 				return;
 			}
 
-			console.log("User found:", user);
-			res.status(200).json({ user });
+			const userData = {
+				...user.toObject(),
+				createdAt: user.createdAt.toISOString(),
+			};
+
+			res.status(200).json({ user: userData });
 		} catch (error) {
 			console.error("Error fetching user:", error);
 			res.status(500).json({ message: "Server error" });
@@ -133,6 +140,34 @@ router.delete(
 			res.status(200).json({ message: "User deleted successfully" });
 		} catch (error) {
 			console.error("Error deleting user:", error);
+			res.status(500).json({ message: "Server error" });
+		}
+	})
+);
+
+router.post(
+	"/change-password",
+	authenticateToken,
+	asyncHandlerWrapper(async (req: express.Request, res: express.Response) => {
+		const { oldPassword, newPassword } = req.body;
+
+		try {
+			const user = await User.findById(req.user?.id);
+			if (!user) {
+				return res.status(404).json({ message: "User not found" });
+			}
+
+			const isMatch = await bcrypt.compare(oldPassword, user.password);
+			if (!isMatch) {
+				return res.status(400).json({ message: "Old password is incorrect" });
+			}
+
+			user.password = await bcrypt.hash(newPassword, 10);
+			await user.save();
+
+			res.status(200).json({ message: "Password updated successfully" });
+		} catch (error) {
+			console.error("Error changing password:", error);
 			res.status(500).json({ message: "Server error" });
 		}
 	})

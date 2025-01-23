@@ -35,8 +35,8 @@ function App() {
 				<Route path="/contact" element={<Layout><ContactPage /></Layout>} />
 				<Route path="/admin" element={<Layout><AdminPage /></Layout>} />
 				<Route path="/profile" element={<Layout><ProfilePage /></Layout>} />
-				<Route path="/recovery-password" element={<Layout><RecoverPassword /></Layout>} />
 				<Route path="/:username" element={<Layout><ProfilePage /></Layout>} />
+				<Route path="/recovery-password" element={<Layout><RecoverPassword /></Layout>} />
 			</Routes>
 		</Router>
 	);

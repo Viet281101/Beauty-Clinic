@@ -6,7 +6,7 @@ import { useAuth } from "./hooks/useAuth";
 import { LoginRequest } from "./types/authTypes";
 
 const FormContainer = styled.div`
-	${tw`max-w-[400px] my-0 mx-auto p-[20px] border-[1px] border-solid border-[#CCC] rounded-[10px]`}
+	${tw`max-w-[400px] my-0 mx-auto p-[20px] border-[2px] border-solid border-[#D9DDFE] rounded-[10px]`}
 `;
 
 const Form = styled.form`
@@ -18,11 +18,11 @@ const InputGroup = styled.div`
 `;
 
 const Label = styled.label`
-	${tw`block mb-[5px] text-[14px]`}
+	${tw`block mb-[5px] text-[14px] text-[#091156] font-semibold`}
 `;
 
 const Input = styled.input`
-	${tw`w-full p-[8px] rounded-[5px] border-[1px] border-solid border-[#DDD] text-[14px]`}
+	${tw`w-full p-[8px] rounded-[5px] border-[2px] border-solid border-[#D9DDFE] text-[14px]`}
 `;
 
 const CheckboxContainer = styled.div`
@@ -38,14 +38,12 @@ const ErrorMessage = styled.p`
 `;
 
 const SubmitButton = styled.button`
-	${tw`w-full p-[10px] bg-[#FF64AE] text-[#FFF] border-none rounded-[5px] cursor-pointer text-[16px]`}
-	&:disabled {
-		${tw`bg-[#CCC] cursor-not-allowed`}
-	}
+	${tw`w-full p-[10px] bg-[#FF64AE] text-[#FFF] font-semibold border-none rounded-[5px] cursor-pointer text-[16px]`}
+	&:disabled { ${tw`bg-[#CCC] cursor-not-allowed`} }
 `;
 
 const ForgotPasswordLink = styled.a`
-	${tw`text-[#FF64AE] text-[14px] no-underline text-right cursor-pointer block mt-[10px]`}
+	${tw`text-[#FF64AE] text-[14px] font-semibold no-underline text-right cursor-pointer block mt-[10px]`}
 `;
 
 const LoginForm: React.FC = () => {
@@ -130,7 +128,7 @@ const LoginForm: React.FC = () => {
 				{error && <ErrorMessage>{error}</ErrorMessage>}
 
 				{/* Submit Button */}
-				<SubmitButton type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</SubmitButton>
+				<SubmitButton type="submit" disabled={loading}>{loading ? "Logging in..." : "Sign In"}</SubmitButton>
 
 				{/* Forgot Password */}
 				<ForgotPasswordLink onClick={navigateToForgotPassword}>Forgot Password?</ForgotPasswordLink>

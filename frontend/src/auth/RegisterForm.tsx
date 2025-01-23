@@ -3,11 +3,11 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./hooks/useAuth";
-import { RegisterRequest } from "./types/authTypes";
+import { RegisterRequest, LoginRequest } from "./types/authTypes";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const FormContainer = styled.div`
-	${tw`max-w-[400px] my-0 mx-auto p-[20px] border-[1px] border-solid border-[#CCC] rounded-[10px]`}
+	${tw`max-w-[400px] my-0 mx-auto p-[20px] border-[2px] border-solid border-[#D9DDFE] rounded-[10px]`}
 `;
 
 const Form = styled.form`
@@ -19,12 +19,12 @@ const InputGroup = styled.div`
 `;
 
 const Label = styled.label`
-	${tw`block mb-[5px] text-[14px]`}
+	${tw`block mb-[5px] text-[14px] text-[#091156] font-semibold`}
 	span { ${tw`text-[red]`} }
 `;
 
 const Input = styled.input`
-	${tw`w-full p-[8px] rounded-[5px] border-[1px] border-solid border-[#DDD] text-[14px]`}
+	${tw`w-full p-[8px] rounded-[5px] border-[2px] border-solid border-[#D9DDFE] text-[14px]`}
 `;
 
 const ErrorMessage = styled.p`
@@ -32,14 +32,14 @@ const ErrorMessage = styled.p`
 `;
 
 const SubmitButton = styled.button`
-	${tw`w-full p-[10px] bg-[#FF64AE] text-[#FFF] border-none rounded-[5px] cursor-pointer text-[16px]`}
+	${tw`w-full p-[10px] bg-[#FF64AE] text-[#FFF] font-semibold border-none rounded-[5px] cursor-pointer text-[16px]`}
 	&:disabled {
 		${tw`bg-[#CCC] cursor-not-allowed`}
 	}
 `;
 
 const RegisterForm: React.FC = () => {
-	const { register } = useAuth();
+	const { register, login } = useAuth();
 	const navigate = useNavigate();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -80,10 +80,13 @@ const RegisterForm: React.FC = () => {
 				password,
 				phoneNumber: phoneNumber || undefined,
 			};
-			// await register(registerRequest);
-			const response = await register(registerRequest);
-			// alert("Registration successful!");
-			// navigate("/profile");
+			await register(registerRequest);
+
+			const loginRequest: LoginRequest = { email, password };
+			const response = await login(loginRequest);
+
+			localStorage.setItem("token", response.token);
+
 			const username = response.user.name.replace(/\s+/g, "").toLowerCase();
 			navigate(`/${username}`);
 		} catch (err: any) {

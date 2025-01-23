@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import profileIcon from "../../assets/icons/profile2.png";
 
 const UserInfoContainer = styled.div`
-	${tw`bg-white shadow-md rounded-lg p-6 mb-6`}
+	${tw`bg-white rounded-[20px] p-6 mb-6 relative`}
+	box-shadow: 0px 25px 50px 25px #E4E7FF;
+`;
+
+const AvatarWrapper = styled.div`
+	${tw`relative w-24 h-24 mx-auto mb-4`}
 `;
 
 const Avatar = styled.img`
-	${tw`w-24 h-24 rounded-full mx-auto mb-4`}
+	${tw`w-full h-full rounded-full object-cover`}
+`;
+
+const ChangeAvatarButton = styled.button`
+	${tw`absolute bottom-0 right-0 bg-[#FF64AE] cursor-pointer text-white rounded-full font-semibold px-[8px] py-[2px]`}
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	&:hover { ${tw`bg-[#E05497]`} }
+`;
+
+const HiddenInput = styled.input`
+	${tw`hidden`}
 `;
 
 const Info = styled.div`
@@ -26,9 +42,26 @@ interface UserInfoProps {
 };
 
 const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
+	const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+	const handleAvatarClick = () => {
+		fileInputRef.current?.click();
+	};
+
+	const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const file = event.target.files?.[0];
+		if (file) {
+			alert(`Selected file: ${file.name}`);
+		}
+	};
+
 	return (
 		<UserInfoContainer>
-			<Avatar src={user.avatar || "/default-avatar.png"} alt="User Avatar" />
+			<AvatarWrapper>
+				<Avatar src={user.avatar || profileIcon} alt="User Avatar"/>
+				<ChangeAvatarButton onClick={handleAvatarClick}>+</ChangeAvatarButton>
+				<HiddenInput type="file" accept="image/*" ref={fileInputRef} onChange={handleAvatarChange}/>
+			</AvatarWrapper>
 			<Info>
 				<h2>{user.name}</h2>
 				<p>{user.email}</p>

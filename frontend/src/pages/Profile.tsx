@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import tw from "twin.macro";
 import styled from "styled-components";
+import { useAtom } from "jotai";
+import { currentUsernameAtom } from "../state/atom";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import ToTopBtn from "../components/ToTopBtn";
@@ -16,11 +18,23 @@ const ProfileContainer = styled.div`
 `;
 
 const HeaderHeroContainer = styled.div`
-	${tw`relative`}
+	${tw`relative mb-[100px]`}
 `;
 
 const ProfileContent = styled.div`
 	${tw`max-w-[1200px] mx-auto my-10 p-5 mb-[200px]`}
+	@media (max-width: 1700px) {
+		${tw`mb-[20px]`}
+	}
+	@media (max-width: 1440px) {
+		${tw`mb-[280px]`}
+	}
+	@media (max-width: 1280px) {
+		${tw`mb-0`}
+	}
+	@media (max-width: 768px) {
+		${tw`-mb-[260px]`}
+	}
 `;
 
 const Profile: React.FC = () => {
@@ -28,6 +42,12 @@ const Profile: React.FC = () => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
+	const [, setCurrentUsername] = useAtom(currentUsernameAtom);
+
+	useEffect(() => {
+		setCurrentUsername(username || null);
+		return () => setCurrentUsername(null);
+	}, [username, setCurrentUsername]);
 
 	useEffect(() => {
 		const fetchUserData = async () => {

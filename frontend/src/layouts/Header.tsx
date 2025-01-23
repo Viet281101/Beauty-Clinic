@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAtom } from "jotai";
-import { currentPageAtom } from "../state/atom";
+import { currentPageAtom, currentUsernameAtom } from "../state/atom";
 import { Link, useLocation } from "react-router-dom";
 import tw from "twin.macro";
 import styled, { createGlobalStyle } from "styled-components";
@@ -106,12 +106,15 @@ const OverlayContent = styled.div`
 	a { ${tw`block py-3 text-2xl font-semibold text-[#8B8B8B] hover:text-[#FF64AE] transition-all`} }
 	.home-btn { ${tw`text-[#091156]`} }
 	.contact-btn {
-		${tw`bg-[#FF64AE] hover:bg-[#E05497] w-[210px] my-5 mx-auto flex items-center justify-center rounded-full text-white`}
+		${tw`bg-[#FF64AE] hover:bg-[#E05497] w-[210px] my-5 mx-auto flex items-center justify-center rounded-full text-white mb-[40px]`}
 	}
 	.profile-link {
-		${tw`flex items-center justify-center text-[#8B8B8B] py-3`}
-		img { ${tw`w-[40px] h-[40px] mr-2`} }
-		span { ${tw`text-[#8B8B8B] text-2xl font-semibold`} }
+		button { ${tw`text-[#091156] text-2xl font-semibold`} }
+		.profile-show {
+			${tw`flex items-center justify-center text-[#8B8B8B] py-3`}
+			img { ${tw`w-[40px] h-[40px] mr-2`} }
+			span { ${tw`text-[#8B8B8B] text-2xl font-semibold`} }
+		}
 	}
 `;
 
@@ -183,13 +186,20 @@ const ProfileIconContainer = styled.div`
 	@media (max-width: 768px) { ${tw`hidden`} }
 `;
 
+const DropdownMenu = styled.div<{ $isVisible: boolean }>`
+	${tw`absolute top-full right-0 bg-white shadow-lg rounded-lg p-4 z-50`}
+	display: ${({ $isVisible }) => ($isVisible ? "block" : "none")};
+`;
+
 const Header: React.FC = () => {
 	const location = useLocation();
 	const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+	const [currentUsername] = useAtom(currentUsernameAtom);
 	const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 	const [isModalOpen, setModalOpen] = useState<boolean>(false);
 	const [isFlipping, setIsFlipping] = useState<boolean>(true);
 	const [currentIcon, setCurrentIcon] = useState<string>(profileIcon);
+	const [isDropdownVisible, setDropdownVisible] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (!isFlipping) return;	
@@ -210,6 +220,7 @@ const Header: React.FC = () => {
 			return isOpen;
 		});
 	};
+	const isUserProfilePage = location.pathname === `/${currentUsername}`;
 
 	return (
 		<HeaderContainer>
@@ -227,8 +238,19 @@ const Header: React.FC = () => {
 			<ContactButton to="/contact">Contact</ContactButton>
 
 			{/* Profile Icon */}
-			<ProfileIconContainer className={!isFlipping ? "paused" : ""} onClick={() => setModalOpen(true)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
-				<img src={currentIcon} alt="Profile Icon" />
+			<ProfileIconContainer className={!isFlipping ? "paused" : ""} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+				<img src={currentIcon} alt="Profile Icon" onClick={() => { if (isUserProfilePage) { setDropdownVisible((prev) => !prev); } else { setModalOpen(true); } }} />
+				{isUserProfilePage && (
+					<DropdownMenu $isVisible={isDropdownVisible}>
+						<button onClick={() => {
+							if (window.confirm("Are you sure you want to sign out?")) {
+								localStorage.removeItem("user");
+								localStorage.removeItem("token");
+								window.location.href = "/BeautyClinic";
+							}
+						}}>Signout</button>
+					</DropdownMenu>
+				)}
 			</ProfileIconContainer>
 
 			{/* Hamburger Button */}
@@ -248,9 +270,22 @@ const Header: React.FC = () => {
 					<Link to="/gallery" onClick={toggleMenu}>Gallery</Link>
 					<Link to="/blog" onClick={toggleMenu}>Blog</Link>
 					<Link className="contact-btn" to="/contact" onClick={toggleMenu}>Contact</Link>
-					<div className="profile-link" onClick={() => { toggleMenu(); setModalOpen(true); }}>
-						<img src={profileIcon} alt="Profile Icon" />
-						<span>Login/Register</span>
+					<div className="profile-link">
+						{isUserProfilePage ? (
+							<button onClick={() => {
+									if (window.confirm("Are you sure you want to sign out?")) {
+										localStorage.removeItem("user");
+										localStorage.removeItem("token");
+										window.location.href = "/BeautyClinic";
+									}
+								}}
+							>Signout</button>
+						) : (
+							<div className="profile-show" onClick={() => { toggleMenu(); setModalOpen(true); }}>
+								<img src={profileIcon} alt="Profile Icon" />
+								<span>Login/Register</span>
+							</div>
+						)}
 					</div>
 				</OverlayContent>
 			</Overlay>

@@ -18,7 +18,7 @@ router.post("/register", asyncHandlerWrapper(authController_1.register));
 router.post("/login", asyncHandlerWrapper(authController_1.login));
 router.get("/users/:username", authMiddleware_1.authenticateToken, asyncHandlerWrapper(async (req, res) => {
     const { username } = req.params;
-    console.log("Fetching user:", username);
+    // console.log("Fetching user:", username);
     try {
         const user = await User_1.default.findOne({ username }).select("-password");
         if (!user) {
