@@ -7,6 +7,8 @@ export interface IUser extends Document {
 	password: string;
 	role: string;
 	createdAt: Date;
+	resetPasswordToken?: string;
+	resetPasswordExpires?: Date;
 };
 
 const userSchema: Schema = new Schema<IUser>({
@@ -16,6 +18,8 @@ const userSchema: Schema = new Schema<IUser>({
 	password: { type: String, required: true },
 	role: { type: String, default: "user" },
 	createdAt: { type: Date, default: Date.now },
+	resetPasswordToken: { type: String, required: false },
+	resetPasswordExpires: { type: Date, required: false },
 });
 
 const User = mongoose.model<IUser>("User", userSchema);

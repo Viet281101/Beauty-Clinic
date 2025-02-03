@@ -1,6 +1,6 @@
 import express, { Router, RequestHandler, Request, Response, NextFunction } from "express";
 import bcrypt from "bcrypt";
-import { register, login } from "../controllers/authController";
+import { register, login, requestPasswordReset, resetPassword } from "../controllers/authController";
 import { authenticateToken, checkAdmin } from "../middleware/authMiddleware";
 import User from "../models/User";
 
@@ -14,6 +14,8 @@ const asyncHandlerWrapper = (fn: (req: Request, res: Response, next: NextFunctio
 
 router.post("/register", asyncHandlerWrapper(register));
 router.post("/login", asyncHandlerWrapper(login));
+router.post("/request-password-reset", asyncHandlerWrapper(requestPasswordReset));
+router.post("/reset-password", asyncHandlerWrapper(resetPassword));
 
 router.get(
 	"/users/:username",

@@ -5,7 +5,7 @@ import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
 const ModalOverlay = styled.div`
-	${tw`fixed top-0 left-0 w-full h-full bg-white bg-opacity-[0.95] z-50 flex items-center justify-center`}
+	${tw`fixed top-0 left-0 w-full h-full bg-white bg-opacity-[0.95] z-[100] flex items-center justify-center`}
 `;
 
 const ModalTittle = styled.div`

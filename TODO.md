@@ -29,6 +29,6 @@
   - [X] Login
     - [X] Navigate to user profile page after login successfully.
     - [X] Remember Me.
-    - [ ] Forgot Password with Recovery Page.
+    - [X] Forgot Password with Recovery Page.
   - [ ] Beautiful view style.
 
