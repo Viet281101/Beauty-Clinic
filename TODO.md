@@ -16,7 +16,7 @@
   - [ ] Beautiful view style.
 - [X] Build the **Profile page**.
   - [X] Each User Account have their own profile page.
-  - [ ] Setting Account (edit user info).
+  - [X] Setting Account (edit user info).
   - [X] Logout, Signout.
   - [ ] Beautiful view style.
 - [X] Build the **Login/Register modals**.

@@ -37,3 +37,5 @@ Request :
      - [GitHub Actions Deployment](https://docs.github.com/en/actions/deployment/about-deployments/deploying-with-github-actions) 
 
 ---
+
+![alt text](frontend/src/assets/footer_logo.svg)
